@@ -1,18 +1,18 @@
 [submodule "threadx"]
 	path = threadx
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/threadx.git
+	url = https://github.com/NXP/threadx.git
 [submodule "filex"]
 	path = filex
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/filex.git
+	url = https://github.com/NXP/filex.git
 [submodule "levelx"]
 	path = levelx
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/levelx.git
+	url = https://github.com/NXP/levelx.git
 [submodule "netxduo"]
 	path = netxduo
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/netxduo.git
+	url = https://github.com/NXP/netxduo.git
 [submodule "usbx"]
 	path = usbx
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/usbx.git
+	url = https://github.com/NXP/usbx.git
 [submodule "guix"]
 	path = guix
-	url = ssh://git@bitbucket.sw.nxp.com/dnind/guix.git
+	url = https://github.com/NXP/guix.git

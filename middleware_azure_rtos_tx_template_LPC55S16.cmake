@@ -15,8 +15,6 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_free.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_initialize.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_stack_build.S
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_stack_error_handler.c
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_stack_error_notify.c
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_system_return.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_timer_interrupt.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/txe_thread_secure_stack_allocate.c
