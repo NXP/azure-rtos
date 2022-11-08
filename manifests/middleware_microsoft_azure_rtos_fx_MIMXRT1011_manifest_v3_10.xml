@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_fx_MIMXRT1011_manifest_v3_10" name="Azure RTOS FileX" brief="A File System Based On Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
+  <!--Timestamp (UTC): 2022-07-15 08:18:18.424918-->
+  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <externalDefinitions>
+    <definition extID="MIMXRT1011xxxxx"/>
+    <definition extID="middleware.azure_rtos.tx.MIMXRT1011"/>
+    <definition extID="core0_MIMXRT1011xxxxx"/>
+    <definition extID="mcuxpresso"/>
+    <definition extID="armgcc"/>
+    <definition extID="middleware.azure_rtos.tx.sp.MIMXRT1011"/>
+  </externalDefinitions>
+  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_fx_MIMXRT1011_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_fx_MIMXRT1011_manifest_v3_10" version="2.12.0"/>
+  <components>
+    <component id="middleware.azure_rtos.fx.MIMXRT1011" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="MIMXRT1011xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <dependencies>
+        <all>
+          <component_dependency value="middleware.azure_rtos.fx.template.MIMXRT1011"/>
+          <component_dependency value="middleware.azure_rtos.tx.MIMXRT1011"/>
+        </all>
+      </dependencies>
+      <source toolchain="mcuxpresso" relative_path="./binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="libfilex.a"/>
+      </source>
+    </component>
+    <component id="middleware.azure_rtos.fx.lib.MIMXRT1011" name="Azure RTOS FileX(lib)" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="MIMXRT1011xxxxx" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+        <files mask="tx_api.h"/>
+        <files mask="tx_block_pool.h"/>
+        <files mask="tx_byte_pool.h"/>
+        <files mask="tx_event_flags.h"/>
+        <files mask="tx_initialize.h"/>
+        <files mask="tx_mutex.h"/>
+        <files mask="tx_queue.h"/>
+        <files mask="tx_semaphore.h"/>
+        <files mask="tx_thread.h"/>
+        <files mask="tx_timer.h"/>
+        <files mask="tx_trace.h"/>
+        <files mask="tx_user_sample.h"/>
+      </source>
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+        <files mask="fx_api.h"/>
+        <files mask="fx_directory.h"/>
+        <files mask="fx_directory_exFAT.h"/>
+        <files mask="fx_fault_tolerant.h"/>
+        <files mask="fx_file.h"/>
+        <files mask="fx_media.h"/>
+        <files mask="fx_system.h"/>
+        <files mask="fx_unicode.h"/>
+        <files mask="fx_user_sample.h"/>
+        <files mask="fx_utility.h"/>
+      </source>
+      <source relative_path="./filex/common/src" project_relative_path="filex/common/src" type="src">
+        <files mask="fx_directory_attributes_read.c"/>
+        <files mask="fx_directory_attributes_set.c"/>
+        <files mask="fx_directory_create.c"/>
+        <files mask="fx_directory_default_get.c"/>
+        <files mask="fx_directory_default_get_copy.c"/>
+        <files mask="fx_directory_default_set.c"/>
+        <files mask="fx_directory_delete.c"/>
+        <files mask="fx_directory_entry_read.c"/>
+        <files mask="fx_directory_entry_write.c"/>
+        <files mask="fx_directory_exFAT_entry_read.c"/>
+        <files mask="fx_directory_exFAT_entry_write.c"/>
+        <files mask="fx_directory_exFAT_free_search.c"/>
+        <files mask="fx_directory_exFAT_unicode_entry_write.c"/>
+        <files mask="fx_directory_first_entry_find.c"/>
+        <files mask="fx_directory_first_full_entry_find.c"/>
+        <files mask="fx_directory_free_search.c"/>
+        <files mask="fx_directory_information_get.c"/>
+        <files mask="fx_directory_local_path_clear.c"/>
+        <files mask="fx_directory_local_path_get.c"/>
+        <files mask="fx_directory_local_path_get_copy.c"/>
+        <files mask="fx_directory_local_path_restore.c"/>
+        <files mask="fx_directory_local_path_set.c"/>
+        <files mask="fx_directory_long_name_get.c"/>
+        <files mask="fx_directory_long_name_get_extended.c"/>
+        <files mask="fx_directory_name_extract.c"/>
+        <files mask="fx_directory_name_test.c"/>
+        <files mask="fx_directory_next_entry_find.c"/>
+        <files mask="fx_directory_next_full_entry_find.c"/>
+        <files mask="fx_directory_rename.c"/>
+        <files mask="fx_directory_search.c"/>
+        <files mask="fx_directory_short_name_get.c"/>
+        <files mask="fx_directory_short_name_get_extended.c"/>
+        <files mask="fx_fault_tolerant_add_FAT_log.c"/>
+        <files mask="fx_fault_tolerant_add_bitmap_log.c"/>
+        <files mask="fx_fault_tolerant_add_checksum_log.c"/>
+        <files mask="fx_fault_tolerant_add_dir_log.c"/>
+        <files mask="fx_fault_tolerant_apply_logs.c"/>
+        <files mask="fx_fault_tolerant_calculate_checksum.c"/>
+        <files mask="fx_fault_tolerant_cleanup_FAT_chain.c"/>
+        <files mask="fx_fault_tolerant_create_log_file.c"/>
+        <files mask="fx_fault_tolerant_enable.c"/>
+        <files mask="fx_fault_tolerant_read_FAT.c"/>
+        <files mask="fx_fault_tolerant_read_directory_sector.c"/>
+        <files mask="fx_fault_tolerant_read_log_file.c"/>
+        <files mask="fx_fault_tolerant_recover.c"/>
+        <files mask="fx_fault_tolerant_reset_log_file.c"/>
+        <files mask="fx_fault_tolerant_set_FAT_chain.c"/>
+        <files mask="fx_fault_tolerant_transaction_end.c"/>
+        <files mask="fx_fault_tolerant_transaction_fail.c"/>
+        <files mask="fx_fault_tolerant_transaction_start.c"/>
+        <files mask="fx_fault_tolerant_write_log_file.c"/>
+        <files mask="fx_file_allocate.c"/>
+        <files mask="fx_file_attributes_read.c"/>
+        <files mask="fx_file_attributes_set.c"/>
+        <files mask="fx_file_best_effort_allocate.c"/>
+        <files mask="fx_file_close.c"/>
+        <files mask="fx_file_create.c"/>
+        <files mask="fx_file_date_time_set.c"/>
+        <files mask="fx_file_delete.c"/>
+        <files mask="fx_file_extended_allocate.c"/>
+        <files mask="fx_file_extended_best_effort_allocate.c"/>
+        <files mask="fx_file_extended_relative_seek.c"/>
+        <files mask="fx_file_extended_seek.c"/>
+        <files mask="fx_file_extended_truncate.c"/>
+        <files mask="fx_file_extended_truncate_release.c"/>
+        <files mask="fx_file_open.c"/>
+        <files mask="fx_file_read.c"/>
+        <files mask="fx_file_relative_seek.c"/>
+        <files mask="fx_file_rename.c"/>
+        <files mask="fx_file_seek.c"/>
+        <files mask="fx_file_truncate.c"/>
+        <files mask="fx_file_truncate_release.c"/>
+        <files mask="fx_file_write.c"/>
+        <files mask="fx_file_write_notify_set.c"/>
+        <files mask="fx_media_abort.c"/>
+        <files mask="fx_media_boot_info_extract.c"/>
+        <files mask="fx_media_cache_invalidate.c"/>
+        <files mask="fx_media_check.c"/>
+        <files mask="fx_media_check_FAT_chain_check.c"/>
+        <files mask="fx_media_check_lost_cluster_check.c"/>
+        <files mask="fx_media_close.c"/>
+        <files mask="fx_media_close_notify_set.c"/>
+        <files mask="fx_media_exFAT_format.c"/>
+        <files mask="fx_media_extended_space_available.c"/>
+        <files mask="fx_media_flush.c"/>
+        <files mask="fx_media_format.c"/>
+        <files mask="fx_media_format_oem_name_set.c"/>
+        <files mask="fx_media_format_type_set.c"/>
+        <files mask="fx_media_format_volume_id_set.c"/>
+        <files mask="fx_media_open.c"/>
+        <files mask="fx_media_open_notify_set.c"/>
+        <files mask="fx_media_read.c"/>
+        <files mask="fx_media_space_available.c"/>
+        <files mask="fx_media_volume_get.c"/>
+        <files mask="fx_media_volume_get_extended.c"/>
+        <files mask="fx_media_volume_set.c"/>
+        <files mask="fx_media_write.c"/>
+        <files mask="fx_partition_offset_calculate.c"/>
+        <files mask="fx_ram_driver.c"/>
+        <files mask="fx_system_date_get.c"/>
+        <files mask="fx_system_date_set.c"/>
+        <files mask="fx_system_initialize.c"/>
+        <files mask="fx_system_time_get.c"/>
+        <files mask="fx_system_time_set.c"/>
+        <files mask="fx_system_timer_entry.c"/>
+        <files mask="fx_trace_event_insert.c"/>
+        <files mask="fx_trace_event_update.c"/>
+        <files mask="fx_trace_object_register.c"/>
+        <files mask="fx_trace_object_unregister.c"/>
+        <files mask="fx_unicode_directory_create.c"/>
+        <files mask="fx_unicode_directory_entry_change.c"/>
+        <files mask="fx_unicode_directory_entry_read.c"/>
+        <files mask="fx_unicode_directory_rename.c"/>
+        <files mask="fx_unicode_directory_search.c"/>
+        <files mask="fx_unicode_file_create.c"/>
+        <files mask="fx_unicode_file_rename.c"/>
+        <files mask="fx_unicode_length_get.c"/>
+        <files mask="fx_unicode_length_get_extended.c"/>
+        <files mask="fx_unicode_name_get.c"/>
+        <files mask="fx_unicode_name_get_extended.c"/>
+        <files mask="fx_unicode_short_name_get.c"/>
+        <files mask="fx_unicode_short_name_get_extended.c"/>
+        <files mask="fx_utility_16_unsigned_read.c"/>
+        <files mask="fx_utility_16_unsigned_write.c"/>
+        <files mask="fx_utility_32_unsigned_read.c"/>
+        <files mask="fx_utility_32_unsigned_write.c"/>
+        <files mask="fx_utility_64_unsigned_read.c"/>
+        <files mask="fx_utility_64_unsigned_write.c"/>
+        <files mask="fx_utility_FAT_entry_read.c"/>
+        <files mask="fx_utility_FAT_entry_write.c"/>
+        <files mask="fx_utility_FAT_flush.c"/>
+        <files mask="fx_utility_FAT_map_flush.c"/>
+        <files mask="fx_utility_FAT_sector_get.c"/>
+        <files mask="fx_utility_absolute_path_get.c"/>
+        <files mask="fx_utility_exFAT_allocate_new_cluster.c"/>
+        <files mask="fx_utility_exFAT_bitmap_cache_prepare.c"/>
+        <files mask="fx_utility_exFAT_bitmap_cache_update.c"/>
+        <files mask="fx_utility_exFAT_bitmap_flush.c"/>
+        <files mask="fx_utility_exFAT_bitmap_free_cluster_find.c"/>
+        <files mask="fx_utility_exFAT_bitmap_initialize.c"/>
+        <files mask="fx_utility_exFAT_bitmap_start_sector_get.c"/>
+        <files mask="fx_utility_exFAT_cluster_free.c"/>
+        <files mask="fx_utility_exFAT_cluster_state_get.c"/>
+        <files mask="fx_utility_exFAT_cluster_state_set.c"/>
+        <files mask="fx_utility_exFAT_geometry_check.c"/>
+        <files mask="fx_utility_exFAT_name_hash_get.c"/>
+        <files mask="fx_utility_exFAT_size_calculate.c"/>
+        <files mask="fx_utility_exFAT_system_area_checksum_verify.c"/>
+        <files mask="fx_utility_exFAT_system_area_checksum_write.c"/>
+        <files mask="fx_utility_exFAT_system_area_format.c"/>
+        <files mask="fx_utility_exFAT_system_sector_write.c"/>
+        <files mask="fx_utility_exFAT_unicode_name_hash_get.c"/>
+        <files mask="fx_utility_exFAT_upcase_table.c"/>
+        <files mask="fx_utility_logical_sector_cache_entry_read.c"/>
+        <files mask="fx_utility_logical_sector_flush.c"/>
+        <files mask="fx_utility_logical_sector_read.c"/>
+        <files mask="fx_utility_logical_sector_write.c"/>
+        <files mask="fx_utility_memory_copy.c"/>
+        <files mask="fx_utility_memory_set.c"/>
+        <files mask="fx_utility_string_length_get.c"/>
+        <files mask="fx_utility_token_length_get.c"/>
+        <files mask="fxe_directory_attributes_read.c"/>
+        <files mask="fxe_directory_attributes_set.c"/>
+        <files mask="fxe_directory_create.c"/>
+        <files mask="fxe_directory_default_get.c"/>
+        <files mask="fxe_directory_default_get_copy.c"/>
+        <files mask="fxe_directory_default_set.c"/>
+        <files mask="fxe_directory_delete.c"/>
+        <files mask="fxe_directory_first_entry_find.c"/>
+        <files mask="fxe_directory_first_full_entry_find.c"/>
+        <files mask="fxe_directory_information_get.c"/>
+        <files mask="fxe_directory_local_path_clear.c"/>
+        <files mask="fxe_directory_local_path_get.c"/>
+        <files mask="fxe_directory_local_path_get_copy.c"/>
+        <files mask="fxe_directory_local_path_restore.c"/>
+        <files mask="fxe_directory_local_path_set.c"/>
+        <files mask="fxe_directory_long_name_get.c"/>
+        <files mask="fxe_directory_long_name_get_extended.c"/>
+        <files mask="fxe_directory_name_test.c"/>
+        <files mask="fxe_directory_next_entry_find.c"/>
+        <files mask="fxe_directory_next_full_entry_find.c"/>
+        <files mask="fxe_directory_rename.c"/>
+        <files mask="fxe_directory_short_name_get.c"/>
+        <files mask="fxe_directory_short_name_get_extended.c"/>
+        <files mask="fxe_fault_tolerant_enable.c"/>
+        <files mask="fxe_file_allocate.c"/>
+        <files mask="fxe_file_attributes_read.c"/>
+        <files mask="fxe_file_attributes_set.c"/>
+        <files mask="fxe_file_best_effort_allocate.c"/>
+        <files mask="fxe_file_close.c"/>
+        <files mask="fxe_file_create.c"/>
+        <files mask="fxe_file_date_time_set.c"/>
+        <files mask="fxe_file_delete.c"/>
+        <files mask="fxe_file_extended_allocate.c"/>
+        <files mask="fxe_file_extended_best_effort_allocate.c"/>
+        <files mask="fxe_file_extended_relative_seek.c"/>
+        <files mask="fxe_file_extended_seek.c"/>
+        <files mask="fxe_file_extended_truncate.c"/>
+        <files mask="fxe_file_extended_truncate_release.c"/>
+        <files mask="fxe_file_open.c"/>
+        <files mask="fxe_file_read.c"/>
+        <files mask="fxe_file_relative_seek.c"/>
+        <files mask="fxe_file_rename.c"/>
+        <files mask="fxe_file_seek.c"/>
+        <files mask="fxe_file_truncate.c"/>
+        <files mask="fxe_file_truncate_release.c"/>
+        <files mask="fxe_file_write.c"/>
+        <files mask="fxe_file_write_notify_set.c"/>
+        <files mask="fxe_media_abort.c"/>
+        <files mask="fxe_media_cache_invalidate.c"/>
+        <files mask="fxe_media_check.c"/>
+        <files mask="fxe_media_close.c"/>
+        <files mask="fxe_media_close_notify_set.c"/>
+        <files mask="fxe_media_exFAT_format.c"/>
+        <files mask="fxe_media_extended_space_available.c"/>
+        <files mask="fxe_media_flush.c"/>
+        <files mask="fxe_media_format.c"/>
+        <files mask="fxe_media_open.c"/>
+        <files mask="fxe_media_open_notify_set.c"/>
+        <files mask="fxe_media_read.c"/>
+        <files mask="fxe_media_space_available.c"/>
+        <files mask="fxe_media_volume_get.c"/>
+        <files mask="fxe_media_volume_get_extended.c"/>
+        <files mask="fxe_media_volume_set.c"/>
+        <files mask="fxe_media_write.c"/>
+        <files mask="fxe_system_date_get.c"/>
+        <files mask="fxe_system_date_set.c"/>
+        <files mask="fxe_system_time_get.c"/>
+        <files mask="fxe_system_time_set.c"/>
+        <files mask="fxe_unicode_directory_create.c"/>
+        <files mask="fxe_unicode_directory_rename.c"/>
+        <files mask="fxe_unicode_file_create.c"/>
+        <files mask="fxe_unicode_file_rename.c"/>
+        <files mask="fxe_unicode_name_get.c"/>
+        <files mask="fxe_unicode_name_get_extended.c"/>
+        <files mask="fxe_unicode_short_name_get.c"/>
+        <files mask="fxe_unicode_short_name_get_extended.c"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="tx_port.h"/>
+      </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="fx_port.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1011xxxxx"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="core0_MIMXRT1011xxxxx"/>
+      </include_paths>
+    </component>
+    <component id="middleware.azure_rtos.fx.sp.MIMXRT1011" name="Azure RTOS FileX(Single Precision FPU)" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX(Single Precision FPU)" devices="MIMXRT1011xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <dependencies>
+        <all>
+          <component_dependency value="middleware.azure_rtos.fx.template.MIMXRT1011"/>
+          <component_dependency value="middleware.azure_rtos.tx.sp.MIMXRT1011"/>
+        </all>
+      </dependencies>
+      <source toolchain="mcuxpresso" relative_path="./binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="libfilex_sp.a"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
+        <files mask="middleware_azure_rtos_fx_sp_MIMXRT1011.cmake" hidden="true"/>
+      </source>
+    </component>
+    <component id="middleware.azure_rtos.fx.template.MIMXRT1011" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="MIMXRT1011xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="other">
+        <files mask="CONTRIBUTING.md" hidden="true"/>
+        <files mask="SECURITY.md" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./filex/docs" project_relative_path="filex/docs" type="image">
+        <files mask="deps.png" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+        <files mask="fx_api.h"/>
+        <files mask="fx_directory.h"/>
+        <files mask="fx_directory_exFAT.h"/>
+        <files mask="fx_fault_tolerant.h"/>
+        <files mask="fx_file.h"/>
+        <files mask="fx_media.h"/>
+        <files mask="fx_system.h"/>
+        <files mask="fx_unicode.h"/>
+        <files mask="fx_user_sample.h"/>
+        <files mask="fx_utility.h"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./filex/cmake" project_relative_path="filex/cmake" type="script">
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m4.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="arm-none-eabi.cmake"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./filex" project_relative_path="filex" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./filex/common" project_relative_path="filex/common" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./filex/ports/cortex_m7/gnu" project_relative_path="filex/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1011xxxxx">
+        <files mask="fx_port.h"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
+        <files mask="middleware_azure_rtos_fx_template_MIMXRT1011.cmake" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="core0_MIMXRT1011xxxxx"/>
+      </include_paths>
+    </component>
+  </components>
+</ksdk:manifest>
