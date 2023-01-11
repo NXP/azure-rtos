@@ -3,7 +3,7 @@ NXP Software Content Register
 --------------------------------------------
 
 Package:                   Azure RTOS
-Version:                   2.12.0
+Version:                   2.13.0
 Outgoing License:          LA_OPT_NXP_Software_License v35 May 2022 - Additional Distribution License granted - Section 2.3 applies
 License File:              LA_OPT_NXP_Software_License.txt
 Package Category:          BSP
