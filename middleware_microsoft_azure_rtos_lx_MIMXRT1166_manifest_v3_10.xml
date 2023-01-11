@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_lx_MIMXRT1166_manifest_v3_10" name="Azure RTOS LevelX" brief="NOR/NAND Flash Wear Leveling Component" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
+  <!--Timestamp (UTC): 2022-07-15 08:19:29.113640-->
+  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <externalDefinitions>
+    <definition extID="MIMXRT1166xxxxx"/>
+    <definition extID="armgcc"/>
+    <definition extID="mcuxpresso"/>
+  </externalDefinitions>
+  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_lx_MIMXRT1166_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_lx_MIMXRT1166_manifest_v3_10" version="2.12.0"/>
+  <components>
+    <component id="middleware.azure_rtos.lx.MIMXRT1166" name="Azure RTOS LevelX" brief="LevelX provides NAND and NOR flash wear leveling facilities to embedded applications" version="6.1.10" full_name="Azure RTOS LevelX" devices="MIMXRT1166xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="./" project_base_path="azure-rtos">
+      <source toolchain="armgcc" relative_path="./levelx/cmake" project_relative_path="levelx/cmake" type="script">
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m4.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="arm-none-eabi.cmake"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./levelx" project_relative_path="levelx" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./levelx/common" project_relative_path="levelx/common" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include">
+        <files mask="lx_api.h"/>
+        <files mask="lx_user_sample.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./levelx/common/src" project_relative_path="levelx/common/src" type="src">
+        <files mask="fx_nand_flash_simulated_driver.c"/>
+        <files mask="fx_nor_flash_simulator_driver.c"/>
+        <files mask="lx_nand_flash_256byte_ecc_check.c"/>
+        <files mask="lx_nand_flash_256byte_ecc_compute.c"/>
+        <files mask="lx_nand_flash_block_full_update.c"/>
+        <files mask="lx_nand_flash_block_obsoleted_check.c"/>
+        <files mask="lx_nand_flash_block_reclaim.c"/>
+        <files mask="lx_nand_flash_close.c"/>
+        <files mask="lx_nand_flash_defragment.c"/>
+        <files mask="lx_nand_flash_driver_block_erase.c"/>
+        <files mask="lx_nand_flash_driver_block_erased_verify.c"/>
+        <files mask="lx_nand_flash_driver_block_status_get.c"/>
+        <files mask="lx_nand_flash_driver_block_status_set.c"/>
+        <files mask="lx_nand_flash_driver_extra_bytes_get.c"/>
+        <files mask="lx_nand_flash_driver_extra_bytes_set.c"/>
+        <files mask="lx_nand_flash_driver_page_erased_verify.c"/>
+        <files mask="lx_nand_flash_driver_read.c"/>
+        <files mask="lx_nand_flash_driver_write.c"/>
+        <files mask="lx_nand_flash_extended_cache_enable.c"/>
+        <files mask="lx_nand_flash_initialize.c"/>
+        <files mask="lx_nand_flash_logical_sector_find.c"/>
+        <files mask="lx_nand_flash_next_block_to_erase_find.c"/>
+        <files mask="lx_nand_flash_open.c"/>
+        <files mask="lx_nand_flash_page_ecc_check.c"/>
+        <files mask="lx_nand_flash_page_ecc_compute.c"/>
+        <files mask="lx_nand_flash_partial_defragment.c"/>
+        <files mask="lx_nand_flash_physical_page_allocate.c"/>
+        <files mask="lx_nand_flash_sector_mapping_cache_invalidate.c"/>
+        <files mask="lx_nand_flash_sector_read.c"/>
+        <files mask="lx_nand_flash_sector_release.c"/>
+        <files mask="lx_nand_flash_sector_write.c"/>
+        <files mask="lx_nand_flash_simulator.c"/>
+        <files mask="lx_nand_flash_system_error.c"/>
+        <files mask="lx_nor_flash_block_reclaim.c"/>
+        <files mask="lx_nor_flash_close.c"/>
+        <files mask="lx_nor_flash_defragment.c"/>
+        <files mask="lx_nor_flash_driver_block_erase.c"/>
+        <files mask="lx_nor_flash_driver_read.c"/>
+        <files mask="lx_nor_flash_driver_write.c"/>
+        <files mask="lx_nor_flash_extended_cache_enable.c"/>
+        <files mask="lx_nor_flash_initialize.c"/>
+        <files mask="lx_nor_flash_logical_sector_find.c"/>
+        <files mask="lx_nor_flash_next_block_to_erase_find.c"/>
+        <files mask="lx_nor_flash_open.c"/>
+        <files mask="lx_nor_flash_partial_defragment.c"/>
+        <files mask="lx_nor_flash_physical_sector_allocate.c"/>
+        <files mask="lx_nor_flash_sector_mapping_cache_invalidate.c"/>
+        <files mask="lx_nor_flash_sector_read.c"/>
+        <files mask="lx_nor_flash_sector_release.c"/>
+        <files mask="lx_nor_flash_sector_write.c"/>
+        <files mask="lx_nor_flash_simulator.c"/>
+        <files mask="lx_nor_flash_system_error.c"/>
+      </source>
+      <source exclude="true" relative_path="./levelx" project_relative_path="levelx" type="other">
+        <files mask="CONTRIBUTING.md" hidden="true"/>
+        <files mask="SECURITY.md" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./levelx/docs" project_relative_path="levelx/docs" type="image">
+        <files mask="deps.png" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./levelx" project_relative_path="levelx" type="doc">
+        <files mask="LICENSED-HARDWARE.txt" hidden="true"/>
+        <files mask="LICENSE.txt" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./levelx/samples" project_relative_path="levelx/samples" type="src">
+        <files mask="demo_filex_nand_flash.c" hidden="true"/>
+        <files mask="demo_filex_nor_flash.c" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include"/>
+      </include_paths>
+    </component>
+  </components>
+</ksdk:manifest>

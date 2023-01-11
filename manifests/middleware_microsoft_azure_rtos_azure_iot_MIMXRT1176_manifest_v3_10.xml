@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1176_manifest_v3_10" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:17:58.594111-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <!--Timestamp (UTC): 2023-01-09 15:33:40.622061-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="MIMXRT1176xxxxx"/>
     <definition extID="middleware.azure_rtos.nxd.sp.MIMXRT1176"/>
@@ -9,9 +9,9 @@
     <definition extID="armgcc"/>
     <definition extID="cm7_MIMXRT1176xxxxx"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1176_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1176_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1176_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1176_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.azure_iot.MIMXRT1176" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.1.10" full_name="Azure RTOS IoT" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.azure_iot.MIMXRT1176" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.2.0" full_name="Azure RTOS IoT" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <any_of>
           <component_dependency value="middleware.azure_rtos.nxd.MIMXRT1176"/>
@@ -36,6 +36,26 @@
         <files mask="nx_azure_iot_json_reader.c" hidden="true"/>
         <files mask="nx_azure_iot_json_writer.c" hidden="true"/>
         <files mask="nx_azure_iot_provisioning_client.c" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs" project_relative_path="netxduo/addons/azure_iot/docs" type="other">
+        <files mask="azure_rtos_iot_json.md" hidden="true"/>
+        <files mask="azure_rtos_iot_sdk_api.md" hidden="true"/>
+        <files mask="azure_rtos_iot_hub_client.md" hidden="true"/>
+        <files mask="azure_rtos_iot_provisioning_client.md" hidden="true"/>
+        <files mask="azure_rtos_iot_adu_agent.md" hidden="true"/>
+        <files mask="azure_rtos_iot.md" hidden="true"/>
+        <files mask="azure_rtos_iot_hub_client_properties.md" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs/img/device_explorer" project_relative_path="netxduo/addons/azure_iot/docs/img/device_explorer" type="image">
+        <files mask="send_turnfanoff_message_to_device.png" hidden="true"/>
+        <files mask="device_temperature_max_at_40.png" hidden="true"/>
+        <files mask="device_explorer_management.png" hidden="true"/>
+        <files mask="device_temperature_min_at_0.png" hidden="true"/>
+        <files mask="device_explorer_configuration.png" hidden="true"/>
+        <files mask="send_turnfanon_message_to_device.png" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs/img" project_relative_path="netxduo/addons/azure_iot/docs/img" type="image">
+        <files mask="diagram.png" hidden="true"/>
       </source>
       <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>

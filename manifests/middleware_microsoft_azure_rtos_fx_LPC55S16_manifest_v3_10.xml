@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" name="Azure RTOS FileX" brief="A File System Based On Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:19:22.267487-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" name="Azure RTOS FileX" brief="FAT-compatible File System for Azure RTOS ThreadX or bare metal implementations" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
+  <!--Timestamp (UTC): 2023-01-09 15:36:56.466273-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="LPC55S16"/>
     <definition extID="middleware.azure_rtos.tx.LPC55S16"/>
@@ -10,9 +10,9 @@
     <definition extID="armgcc"/>
     <definition extID="middleware.azure_rtos.tx.sp.LPC55S16"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_fx_LPC55S16_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.fx.LPC55S16" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.LPC55S16" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.fx.template.LPC55S16"/>
@@ -20,7 +20,7 @@
         </all>
       </dependencies>
     </component>
-    <component id="middleware.azure_rtos.fx.lib.LPC55S16" name="Azure RTOS FileX(lib)" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="LPC55S16" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.lib.LPC55S16" name="Azure RTOS FileX(lib)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="LPC55S16" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
@@ -293,6 +293,9 @@
       <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m33/gnu/inc" project_relative_path="threadx/ports/cortex_m33/gnu/inc" type="c_include" device_cores="cm33_core0_LPC55S16">
         <files mask="tx_port.h"/>
       </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm33_core0_LPC55S16">
+        <files mask="fx_port.h"/>
+      </source>
       <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m33/gnu/inc" project_relative_path="filex/ports/cortex_m33/gnu/inc" type="c_include" device_cores="cm33_core0_LPC55S16">
         <files mask="fx_port.h"/>
       </source>
@@ -303,7 +306,7 @@
         <include_path relative_path="./filex/ports/cortex_m33/gnu/inc" project_relative_path="filex/ports/cortex_m33/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm33_core0_LPC55S16"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.fx.sp.LPC55S16" name="Azure RTOS FileX(Single Precision FPU)" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX(Single Precision FPU)" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.sp.LPC55S16" name="Azure RTOS FileX(Single Precision FPU)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX(Single Precision FPU)" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.fx.template.LPC55S16"/>
@@ -317,7 +320,7 @@
         <files mask="middleware_azure_rtos_fx_sp_LPC55S16.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.fx.template.LPC55S16" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.1.10" full_name="Azure RTOS FileX" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.template.LPC55S16" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="LPC55S16" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./filex" project_relative_path="filex" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>
@@ -355,6 +358,9 @@
       </source>
       <source toolchain="armgcc" relative_path="./filex/common" project_relative_path="filex/common" type="doc">
         <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm33_core0_LPC55S16">
+        <files mask="fx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./filex/ports/cortex_m33/gnu" project_relative_path="filex/ports/cortex_m33/gnu" type="doc" device_cores="cm33_core0_LPC55S16">
         <files mask="CMakeLists.txt"/>

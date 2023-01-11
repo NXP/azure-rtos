@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_gx_MIMXRT1176_manifest_v3_10" name="Azure RTOS GUIX" brief="GUI-X graphics library from Azure RTOS middleware suite" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:17:58.926522-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <!--Timestamp (UTC): 2023-01-09 15:33:41.304316-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="MIMXRT1176xxxxx"/>
     <definition extID="middleware.azure_rtos.tx.MIMXRT1176"/>
@@ -9,9 +9,9 @@
     <definition extID="cm7_MIMXRT1176xxxxx"/>
     <definition extID="mcuxpresso"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_gx_MIMXRT1176_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_gx_MIMXRT1176_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_gx_MIMXRT1176_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_gx_MIMXRT1176_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.gx.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.gx.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.MIMXRT1176"/>
       </dependencies>
@@ -89,7 +89,7 @@
         <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.gx.lib.MIMXRT1176" name="Azure RTOS GUIX(lib)" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.gx.lib.MIMXRT1176" name="Azure RTOS GUIX(lib)" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./guix" project_relative_path="guix" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -1478,7 +1478,7 @@
         <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.gx.unused_files.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.gx.unused_files.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./guix" project_relative_path="guix" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>

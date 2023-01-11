@@ -10,15 +10,9 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_disable.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_restore.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_schedule.S
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack.c
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_allocate.S
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_free.S
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_initialize.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_stack_build.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_thread_system_return.S
     ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/tx_timer_interrupt.S
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/txe_thread_secure_stack_allocate.c
-    ${CMAKE_CURRENT_LIST_DIR}/threadx/ports/cortex_m33/gnu/src/txe_thread_secure_stack_free.c
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC

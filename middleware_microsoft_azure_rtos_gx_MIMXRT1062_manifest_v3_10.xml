@@ -1,0 +1,2806 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_gx_MIMXRT1062_manifest_v3_10" name="Azure RTOS GUIX" brief="GUI-X graphics library from Azure RTOS middleware suite" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
+  <!--Timestamp (UTC): 2022-07-15 08:18:37.014295-->
+  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <externalDefinitions>
+    <definition extID="MIMXRT1062xxxxA"/>
+    <definition extID="MIMXRT1062xxxxB"/>
+    <definition extID="middleware.azure_rtos.tx.MIMXRT1062"/>
+    <definition extID="armgcc"/>
+    <definition extID="core0_MIMXRT1062xxxxA"/>
+    <definition extID="core0_MIMXRT1062xxxxB"/>
+    <definition extID="mcuxpresso"/>
+  </externalDefinitions>
+  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_gx_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_gx_MIMXRT1062_manifest_v3_10" version="2.12.0"/>
+  <components>
+    <component id="middleware.azure_rtos.gx.MIMXRT1062" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="./" project_base_path="azure-rtos">
+      <dependencies>
+        <component_dependency value="middleware.azure_rtos.tx.MIMXRT1062"/>
+      </dependencies>
+      <source toolchain="armgcc" relative_path="./guix/cmake" project_relative_path="guix/cmake" type="script">
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="cortex_m4.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="arm-none-eabi.cmake"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./guix" project_relative_path="guix" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./guix/common" project_relative_path="guix/common" type="doc">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
+        <files mask="gx_animation.h"/>
+        <files mask="gx_api.h"/>
+        <files mask="gx_binres_loader.h"/>
+        <files mask="gx_button.h"/>
+        <files mask="gx_canvas.h"/>
+        <files mask="gx_circular_gauge.h"/>
+        <files mask="gx_context.h"/>
+        <files mask="gx_display.h"/>
+        <files mask="gx_drop_list.h"/>
+        <files mask="gx_icon.h"/>
+        <files mask="gx_image_reader.h"/>
+        <files mask="gx_line_chart.h"/>
+        <files mask="gx_menu.h"/>
+        <files mask="gx_multi_line_text_input.h"/>
+        <files mask="gx_multi_line_text_view.h"/>
+        <files mask="gx_numeric_pixelmap_prompt.h"/>
+        <files mask="gx_numeric_prompt.h"/>
+        <files mask="gx_pixelmap_prompt.h"/>
+        <files mask="gx_progress_bar.h"/>
+        <files mask="gx_prompt.h"/>
+        <files mask="gx_radial_progress_bar.h"/>
+        <files mask="gx_radial_slider.h"/>
+        <files mask="gx_rich_text_view.h"/>
+        <files mask="gx_screen_stack.h"/>
+        <files mask="gx_scroll_wheel.h"/>
+        <files mask="gx_scrollbar.h"/>
+        <files mask="gx_single_line_text_input.h"/>
+        <files mask="gx_slider.h"/>
+        <files mask="gx_sprite.h"/>
+        <files mask="gx_system.h"/>
+        <files mask="gx_system_rtos_bind.h"/>
+        <files mask="gx_text_input_cursor.h"/>
+        <files mask="gx_tree_view.h"/>
+        <files mask="gx_user_sample.h"/>
+        <files mask="gx_utility.h"/>
+        <files mask="gx_widget.h"/>
+        <files mask="gx_window.h"/>
+      </source>
+      <source exclude="true" relative_path="./guix" project_relative_path="guix" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./guix/ports/cortex_m7/gnu" project_relative_path="guix/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="CMakeLists.txt"/>
+      </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="gx_port.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./binary/guix/cortex_m7/mcux" project_relative_path="binary/guix/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="libguix.a"/>
+      </source>
+      <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
+        <files mask="middleware_azure_rtos_gx_MIMXRT1062.cmake" hidden="true"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
+        <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+      </include_paths>
+    </component>
+    <component id="middleware.azure_rtos.gx.lib.MIMXRT1062" name="Azure RTOS GUIX(lib)" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path="./" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./guix" project_relative_path="guix" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
+        <files mask="gx_animation.h"/>
+        <files mask="gx_api.h"/>
+        <files mask="gx_binres_loader.h"/>
+        <files mask="gx_button.h"/>
+        <files mask="gx_canvas.h"/>
+        <files mask="gx_circular_gauge.h"/>
+        <files mask="gx_context.h"/>
+        <files mask="gx_display.h"/>
+        <files mask="gx_drop_list.h"/>
+        <files mask="gx_icon.h"/>
+        <files mask="gx_image_reader.h"/>
+        <files mask="gx_line_chart.h"/>
+        <files mask="gx_menu.h"/>
+        <files mask="gx_multi_line_text_input.h"/>
+        <files mask="gx_multi_line_text_view.h"/>
+        <files mask="gx_numeric_pixelmap_prompt.h"/>
+        <files mask="gx_numeric_prompt.h"/>
+        <files mask="gx_pixelmap_prompt.h"/>
+        <files mask="gx_progress_bar.h"/>
+        <files mask="gx_prompt.h"/>
+        <files mask="gx_radial_progress_bar.h"/>
+        <files mask="gx_radial_slider.h"/>
+        <files mask="gx_rich_text_view.h"/>
+        <files mask="gx_screen_stack.h"/>
+        <files mask="gx_scroll_wheel.h"/>
+        <files mask="gx_scrollbar.h"/>
+        <files mask="gx_single_line_text_input.h"/>
+        <files mask="gx_slider.h"/>
+        <files mask="gx_sprite.h"/>
+        <files mask="gx_system.h"/>
+        <files mask="gx_system_rtos_bind.h"/>
+        <files mask="gx_text_input_cursor.h"/>
+        <files mask="gx_tree_view.h"/>
+        <files mask="gx_user_sample.h"/>
+        <files mask="gx_utility.h"/>
+        <files mask="gx_widget.h"/>
+        <files mask="gx_window.h"/>
+      </source>
+      <source relative_path="./guix/common/src" project_relative_path="guix/common/src" type="src">
+        <files mask="gx_display_driver_1555xrgb_canvas_blend.c"/>
+        <files mask="gx_display_driver_1555xrgb_jpeg_draw.c"/>
+        <files mask="gx_display_driver_1555xrgb_native_color_get.c"/>
+        <files mask="gx_display_driver_1555xrgb_pixel_blend.c"/>
+        <files mask="gx_display_driver_1555xrgb_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_1555xrgb_png_draw.c"/>
+        <files mask="gx_display_driver_1555xrgb_setup.c"/>
+        <files mask="gx_display_driver_16bpp_block_move.c"/>
+        <files mask="gx_display_driver_16bpp_canvas_copy.c"/>
+        <files mask="gx_display_driver_16bpp_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_mouse_capture.c"/>
+        <files mask="gx_display_driver_16bpp_mouse_restore.c"/>
+        <files mask="gx_display_driver_16bpp_pixel_write.c"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_16bpp_row_pitch_get.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_block_move.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_canvas_copy.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixel_write.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_simple_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_rotated_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_simple_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_16bpp_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_block_move.c"/>
+        <files mask="gx_display_driver_1bpp_canvas_copy.c"/>
+        <files mask="gx_display_driver_1bpp_glyph_1bpp_draw.c"/>
+        <files mask="gx_display_driver_1bpp_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_mouse_capture.c"/>
+        <files mask="gx_display_driver_1bpp_mouse_restore.c"/>
+        <files mask="gx_display_driver_1bpp_native_color_get.c"/>
+        <files mask="gx_display_driver_1bpp_pixel_write.c"/>
+        <files mask="gx_display_driver_1bpp_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_1bpp_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_1bpp_row_pitch_get.c"/>
+        <files mask="gx_display_driver_1bpp_simple_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_1bpp_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_24xrgb_canvas_blend.c"/>
+        <files mask="gx_display_driver_24xrgb_jpeg_draw.c"/>
+        <files mask="gx_display_driver_24xrgb_mouse_capture.c"/>
+        <files mask="gx_display_driver_24xrgb_mouse_restore.c"/>
+        <files mask="gx_display_driver_24xrgb_native_color_get.c"/>
+        <files mask="gx_display_driver_24xrgb_pixel_blend.c"/>
+        <files mask="gx_display_driver_24xrgb_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_24xrgb_png_draw.c"/>
+        <files mask="gx_display_driver_24xrgb_rotated_canvas_blend.c"/>
+        <files mask="gx_display_driver_24xrgb_rotated_jpeg_draw.c"/>
+        <files mask="gx_display_driver_24xrgb_rotated_pixel_blend.c"/>
+        <files mask="gx_display_driver_24xrgb_rotated_png_draw.c"/>
+        <files mask="gx_display_driver_24xrgb_rotated_setup.c"/>
+        <files mask="gx_display_driver_24xrgb_setup.c"/>
+        <files mask="gx_display_driver_32argb_native_color_get.c"/>
+        <files mask="gx_display_driver_32argb_pixel_blend.c"/>
+        <files mask="gx_display_driver_32argb_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_32argb_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_32argb_rotated_pixel_blend.c"/>
+        <files mask="gx_display_driver_32argb_rotated_setup.c"/>
+        <files mask="gx_display_driver_32argb_setup.c"/>
+        <files mask="gx_display_driver_32bpp_block_move.c"/>
+        <files mask="gx_display_driver_32bpp_canvas_copy.c"/>
+        <files mask="gx_display_driver_32bpp_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_32bpp_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_pixel_write.c"/>
+        <files mask="gx_display_driver_32bpp_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_32bpp_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_block_move.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_canvas_copy.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixel_write.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_simple_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_rotated_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_row_pitch_get.c"/>
+        <files mask="gx_display_driver_32bpp_simple_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_32bpp_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_332rgb_native_color_get.c"/>
+        <files mask="gx_display_driver_332rgb_pixel_blend.c"/>
+        <files mask="gx_display_driver_332rgb_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_332rgb_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_332rgb_setup.c"/>
+        <files mask="gx_display_driver_4444argb_canvas_blend.c"/>
+        <files mask="gx_display_driver_4444argb_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_4444argb_native_color_get.c"/>
+        <files mask="gx_display_driver_4444argb_pixel_blend.c"/>
+        <files mask="gx_display_driver_4444argb_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_4444argb_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_4444argb_setup.c"/>
+        <files mask="gx_display_driver_4bpp_block_move.c"/>
+        <files mask="gx_display_driver_4bpp_canvas_copy.c"/>
+        <files mask="gx_display_driver_4bpp_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_4bpp_glyph_4bit_draw.c"/>
+        <files mask="gx_display_driver_4bpp_grayscale_setup.c"/>
+        <files mask="gx_display_driver_4bpp_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_4bpp_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_4bpp_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_4bpp_mouse_capture.c"/>
+        <files mask="gx_display_driver_4bpp_mouse_restore.c"/>
+        <files mask="gx_display_driver_4bpp_native_color_get.c"/>
+        <files mask="gx_display_driver_4bpp_pixel_write.c"/>
+        <files mask="gx_display_driver_4bpp_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_4bpp_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_4bpp_row_pitch_get.c"/>
+        <files mask="gx_display_driver_4bpp_simple_line_draw.c"/>
+        <files mask="gx_display_driver_4bpp_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_4bpp_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_565rgb_canvas_blend.c"/>
+        <files mask="gx_display_driver_565rgb_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_565rgb_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_565rgb_jpeg_draw.c"/>
+        <files mask="gx_display_driver_565rgb_native_color_get.c"/>
+        <files mask="gx_display_driver_565rgb_pixel_blend.c"/>
+        <files mask="gx_display_driver_565rgb_png_draw.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_canvas_blend.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_jpeg_draw.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_pixel_blend.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_png_draw.c"/>
+        <files mask="gx_display_driver_565rgb_rotated_setup.c"/>
+        <files mask="gx_display_driver_565rgb_setup.c"/>
+        <files mask="gx_display_driver_8bit_palette_native_color_get.c"/>
+        <files mask="gx_display_driver_8bit_palette_rotated_setup.c"/>
+        <files mask="gx_display_driver_8bit_palette_setup.c"/>
+        <files mask="gx_display_driver_8bpp_block_move.c"/>
+        <files mask="gx_display_driver_8bpp_canvas_copy.c"/>
+        <files mask="gx_display_driver_8bpp_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_glyph_3bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_glyph_4bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_mouse_capture.c"/>
+        <files mask="gx_display_driver_8bpp_mouse_restore.c"/>
+        <files mask="gx_display_driver_8bpp_pixel_write.c"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_blend.c"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_8bpp_row_pitch_get.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_block_move.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_canvas_copy.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_1bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_3bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_4bit_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_pixelmap_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixel_write.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixelmap_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixelmap_rotate.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_simple_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_rotated_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_simple_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_vertical_line_draw.c"/>
+        <files mask="gx_display_driver_8bpp_vertical_pattern_line_draw.c"/>
+        <files mask="gx_display_driver_generic_rotated_polygon_fill.c"/>
+        <files mask="gx_system_font_mono.c"/>
+        <files mask="gx_system_font_4bpp.c"/>
+        <files mask="gx_system_font_8bpp.c"/>
+        <files mask="gx_utility_1555xrgb_pixelmap_resize.c"/>
+        <files mask="gx_utility_1555xrgb_pixelmap_rotate.c"/>
+        <files mask="gx_utility_16bpp_pixelmap_resize.c"/>
+        <files mask="gx_utility_1bpp_pixelmap_resize.c"/>
+        <files mask="gx_utility_1bpp_pixelmap_rotate.c"/>
+        <files mask="gx_utility_32argb_pixelmap_resize.c"/>
+        <files mask="gx_utility_32argb_pixelmap_rotate.c"/>
+        <files mask="gx_utility_332rgb_pixelmap_rotate.c"/>
+        <files mask="gx_utility_4444argb_pixelmap_resize.c"/>
+        <files mask="gx_utility_4444argb_pixelmap_rotate.c"/>
+        <files mask="gx_utility_4bpp_pixelmap_resize.c"/>
+        <files mask="gx_utility_4bpp_pixelmap_rotate.c"/>
+        <files mask="gx_utility_565rgb_pixelmap_rotate.c"/>
+        <files mask="gx_utility_8bpp_pixelmap_resize.c"/>
+        <files mask="gx_utility_8bpp_pixelmap_rotate.c"/>
+        <files mask="gx_utility_string_compare.c"/>
+        <files mask="gx_system_initialize.c"/>
+      </source>
+      <source toolchain="mcuxpresso" exclude="true" relative_path="./guix/common/src" project_relative_path="guix/common/src" type="src">
+        <files mask="gx_accordion_menu_create.c"/>
+        <files mask="gx_accordion_menu_draw.c"/>
+        <files mask="gx_accordion_menu_event_process.c"/>
+        <files mask="gx_accordion_menu_position.c"/>
+        <files mask="gx_animation_canvas_define.c"/>
+        <files mask="gx_animation_complete.c"/>
+        <files mask="gx_animation_create.c"/>
+        <files mask="gx_animation_delete.c"/>
+        <files mask="gx_animation_drag_disable.c"/>
+        <files mask="gx_animation_drag_enable.c"/>
+        <files mask="gx_animation_drag_event_process.c"/>
+        <files mask="gx_animation_drag_tracking.c"/>
+        <files mask="gx_animation_drag_tracking_start.c"/>
+        <files mask="gx_animation_landing_speed_set.c"/>
+        <files mask="gx_animation_slide_landing.c"/>
+        <files mask="gx_animation_slide_landing_start.c"/>
+        <files mask="gx_animation_start.c"/>
+        <files mask="gx_animation_stop.c"/>
+        <files mask="gx_animation_update.c"/>
+        <files mask="gx_binres_language_count_get.c"/>
+        <files mask="gx_binres_language_info_load.c"/>
+        <files mask="gx_binres_language_table_load.c"/>
+        <files mask="gx_binres_theme_load.c"/>
+        <files mask="gx_brush_default.c"/>
+        <files mask="gx_brush_define.c"/>
+        <files mask="gx_button_background_draw.c"/>
+        <files mask="gx_button_create.c"/>
+        <files mask="gx_button_deselect.c"/>
+        <files mask="gx_button_draw.c"/>
+        <files mask="gx_button_event_process.c"/>
+        <files mask="gx_button_select.c"/>
+        <files mask="gx_button_siblings_deselect.c"/>
+        <files mask="gx_canvas_alpha_set.c"/>
+        <files mask="gx_canvas_arc_draw.c"/>
+        <files mask="gx_canvas_block_move.c"/>
+        <files mask="gx_canvas_circle_draw.c"/>
+        <files mask="gx_canvas_composite_create.c"/>
+        <files mask="gx_canvas_create.c"/>
+        <files mask="gx_canvas_delete.c"/>
+        <files mask="gx_canvas_dirty_mark.c"/>
+        <files mask="gx_canvas_drawing_complete.c"/>
+        <files mask="gx_canvas_drawing_initiate.c"/>
+        <files mask="gx_canvas_ellipse_draw.c"/>
+        <files mask="gx_canvas_glyphs_draw.c"/>
+        <files mask="gx_canvas_hardware_layer_bind.c"/>
+        <files mask="gx_canvas_hide.c"/>
+        <files mask="gx_canvas_line_draw.c"/>
+        <files mask="gx_canvas_memory_define.c"/>
+        <files mask="gx_canvas_mouse_define.c"/>
+        <files mask="gx_canvas_mouse_hide.c"/>
+        <files mask="gx_canvas_mouse_show.c"/>
+        <files mask="gx_canvas_offset_set.c"/>
+        <files mask="gx_canvas_pie_draw.c"/>
+        <files mask="gx_canvas_pixel_draw.c"/>
+        <files mask="gx_canvas_pixelmap_blend.c"/>
+        <files mask="gx_canvas_pixelmap_draw.c"/>
+        <files mask="gx_canvas_pixelmap_get.c"/>
+        <files mask="gx_canvas_pixelmap_rotate.c"/>
+        <files mask="gx_canvas_pixelmap_tile.c"/>
+        <files mask="gx_canvas_polygon_draw.c"/>
+        <files mask="gx_canvas_rectangle_draw.c"/>
+        <files mask="gx_canvas_rotated_text_draw.c"/>
+        <files mask="gx_canvas_shift.c"/>
+        <files mask="gx_canvas_show.c"/>
+        <files mask="gx_canvas_text_draw.c"/>
+        <files mask="gx_checkbox_create.c"/>
+        <files mask="gx_checkbox_draw.c"/>
+        <files mask="gx_checkbox_event_process.c"/>
+        <files mask="gx_checkbox_pixelmap_set.c"/>
+        <files mask="gx_checkbox_select.c"/>
+        <files mask="gx_circular_gauge_angle_get.c"/>
+        <files mask="gx_circular_gauge_angle_increment_calculate.c"/>
+        <files mask="gx_circular_gauge_angle_set.c"/>
+        <files mask="gx_circular_gauge_animation_set.c"/>
+        <files mask="gx_circular_gauge_background_draw.c"/>
+        <files mask="gx_circular_gauge_create.c"/>
+        <files mask="gx_circular_gauge_draw.c"/>
+        <files mask="gx_circular_gauge_event_process.c"/>
+        <files mask="gx_circular_gauge_needle_dirty_mark.c"/>
+        <files mask="gx_circular_gauge_needle_rectangle_calculate.c"/>
+        <files mask="gx_circular_gauge_needle_rotate.c"/>
+        <files mask="gx_context_brush_default.c"/>
+        <files mask="gx_context_brush_define.c"/>
+        <files mask="gx_context_brush_get.c"/>
+        <files mask="gx_context_brush_pattern_set.c"/>
+        <files mask="gx_context_brush_set.c"/>
+        <files mask="gx_context_brush_style_set.c"/>
+        <files mask="gx_context_brush_width_set.c"/>
+        <files mask="gx_context_color_get.c"/>
+        <files mask="gx_context_fill_color_set.c"/>
+        <files mask="gx_context_font_get.c"/>
+        <files mask="gx_context_font_set.c"/>
+        <files mask="gx_context_line_color_set.c"/>
+        <files mask="gx_context_pixelmap_get.c"/>
+        <files mask="gx_context_pixelmap_set.c"/>
+        <files mask="gx_context_raw_brush_define.c"/>
+        <files mask="gx_context_raw_fill_color_set.c"/>
+        <files mask="gx_context_raw_line_color_set.c"/>
+        <files mask="gx_context_string_get.c"/>
+        <files mask="gx_display_active_language_set.c"/>
+        <files mask="gx_display_canvas_dirty.c"/>
+        <files mask="gx_display_color_set.c"/>
+        <files mask="gx_display_color_table_set.c"/>
+        <files mask="gx_display_create.c"/>
+        <files mask="gx_display_delete.c"/>
+        <files mask="gx_display_driver_arc_clipping_get.c"/>
+        <files mask="gx_display_driver_generic_aliased_arc_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_ellipse_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_filled_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_fixed_point_line_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_line_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_wide_arc_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_wide_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_wide_ellipse_draw.c"/>
+        <files mask="gx_display_driver_generic_aliased_wide_line_draw.c"/>
+        <files mask="gx_display_driver_generic_alphamap_draw.c"/>
+        <files mask="gx_display_driver_generic_arc_draw.c"/>
+        <files mask="gx_display_driver_generic_arc_fill.c"/>
+        <files mask="gx_display_driver_generic_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_circle_fill.c"/>
+        <files mask="gx_display_driver_generic_drawing_complete.c"/>
+        <files mask="gx_display_driver_generic_drawing_initiate.c"/>
+        <files mask="gx_display_driver_generic_ellipse_draw.c"/>
+        <files mask="gx_display_driver_generic_ellipse_fill.c"/>
+        <files mask="gx_display_driver_generic_filled_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_glyph_4bpp_draw.c"/>
+        <files mask="gx_display_driver_generic_glyph_8bpp_draw.c"/>
+        <files mask="gx_display_driver_generic_mouse_cursor_define.c"/>
+        <files mask="gx_display_driver_generic_mouse_draw.c"/>
+        <files mask="gx_display_driver_generic_mouse_enable.c"/>
+        <files mask="gx_display_driver_generic_mouse_position_set.c"/>
+        <files mask="gx_display_driver_generic_pie_fill.c"/>
+        <files mask="gx_display_driver_generic_polygon_draw.c"/>
+        <files mask="gx_display_driver_generic_polygon_fill.c"/>
+        <files mask="gx_display_driver_generic_rotated_alphamap_draw.c"/>
+        <files mask="gx_display_driver_generic_rotated_arc_fill.c"/>
+        <files mask="gx_display_driver_generic_rotated_circle_fill.c"/>
+        <files mask="gx_display_driver_generic_rotated_ellipse_fill.c"/>
+        <files mask="gx_display_driver_generic_rotated_glyph_4bit_draw.c"/>
+        <files mask="gx_display_driver_generic_rotated_glyph_8bit_draw.c"/>
+        <files mask="gx_display_driver_generic_rotated_pie_fill.c"/>
+        <files mask="gx_display_driver_generic_rotated_wide_line_fill.c"/>
+        <files mask="gx_display_driver_generic_simple_pie_fill.c"/>
+        <files mask="gx_display_driver_generic_simple_wide_line_draw.c"/>
+        <files mask="gx_display_driver_generic_wide_arc_draw.c"/>
+        <files mask="gx_display_driver_generic_wide_circle_draw.c"/>
+        <files mask="gx_display_driver_generic_wide_ellipse_draw.c"/>
+        <files mask="gx_display_driver_generic_wide_line_fill.c"/>
+        <files mask="gx_display_driver_generic_wide_line_points_calculate.c"/>
+        <files mask="gx_display_driver_horizontal_line_alpha_draw.c"/>
+        <files mask="gx_display_driver_monochrome_setup.c"/>
+        <files mask="gx_display_driver_simple_line_alpha_draw.c"/>
+        <files mask="gx_display_driver_vertical_line_alpha_draw.c"/>
+        <files mask="gx_display_font_table_set.c"/>
+        <files mask="gx_display_language_table_get.c"/>
+        <files mask="gx_display_language_table_set.c"/>
+        <files mask="gx_display_pixelmap_table_set.c"/>
+        <files mask="gx_display_string_get.c"/>
+        <files mask="gx_display_string_table_get.c"/>
+        <files mask="gx_display_theme_install.c"/>
+        <files mask="gx_drop_list_background_draw.c"/>
+        <files mask="gx_drop_list_close.c"/>
+        <files mask="gx_drop_list_create.c"/>
+        <files mask="gx_drop_list_draw.c"/>
+        <files mask="gx_drop_list_event_process.c"/>
+        <files mask="gx_drop_list_open.c"/>
+        <files mask="gx_drop_list_pixelmap_set.c"/>
+        <files mask="gx_drop_list_popup_get.c"/>
+        <files mask="gx_generic_scroll_wheel_children_position.c"/>
+        <files mask="gx_generic_scroll_wheel_create.c"/>
+        <files mask="gx_generic_scroll_wheel_down_wrap.c"/>
+        <files mask="gx_generic_scroll_wheel_draw.c"/>
+        <files mask="gx_generic_scroll_wheel_event_process.c"/>
+        <files mask="gx_generic_scroll_wheel_row_height_set.c"/>
+        <files mask="gx_generic_scroll_wheel_scroll.c"/>
+        <files mask="gx_generic_scroll_wheel_total_rows_set.c"/>
+        <files mask="gx_generic_scroll_wheel_up_wrap.c"/>
+        <files mask="gx_generic_scroll_wheel_wrap_style_check.c"/>
+        <files mask="gx_horizontal_list_children_position.c"/>
+        <files mask="gx_horizontal_list_create.c"/>
+        <files mask="gx_horizontal_list_event_process.c"/>
+        <files mask="gx_horizontal_list_left_wrap.c"/>
+        <files mask="gx_horizontal_list_page_index_set.c"/>
+        <files mask="gx_horizontal_list_right_wrap.c"/>
+        <files mask="gx_horizontal_list_scroll.c"/>
+        <files mask="gx_horizontal_list_scroll_info_get.c"/>
+        <files mask="gx_horizontal_list_selected_index_get.c"/>
+        <files mask="gx_horizontal_list_selected_set.c"/>
+        <files mask="gx_horizontal_list_selected_visible.c"/>
+        <files mask="gx_horizontal_list_selected_widget_get.c"/>
+        <files mask="gx_horizontal_list_slide_back_check.c"/>
+        <files mask="gx_horizontal_list_total_columns_set.c"/>
+        <files mask="gx_horizontal_scrollbar_create.c"/>
+        <files mask="gx_icon_background_draw.c"/>
+        <files mask="gx_icon_button_create.c"/>
+        <files mask="gx_icon_button_draw.c"/>
+        <files mask="gx_icon_button_pixelmap_set.c"/>
+        <files mask="gx_icon_create.c"/>
+        <files mask="gx_icon_draw.c"/>
+        <files mask="gx_icon_event_process.c"/>
+        <files mask="gx_icon_pixelmap_set.c"/>
+        <files mask="gx_icon_pixelmap_update.c"/>
+        <files mask="gx_image_reader_colorspace_convert.c"/>
+        <files mask="gx_image_reader_create.c"/>
+        <files mask="gx_image_reader_image_decode.c"/>
+        <files mask="gx_image_reader_jpeg_decode.c"/>
+        <files mask="gx_image_reader_nearest_palette_color_get.c"/>
+        <files mask="gx_image_reader_palette_set.c"/>
+        <files mask="gx_image_reader_pixel_read_callback_set.c"/>
+        <files mask="gx_image_reader_pixel_write_callback_set.c"/>
+        <files mask="gx_image_reader_png_decode.c"/>
+        <files mask="gx_image_reader_rle_encode.c"/>
+        <files mask="gx_image_reader_start.c"/>
+        <files mask="gx_line_chart_axis_draw.c"/>
+        <files mask="gx_line_chart_create.c"/>
+        <files mask="gx_line_chart_data_draw.c"/>
+        <files mask="gx_line_chart_draw.c"/>
+        <files mask="gx_line_chart_update.c"/>
+        <files mask="gx_line_chart_y_scale_calculate.c"/>
+        <files mask="gx_menu_create.c"/>
+        <files mask="gx_menu_draw.c"/>
+        <files mask="gx_menu_event_process.c"/>
+        <files mask="gx_menu_insert.c"/>
+        <files mask="gx_menu_position.c"/>
+        <files mask="gx_menu_remove.c"/>
+        <files mask="gx_menu_text_draw.c"/>
+        <files mask="gx_menu_text_offset_set.c"/>
+        <files mask="gx_monochrome_driver_disabled_button_line_draw.c"/>
+        <files mask="gx_multi_line_text_button_create.c"/>
+        <files mask="gx_multi_line_text_button_draw.c"/>
+        <files mask="gx_multi_line_text_button_event_process.c"/>
+        <files mask="gx_multi_line_text_button_line_pointers_set.c"/>
+        <files mask="gx_multi_line_text_button_text_draw.c"/>
+        <files mask="gx_multi_line_text_button_text_id_set.c"/>
+        <files mask="gx_multi_line_text_button_text_set.c"/>
+        <files mask="gx_multi_line_text_input_backspace.c"/>
+        <files mask="gx_multi_line_text_input_buffer_clear.c"/>
+        <files mask="gx_multi_line_text_input_buffer_get.c"/>
+        <files mask="gx_multi_line_text_input_char_insert.c"/>
+        <files mask="gx_multi_line_text_input_char_remove.c"/>
+        <files mask="gx_multi_line_text_input_copy.c"/>
+        <files mask="gx_multi_line_text_input_create.c"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_calculate.c"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_get.c"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_update.c"/>
+        <files mask="gx_multi_line_text_input_cursor_visible.c"/>
+        <files mask="gx_multi_line_text_input_cut.c"/>
+        <files mask="gx_multi_line_text_input_delete.c"/>
+        <files mask="gx_multi_line_text_input_down_arrow.c"/>
+        <files mask="gx_multi_line_text_input_draw.c"/>
+        <files mask="gx_multi_line_text_input_end.c"/>
+        <files mask="gx_multi_line_text_input_event_process.c"/>
+        <files mask="gx_multi_line_text_input_fill_color_set.c"/>
+        <files mask="gx_multi_line_text_input_highlight_rectangle_get.c"/>
+        <files mask="gx_multi_line_text_input_home.c"/>
+        <files mask="gx_multi_line_text_input_keydown_process.c"/>
+        <files mask="gx_multi_line_text_input_left_arrow.c"/>
+        <files mask="gx_multi_line_text_input_mark_down.c"/>
+        <files mask="gx_multi_line_text_input_mark_end.c"/>
+        <files mask="gx_multi_line_text_input_mark_home.c"/>
+        <files mask="gx_multi_line_text_input_mark_next.c"/>
+        <files mask="gx_multi_line_text_input_mark_previous.c"/>
+        <files mask="gx_multi_line_text_input_mark_up.c"/>
+        <files mask="gx_multi_line_text_input_paste.c"/>
+        <files mask="gx_multi_line_text_input_right_arrow.c"/>
+        <files mask="gx_multi_line_text_input_style_add.c"/>
+        <files mask="gx_multi_line_text_input_style_remove.c"/>
+        <files mask="gx_multi_line_text_input_style_set.c"/>
+        <files mask="gx_multi_line_text_input_text_color_set.c"/>
+        <files mask="gx_multi_line_text_input_text_rectangle_get.c"/>
+        <files mask="gx_multi_line_text_input_text_select.c"/>
+        <files mask="gx_multi_line_text_input_text_set.c"/>
+        <files mask="gx_multi_line_text_input_up_arrow.c"/>
+        <files mask="gx_multi_line_text_view_create.c"/>
+        <files mask="gx_multi_line_text_view_display_info_get.c"/>
+        <files mask="gx_multi_line_text_view_draw.c"/>
+        <files mask="gx_multi_line_text_view_event_process.c"/>
+        <files mask="gx_multi_line_text_view_font_set.c"/>
+        <files mask="gx_multi_line_text_view_line_cache_update.c"/>
+        <files mask="gx_multi_line_text_view_line_space_set.c"/>
+        <files mask="gx_multi_line_text_view_scroll.c"/>
+        <files mask="gx_multi_line_text_view_scroll_info_get.c"/>
+        <files mask="gx_multi_line_text_view_string_total_rows_compute.c"/>
+        <files mask="gx_multi_line_text_view_text_color_set.c"/>
+        <files mask="gx_multi_line_text_view_text_draw.c"/>
+        <files mask="gx_multi_line_text_view_text_id_set.c"/>
+        <files mask="gx_multi_line_text_view_text_set.c"/>
+        <files mask="gx_multi_line_text_view_visible_rows_compute.c"/>
+        <files mask="gx_multi_line_text_view_whitespace_set.c"/>
+        <files mask="gx_numeric_pixelmap_prompt_create.c"/>
+        <files mask="gx_numeric_pixelmap_prompt_format.c"/>
+        <files mask="gx_numeric_pixelmap_prompt_format_function_set.c"/>
+        <files mask="gx_numeric_pixelmap_prompt_value_set.c"/>
+        <files mask="gx_numeric_prompt_create.c"/>
+        <files mask="gx_numeric_prompt_format.c"/>
+        <files mask="gx_numeric_prompt_format_function_set.c"/>
+        <files mask="gx_numeric_prompt_value_set.c"/>
+        <files mask="gx_numeric_scroll_wheel_create.c"/>
+        <files mask="gx_numeric_scroll_wheel_range_set.c"/>
+        <files mask="gx_numeric_scroll_wheel_text_get.c"/>
+        <files mask="gx_pixelmap_button_create.c"/>
+        <files mask="gx_pixelmap_button_draw.c"/>
+        <files mask="gx_pixelmap_button_event_process.c"/>
+        <files mask="gx_pixelmap_button_pixelmap_set.c"/>
+        <files mask="gx_pixelmap_button_transparent_detect.c"/>
+        <files mask="gx_pixelmap_prompt_background_draw.c"/>
+        <files mask="gx_pixelmap_prompt_create.c"/>
+        <files mask="gx_pixelmap_prompt_draw.c"/>
+        <files mask="gx_pixelmap_prompt_pixelmap_set.c"/>
+        <files mask="gx_pixelmap_slider_create.c"/>
+        <files mask="gx_pixelmap_slider_draw.c"/>
+        <files mask="gx_pixelmap_slider_event_process.c"/>
+        <files mask="gx_pixelmap_slider_pixelmap_set.c"/>
+        <files mask="gx_pixelmap_slider_pixelmap_update.c"/>
+        <files mask="gx_popup_list_event_process.c"/>
+        <files mask="gx_progress_bar_background_draw.c"/>
+        <files mask="gx_progress_bar_create.c"/>
+        <files mask="gx_progress_bar_draw.c"/>
+        <files mask="gx_progress_bar_event_process.c"/>
+        <files mask="gx_progress_bar_font_set.c"/>
+        <files mask="gx_progress_bar_info_set.c"/>
+        <files mask="gx_progress_bar_pixelmap_set.c"/>
+        <files mask="gx_progress_bar_range_set.c"/>
+        <files mask="gx_progress_bar_text_color_set.c"/>
+        <files mask="gx_progress_bar_text_draw.c"/>
+        <files mask="gx_progress_bar_value_set.c"/>
+        <files mask="gx_prompt_create.c"/>
+        <files mask="gx_prompt_draw.c"/>
+        <files mask="gx_prompt_event_process.c"/>
+        <files mask="gx_prompt_font_set.c"/>
+        <files mask="gx_prompt_text_color_set.c"/>
+        <files mask="gx_prompt_text_draw.c"/>
+        <files mask="gx_prompt_text_get.c"/>
+        <files mask="gx_prompt_text_id_set.c"/>
+        <files mask="gx_prompt_text_set.c"/>
+        <files mask="gx_radial_progress_bar_anchor_set.c"/>
+        <files mask="gx_radial_progress_bar_background_draw.c"/>
+        <files mask="gx_radial_progress_bar_create.c"/>
+        <files mask="gx_radial_progress_bar_draw.c"/>
+        <files mask="gx_radial_progress_bar_event_process.c"/>
+        <files mask="gx_radial_progress_bar_font_set.c"/>
+        <files mask="gx_radial_progress_bar_info_set.c"/>
+        <files mask="gx_radial_progress_bar_resize.c"/>
+        <files mask="gx_radial_progress_bar_size_update.c"/>
+        <files mask="gx_radial_progress_bar_text_color_set.c"/>
+        <files mask="gx_radial_progress_bar_text_draw.c"/>
+        <files mask="gx_radial_progress_bar_value_calculate.c"/>
+        <files mask="gx_radial_progress_bar_value_set.c"/>
+        <files mask="gx_radial_slider_anchor_angle_calculate.c"/>
+        <files mask="gx_radial_slider_anchor_angles_set.c"/>
+        <files mask="gx_radial_slider_angle_calculate.c"/>
+        <files mask="gx_radial_slider_angle_set.c"/>
+        <files mask="gx_radial_slider_animation_set.c"/>
+        <files mask="gx_radial_slider_animation_start.c"/>
+        <files mask="gx_radial_slider_animation_update.c"/>
+        <files mask="gx_radial_slider_create.c"/>
+        <files mask="gx_radial_slider_draw.c"/>
+        <files mask="gx_radial_slider_event_process.c"/>
+        <files mask="gx_radial_slider_info_get.c"/>
+        <files mask="gx_radial_slider_info_set.c"/>
+        <files mask="gx_radial_slider_needle_rectangle_calculate.c"/>
+        <files mask="gx_radial_slider_pixelmap_set.c"/>
+        <files mask="gx_radio_button_create.c"/>
+        <files mask="gx_radio_button_draw.c"/>
+        <files mask="gx_radio_button_pixelmap_set.c"/>
+        <files mask="gx_rich_text_view_context_peek.c"/>
+        <files mask="gx_rich_text_view_context_pop.c"/>
+        <files mask="gx_rich_text_view_context_push.c"/>
+        <files mask="gx_rich_text_view_context_reset.c"/>
+        <files mask="gx_rich_text_view_context_restore.c"/>
+        <files mask="gx_rich_text_view_context_save.c"/>
+        <files mask="gx_rich_text_view_create.c"/>
+        <files mask="gx_rich_text_view_draw.c"/>
+        <files mask="gx_rich_text_view_fonts_set.c"/>
+        <files mask="gx_rich_text_view_line_info_get.c"/>
+        <files mask="gx_rich_text_view_scroll_info_get.c"/>
+        <files mask="gx_rich_text_view_tag_enter.c"/>
+        <files mask="gx_rich_text_view_text_draw.c"/>
+        <files mask="gx_rich_text_view_text_total_height_calculate.c"/>
+        <files mask="gx_screen_stack_create.c"/>
+        <files mask="gx_screen_stack_pop.c"/>
+        <files mask="gx_screen_stack_push.c"/>
+        <files mask="gx_screen_stack_reset.c"/>
+        <files mask="gx_scroll_thumb_create.c"/>
+        <files mask="gx_scroll_thumb_draw.c"/>
+        <files mask="gx_scroll_thumb_event_process.c"/>
+        <files mask="gx_scroll_thumb_shift_limit.c"/>
+        <files mask="gx_scroll_wheel_create.c"/>
+        <files mask="gx_scroll_wheel_event_process.c"/>
+        <files mask="gx_scroll_wheel_gradient_alpha_set.c"/>
+        <files mask="gx_scroll_wheel_gradient_create.c"/>
+        <files mask="gx_scroll_wheel_row_height_set.c"/>
+        <files mask="gx_scroll_wheel_scroll.c"/>
+        <files mask="gx_scroll_wheel_selected_background_set.c"/>
+        <files mask="gx_scroll_wheel_selected_get.c"/>
+        <files mask="gx_scroll_wheel_selected_row_calculate.c"/>
+        <files mask="gx_scroll_wheel_selected_set.c"/>
+        <files mask="gx_scroll_wheel_speed_set.c"/>
+        <files mask="gx_scroll_wheel_total_rows_set.c"/>
+        <files mask="gx_scroll_wheel_wrap_style_check.c"/>
+        <files mask="gx_scrollbar_draw.c"/>
+        <files mask="gx_scrollbar_event_process.c"/>
+        <files mask="gx_scrollbar_limit_check.c"/>
+        <files mask="gx_scrollbar_reset.c"/>
+        <files mask="gx_scrollbar_size_update.c"/>
+        <files mask="gx_scrollbar_thumb_position_calculate.c"/>
+        <files mask="gx_scrollbar_value_calculate.c"/>
+        <files mask="gx_scrollbar_value_set.c"/>
+        <files mask="gx_single_line_text_input_backspace.c"/>
+        <files mask="gx_single_line_text_input_buffer_clear.c"/>
+        <files mask="gx_single_line_text_input_buffer_get.c"/>
+        <files mask="gx_single_line_text_input_character_delete.c"/>
+        <files mask="gx_single_line_text_input_character_insert.c"/>
+        <files mask="gx_single_line_text_input_copy.c"/>
+        <files mask="gx_single_line_text_input_create.c"/>
+        <files mask="gx_single_line_text_input_cut.c"/>
+        <files mask="gx_single_line_text_input_draw.c"/>
+        <files mask="gx_single_line_text_input_draw_position_get.c"/>
+        <files mask="gx_single_line_text_input_end.c"/>
+        <files mask="gx_single_line_text_input_event_process.c"/>
+        <files mask="gx_single_line_text_input_fill_color_set.c"/>
+        <files mask="gx_single_line_text_input_home.c"/>
+        <files mask="gx_single_line_text_input_keydown_process.c"/>
+        <files mask="gx_single_line_text_input_left_arrow.c"/>
+        <files mask="gx_single_line_text_input_mark_end.c"/>
+        <files mask="gx_single_line_text_input_mark_home.c"/>
+        <files mask="gx_single_line_text_input_mark_next.c"/>
+        <files mask="gx_single_line_text_input_mark_previous.c"/>
+        <files mask="gx_single_line_text_input_paste.c"/>
+        <files mask="gx_single_line_text_input_position_get.c"/>
+        <files mask="gx_single_line_text_input_position_update.c"/>
+        <files mask="gx_single_line_text_input_right_arrow.c"/>
+        <files mask="gx_single_line_text_input_style_add.c"/>
+        <files mask="gx_single_line_text_input_style_remove.c"/>
+        <files mask="gx_single_line_text_input_style_set.c"/>
+        <files mask="gx_single_line_text_input_text_color_set.c"/>
+        <files mask="gx_single_line_text_input_text_rectangle_get.c"/>
+        <files mask="gx_single_line_text_input_text_select.c"/>
+        <files mask="gx_single_line_text_input_text_set.c"/>
+        <files mask="gx_slider_create.c"/>
+        <files mask="gx_slider_draw.c"/>
+        <files mask="gx_slider_event_process.c"/>
+        <files mask="gx_slider_info_set.c"/>
+        <files mask="gx_slider_needle_draw.c"/>
+        <files mask="gx_slider_needle_position_get.c"/>
+        <files mask="gx_slider_tickmarks_draw.c"/>
+        <files mask="gx_slider_travel_get.c"/>
+        <files mask="gx_slider_value_calculate.c"/>
+        <files mask="gx_slider_value_set.c"/>
+        <files mask="gx_sprite_create.c"/>
+        <files mask="gx_sprite_current_frame_set.c"/>
+        <files mask="gx_sprite_draw.c"/>
+        <files mask="gx_sprite_event_process.c"/>
+        <files mask="gx_sprite_frame_list_set.c"/>
+        <files mask="gx_sprite_start.c"/>
+        <files mask="gx_sprite_stop.c"/>
+        <files mask="gx_sprite_update.c"/>
+        <files mask="gx_string_scroll_wheel_create.c"/>
+        <files mask="gx_string_scroll_wheel_event_process.c"/>
+        <files mask="gx_string_scroll_wheel_string_id_list_set.c"/>
+        <files mask="gx_string_scroll_wheel_string_list_set.c"/>
+        <files mask="gx_string_scroll_wheel_text_get.c"/>
+        <files mask="gx_system_active_language_set.c"/>
+        <files mask="gx_system_all_canvas_dirty.c"/>
+        <files mask="gx_system_all_views_free.c"/>
+        <files mask="gx_system_animation_free.c"/>
+        <files mask="gx_system_animation_get.c"/>
+        <files mask="gx_system_bidi_text_disable.c"/>
+        <files mask="gx_system_bidi_text_enable.c"/>
+        <files mask="gx_system_canvas_refresh.c"/>
+        <files mask="gx_system_clipboard_get.c"/>
+        <files mask="gx_system_clipboard_put.c"/>
+        <files mask="gx_system_dirty_list_remove.c"/>
+        <files mask="gx_system_dirty_list_trim.c"/>
+        <files mask="gx_system_dirty_mark.c"/>
+        <files mask="gx_system_dirty_partial_add.c"/>
+        <files mask="gx_system_draw_context_get.c"/>
+        <files mask="gx_system_error_process.c"/>
+        <files mask="gx_system_event_dispatch.c"/>
+        <files mask="gx_system_event_fold.c"/>
+        <files mask="gx_system_event_remove.c"/>
+        <files mask="gx_system_event_send.c"/>
+        <files mask="gx_system_focus_claim.c"/>
+        <files mask="gx_system_free_view_get.c"/>
+        <files mask="gx_system_input_capture.c"/>
+        <files mask="gx_system_input_release.c"/>
+        <files mask="gx_system_language_table_get.c"/>
+        <files mask="gx_system_language_table_set.c"/>
+        <files mask="gx_system_lock.c"/>
+        <files mask="gx_system_memory_allocator_set.c"/>
+        <files mask="gx_system_pen_configure.c"/>
+        <files mask="gx_system_pen_flick_test.c"/>
+        <files mask="gx_system_pen_speed_init.c"/>
+        <files mask="gx_system_pen_speed_update.c"/>
+        <files mask="gx_system_private_string.c"/>
+        <files mask="gx_system_root_view_add.c"/>
+        <files mask="gx_system_rtos_bind.c"/>
+        <files mask="gx_system_screen_stack_create.c"/>
+        <files mask="gx_system_screen_stack_get.c"/>
+        <files mask="gx_system_screen_stack_pop.c"/>
+        <files mask="gx_system_screen_stack_push.c"/>
+        <files mask="gx_system_screen_stack_reset.c"/>
+        <files mask="gx_system_scroll_appearance_get.c"/>
+        <files mask="gx_system_scroll_appearance_set.c"/>
+        <files mask="gx_system_start.c"/>
+        <files mask="gx_system_string_get.c"/>
+        <files mask="gx_system_string_table_get.c"/>
+        <files mask="gx_system_string_width_get.c"/>
+        <files mask="gx_system_text_render_style_set.c"/>
+        <files mask="gx_system_thread_entry.c"/>
+        <files mask="gx_system_timer_expiration.c"/>
+        <files mask="gx_system_timer_start.c"/>
+        <files mask="gx_system_timer_stop.c"/>
+        <files mask="gx_system_timer_update.c"/>
+        <files mask="gx_system_top_root_find.c"/>
+        <files mask="gx_system_top_widget_find.c"/>
+        <files mask="gx_system_unlock.c"/>
+        <files mask="gx_system_version_string_get.c"/>
+        <files mask="gx_system_view_add.c"/>
+        <files mask="gx_system_view_fold.c"/>
+        <files mask="gx_system_view_split.c"/>
+        <files mask="gx_system_views_free.c"/>
+        <files mask="gx_system_views_update.c"/>
+        <files mask="gx_system_widget_find.c"/>
+        <files mask="gx_text_button_create.c"/>
+        <files mask="gx_text_button_draw.c"/>
+        <files mask="gx_text_button_event_process.c"/>
+        <files mask="gx_text_button_font_set.c"/>
+        <files mask="gx_text_button_text_color_set.c"/>
+        <files mask="gx_text_button_text_draw.c"/>
+        <files mask="gx_text_button_text_get.c"/>
+        <files mask="gx_text_button_text_id_set.c"/>
+        <files mask="gx_text_button_text_set.c"/>
+        <files mask="gx_text_input_cursor_blink_interval_set.c"/>
+        <files mask="gx_text_input_cursor_dirty_rectangle_get.c"/>
+        <files mask="gx_text_input_cursor_draw.c"/>
+        <files mask="gx_text_input_cursor_height_set.c"/>
+        <files mask="gx_text_input_cursor_width_set.c"/>
+        <files mask="gx_text_scroll_wheel_callback_set.c"/>
+        <files mask="gx_text_scroll_wheel_create.c"/>
+        <files mask="gx_text_scroll_wheel_draw.c"/>
+        <files mask="gx_text_scroll_wheel_dynamic_bidi_text_delete.c"/>
+        <files mask="gx_text_scroll_wheel_event_process.c"/>
+        <files mask="gx_text_scroll_wheel_font_set.c"/>
+        <files mask="gx_text_scroll_wheel_text_color_set.c"/>
+        <files mask="gx_touch_driver_generic_resistive.c"/>
+        <files mask="gx_tree_view_create.c"/>
+        <files mask="gx_tree_view_draw.c"/>
+        <files mask="gx_tree_view_event_process.c"/>
+        <files mask="gx_tree_view_indentation_set.c"/>
+        <files mask="gx_tree_view_position.c"/>
+        <files mask="gx_tree_view_root_line_color_set.c"/>
+        <files mask="gx_tree_view_root_pixelmap_set.c"/>
+        <files mask="gx_tree_view_scroll.c"/>
+        <files mask="gx_tree_view_scroll_info_get.c"/>
+        <files mask="gx_tree_view_selected_get.c"/>
+        <files mask="gx_tree_view_selected_set.c"/>
+        <files mask="gx_utility_alphamap_create.c"/>
+        <files mask="gx_utility_bidi_arabic_shaping.c"/>
+        <files mask="gx_utility_bidi_bracket_pair_get.c"/>
+        <files mask="gx_utility_bidi_character_type_get.c"/>
+        <files mask="gx_utility_bidi_mirroring_get.c"/>
+        <files mask="gx_utility_bidi_paragraph_reorder.c"/>
+        <files mask="gx_utility_bidi_resolved_text_info_delete.c"/>
+        <files mask="gx_utility_canvas_to_bmp.c"/>
+        <files mask="gx_utility_circle_point_get.c"/>
+        <files mask="gx_utility_easing_function_calculate.c"/>
+        <files mask="gx_utility_gradient_create.c"/>
+        <files mask="gx_utility_gradient_delete.c"/>
+        <files mask="gx_utility_ltoa.c"/>
+        <files mask="gx_utility_math_acos.c"/>
+        <files mask="gx_utility_math_asin.c"/>
+        <files mask="gx_utility_math_cos.c"/>
+        <files mask="gx_utility_math_sin.c"/>
+        <files mask="gx_utility_math_sqrt.c"/>
+        <files mask="gx_utility_pixelmap_resize.c"/>
+        <files mask="gx_utility_pixelmap_rotate.c"/>
+        <files mask="gx_utility_pixelmap_simple_rotate.c"/>
+        <files mask="gx_utility_rectangle_center.c"/>
+        <files mask="gx_utility_rectangle_center_find.c"/>
+        <files mask="gx_utility_rectangle_combine.c"/>
+        <files mask="gx_utility_rectangle_compare.c"/>
+        <files mask="gx_utility_rectangle_define.c"/>
+        <files mask="gx_utility_rectangle_inside_detect.c"/>
+        <files mask="gx_utility_rectangle_overlap_detect.c"/>
+        <files mask="gx_utility_rectangle_point_detect.c"/>
+        <files mask="gx_utility_rectangle_resize.c"/>
+        <files mask="gx_utility_rectangle_shift.c"/>
+        <files mask="gx_utility_string_length_check.c"/>
+        <files mask="gx_utility_string_to_alphamap.c"/>
+        <files mask="gx_utility_thai_glyph_shaping.c"/>
+        <files mask="gx_utility_unicode_to_utf8.c"/>
+        <files mask="gx_utility_utf8_string_backward_character_length_get.c"/>
+        <files mask="gx_utility_utf8_string_character_get.c"/>
+        <files mask="gx_vertical_list_children_position.c"/>
+        <files mask="gx_vertical_list_create.c"/>
+        <files mask="gx_vertical_list_down_wrap.c"/>
+        <files mask="gx_vertical_list_event_process.c"/>
+        <files mask="gx_vertical_list_page_index_set.c"/>
+        <files mask="gx_vertical_list_scroll.c"/>
+        <files mask="gx_vertical_list_scroll_info_get.c"/>
+        <files mask="gx_vertical_list_selected_index_get.c"/>
+        <files mask="gx_vertical_list_selected_set.c"/>
+        <files mask="gx_vertical_list_selected_visible.c"/>
+        <files mask="gx_vertical_list_selected_widget_get.c"/>
+        <files mask="gx_vertical_list_slide_back_check.c"/>
+        <files mask="gx_vertical_list_total_rows_set.c"/>
+        <files mask="gx_vertical_list_up_wrap.c"/>
+        <files mask="gx_vertical_scrollbar_create.c"/>
+        <files mask="gx_widget_allocate.c"/>
+        <files mask="gx_widget_attach.c"/>
+        <files mask="gx_widget_back_attach.c"/>
+        <files mask="gx_widget_back_link.c"/>
+        <files mask="gx_widget_back_move.c"/>
+        <files mask="gx_widget_background_draw.c"/>
+        <files mask="gx_widget_block_move.c"/>
+        <files mask="gx_widget_border_draw.c"/>
+        <files mask="gx_widget_border_style_set.c"/>
+        <files mask="gx_widget_border_width_get.c"/>
+        <files mask="gx_widget_canvas_get.c"/>
+        <files mask="gx_widget_child_clipping_update.c"/>
+        <files mask="gx_widget_child_detect.c"/>
+        <files mask="gx_widget_child_focus_assign.c"/>
+        <files mask="gx_widget_children_draw.c"/>
+        <files mask="gx_widget_children_event_process.c"/>
+        <files mask="gx_widget_client_get.c"/>
+        <files mask="gx_widget_client_index_get.c"/>
+        <files mask="gx_widget_clipping_update.c"/>
+        <files mask="gx_widget_color_get.c"/>
+        <files mask="gx_widget_context_fill_set.c"/>
+        <files mask="gx_widget_create.c"/>
+        <files mask="gx_widget_created_test.c"/>
+        <files mask="gx_widget_delete.c"/>
+        <files mask="gx_widget_detach.c"/>
+        <files mask="gx_widget_draw.c"/>
+        <files mask="gx_widget_draw_set.c"/>
+        <files mask="gx_widget_event_generate.c"/>
+        <files mask="gx_widget_event_process.c"/>
+        <files mask="gx_widget_event_process_set.c"/>
+        <files mask="gx_widget_event_to_parent.c"/>
+        <files mask="gx_widget_fill_color_set.c"/>
+        <files mask="gx_widget_find.c"/>
+        <files mask="gx_widget_first_child_get.c"/>
+        <files mask="gx_widget_first_client_child_get.c"/>
+        <files mask="gx_widget_focus_next.c"/>
+        <files mask="gx_widget_focus_previous.c"/>
+        <files mask="gx_widget_font_get.c"/>
+        <files mask="gx_widget_free.c"/>
+        <files mask="gx_widget_front_move.c"/>
+        <files mask="gx_widget_height_get.c"/>
+        <files mask="gx_widget_hide.c"/>
+        <files mask="gx_widget_last_child_get.c"/>
+        <files mask="gx_widget_last_client_child_get.c"/>
+        <files mask="gx_widget_link.c"/>
+        <files mask="gx_widget_nav_order_initialize.c"/>
+        <files mask="gx_widget_next_client_child_get.c"/>
+        <files mask="gx_widget_next_sibling_get.c"/>
+        <files mask="gx_widget_parent_get.c"/>
+        <files mask="gx_widget_pixelmap_get.c"/>
+        <files mask="gx_widget_previous_sibling_get.c"/>
+        <files mask="gx_widget_resize.c"/>
+        <files mask="gx_widget_scroll_shift.c"/>
+        <files mask="gx_widget_shift.c"/>
+        <files mask="gx_widget_show.c"/>
+        <files mask="gx_widget_status_add.c"/>
+        <files mask="gx_widget_status_get.c"/>
+        <files mask="gx_widget_status_remove.c"/>
+        <files mask="gx_widget_status_test.c"/>
+        <files mask="gx_widget_string_get.c"/>
+        <files mask="gx_widget_style_add.c"/>
+        <files mask="gx_widget_style_get.c"/>
+        <files mask="gx_widget_style_remove.c"/>
+        <files mask="gx_widget_style_set.c"/>
+        <files mask="gx_widget_text_blend.c"/>
+        <files mask="gx_widget_text_draw.c"/>
+        <files mask="gx_widget_text_id_draw.c"/>
+        <files mask="gx_widget_top_visible_child_find.c"/>
+        <files mask="gx_widget_transparent_pixelmap_detect.c"/>
+        <files mask="gx_widget_type_find.c"/>
+        <files mask="gx_widget_unlink.c"/>
+        <files mask="gx_widget_width_get.c"/>
+        <files mask="gx_window_background_draw.c"/>
+        <files mask="gx_window_border_draw.c"/>
+        <files mask="gx_window_client_height_get.c"/>
+        <files mask="gx_window_client_scroll.c"/>
+        <files mask="gx_window_client_width_get.c"/>
+        <files mask="gx_window_close.c"/>
+        <files mask="gx_window_create.c"/>
+        <files mask="gx_window_draw.c"/>
+        <files mask="gx_window_event_process.c"/>
+        <files mask="gx_window_execute.c"/>
+        <files mask="gx_window_root_create.c"/>
+        <files mask="gx_window_root_delete.c"/>
+        <files mask="gx_window_root_event_process.c"/>
+        <files mask="gx_window_root_find.c"/>
+        <files mask="gx_window_scroll.c"/>
+        <files mask="gx_window_scroll_info_get.c"/>
+        <files mask="gx_window_scrollbar_find.c"/>
+        <files mask="gx_window_view_update_detect.c"/>
+        <files mask="gx_window_wallpaper_get.c"/>
+        <files mask="gx_window_wallpaper_set.c"/>
+        <files mask="gxe_accordion_menu_create.c"/>
+        <files mask="gxe_accordion_menu_event_process.c"/>
+        <files mask="gxe_accordion_menu_position.c"/>
+        <files mask="gxe_animation_canvas_define.c"/>
+        <files mask="gxe_animation_create.c"/>
+        <files mask="gxe_animation_delete.c"/>
+        <files mask="gxe_animation_drag_disable.c"/>
+        <files mask="gxe_animation_drag_enable.c"/>
+        <files mask="gxe_animation_landing_speed_set.c"/>
+        <files mask="gxe_animation_start.c"/>
+        <files mask="gxe_animation_stop.c"/>
+        <files mask="gxe_binres_language_count_get.c"/>
+        <files mask="gxe_binres_language_info_load.c"/>
+        <files mask="gxe_binres_language_table_load.c"/>
+        <files mask="gxe_binres_theme_load.c"/>
+        <files mask="gxe_brush_default.c"/>
+        <files mask="gxe_brush_define.c"/>
+        <files mask="gxe_button_create.c"/>
+        <files mask="gxe_button_deselect.c"/>
+        <files mask="gxe_button_event_process.c"/>
+        <files mask="gxe_button_select.c"/>
+        <files mask="gxe_canvas_alpha_set.c"/>
+        <files mask="gxe_canvas_arc_draw.c"/>
+        <files mask="gxe_canvas_block_move.c"/>
+        <files mask="gxe_canvas_circle_draw.c"/>
+        <files mask="gxe_canvas_create.c"/>
+        <files mask="gxe_canvas_delete.c"/>
+        <files mask="gxe_canvas_drawing_complete.c"/>
+        <files mask="gxe_canvas_drawing_initiate.c"/>
+        <files mask="gxe_canvas_ellipse_draw.c"/>
+        <files mask="gxe_canvas_hardware_layer_bind.c"/>
+        <files mask="gxe_canvas_hide.c"/>
+        <files mask="gxe_canvas_line_draw.c"/>
+        <files mask="gxe_canvas_memory_define.c"/>
+        <files mask="gxe_canvas_mouse_define.c"/>
+        <files mask="gxe_canvas_mouse_hide.c"/>
+        <files mask="gxe_canvas_mouse_show.c"/>
+        <files mask="gxe_canvas_offset_set.c"/>
+        <files mask="gxe_canvas_pie_draw.c"/>
+        <files mask="gxe_canvas_pixel_draw.c"/>
+        <files mask="gxe_canvas_pixelmap_blend.c"/>
+        <files mask="gxe_canvas_pixelmap_draw.c"/>
+        <files mask="gxe_canvas_pixelmap_get.c"/>
+        <files mask="gxe_canvas_pixelmap_rotate.c"/>
+        <files mask="gxe_canvas_pixelmap_tile.c"/>
+        <files mask="gxe_canvas_polygon_draw.c"/>
+        <files mask="gxe_canvas_rectangle_draw.c"/>
+        <files mask="gxe_canvas_rotated_text_draw.c"/>
+        <files mask="gxe_canvas_shift.c"/>
+        <files mask="gxe_canvas_show.c"/>
+        <files mask="gxe_canvas_text_draw.c"/>
+        <files mask="gxe_checkbox_create.c"/>
+        <files mask="gxe_checkbox_event_process.c"/>
+        <files mask="gxe_checkbox_pixelmap_set.c"/>
+        <files mask="gxe_checkbox_select.c"/>
+        <files mask="gxe_circular_gauge_angle_get.c"/>
+        <files mask="gxe_circular_gauge_angle_set.c"/>
+        <files mask="gxe_circular_gauge_animation_set.c"/>
+        <files mask="gxe_circular_gauge_create.c"/>
+        <files mask="gxe_circular_gauge_event_process.c"/>
+        <files mask="gxe_context_brush_default.c"/>
+        <files mask="gxe_context_brush_define.c"/>
+        <files mask="gxe_context_brush_get.c"/>
+        <files mask="gxe_context_brush_pattern_set.c"/>
+        <files mask="gxe_context_brush_set.c"/>
+        <files mask="gxe_context_brush_style_set.c"/>
+        <files mask="gxe_context_brush_width_set.c"/>
+        <files mask="gxe_context_color_get.c"/>
+        <files mask="gxe_context_fill_color_set.c"/>
+        <files mask="gxe_context_font_get.c"/>
+        <files mask="gxe_context_font_set.c"/>
+        <files mask="gxe_context_line_color_set.c"/>
+        <files mask="gxe_context_pixelmap_get.c"/>
+        <files mask="gxe_context_pixelmap_set.c"/>
+        <files mask="gxe_context_raw_brush_define.c"/>
+        <files mask="gxe_context_raw_fill_color_set.c"/>
+        <files mask="gxe_context_raw_line_color_set.c"/>
+        <files mask="gxe_context_string_get.c"/>
+        <files mask="gxe_display_active_language_set.c"/>
+        <files mask="gxe_display_color_set.c"/>
+        <files mask="gxe_display_color_table_set.c"/>
+        <files mask="gxe_display_create.c"/>
+        <files mask="gxe_display_delete.c"/>
+        <files mask="gxe_display_font_table_set.c"/>
+        <files mask="gxe_display_language_table_get.c"/>
+        <files mask="gxe_display_language_table_set.c"/>
+        <files mask="gxe_display_pixelmap_table_set.c"/>
+        <files mask="gxe_display_string_get.c"/>
+        <files mask="gxe_display_string_table_get.c"/>
+        <files mask="gxe_display_theme_install.c"/>
+        <files mask="gxe_drop_list_close.c"/>
+        <files mask="gxe_drop_list_create.c"/>
+        <files mask="gxe_drop_list_event_process.c"/>
+        <files mask="gxe_drop_list_open.c"/>
+        <files mask="gxe_drop_list_pixelmap_set.c"/>
+        <files mask="gxe_drop_list_popup_get.c"/>
+        <files mask="gxe_generic_scroll_wheel_children_position.c"/>
+        <files mask="gxe_generic_scroll_wheel_create.c"/>
+        <files mask="gxe_generic_scroll_wheel_event_process.c"/>
+        <files mask="gxe_generic_scroll_wheel_row_height_set.c"/>
+        <files mask="gxe_generic_scroll_wheel_total_rows_set.c"/>
+        <files mask="gxe_horizontal_list_children_position.c"/>
+        <files mask="gxe_horizontal_list_create.c"/>
+        <files mask="gxe_horizontal_list_event_process.c"/>
+        <files mask="gxe_horizontal_list_page_index_set.c"/>
+        <files mask="gxe_horizontal_list_selected_index_get.c"/>
+        <files mask="gxe_horizontal_list_selected_set.c"/>
+        <files mask="gxe_horizontal_list_selected_widget_get.c"/>
+        <files mask="gxe_horizontal_list_total_columns_set.c"/>
+        <files mask="gxe_horizontal_scrollbar_create.c"/>
+        <files mask="gxe_icon_button_create.c"/>
+        <files mask="gxe_icon_button_pixelmap_set.c"/>
+        <files mask="gxe_icon_create.c"/>
+        <files mask="gxe_icon_event_process.c"/>
+        <files mask="gxe_icon_pixelmap_set.c"/>
+        <files mask="gxe_image_reader_create.c"/>
+        <files mask="gxe_image_reader_palette_set.c"/>
+        <files mask="gxe_image_reader_start.c"/>
+        <files mask="gxe_line_chart_create.c"/>
+        <files mask="gxe_line_chart_update.c"/>
+        <files mask="gxe_line_chart_y_scale_calculate.c"/>
+        <files mask="gxe_menu_create.c"/>
+        <files mask="gxe_menu_event_process.c"/>
+        <files mask="gxe_menu_insert.c"/>
+        <files mask="gxe_menu_remove.c"/>
+        <files mask="gxe_menu_text_offset_set.c"/>
+        <files mask="gxe_multi_line_text_button_create.c"/>
+        <files mask="gxe_multi_line_text_button_event_process.c"/>
+        <files mask="gxe_multi_line_text_button_text_id_set.c"/>
+        <files mask="gxe_multi_line_text_button_text_set.c"/>
+        <files mask="gxe_multi_line_text_input_backspace.c"/>
+        <files mask="gxe_multi_line_text_input_buffer_clear.c"/>
+        <files mask="gxe_multi_line_text_input_buffer_get.c"/>
+        <files mask="gxe_multi_line_text_input_char_insert.c"/>
+        <files mask="gxe_multi_line_text_input_create.c"/>
+        <files mask="gxe_multi_line_text_input_cursor_pos_get.c"/>
+        <files mask="gxe_multi_line_text_input_delete.c"/>
+        <files mask="gxe_multi_line_text_input_down_arrow.c"/>
+        <files mask="gxe_multi_line_text_input_end.c"/>
+        <files mask="gxe_multi_line_text_input_event_process.c"/>
+        <files mask="gxe_multi_line_text_input_fill_color_set.c"/>
+        <files mask="gxe_multi_line_text_input_home.c"/>
+        <files mask="gxe_multi_line_text_input_left_arrow.c"/>
+        <files mask="gxe_multi_line_text_input_right_arrow.c"/>
+        <files mask="gxe_multi_line_text_input_style_add.c"/>
+        <files mask="gxe_multi_line_text_input_style_remove.c"/>
+        <files mask="gxe_multi_line_text_input_style_set.c"/>
+        <files mask="gxe_multi_line_text_input_text_color_set.c"/>
+        <files mask="gxe_multi_line_text_input_text_select.c"/>
+        <files mask="gxe_multi_line_text_input_text_set.c"/>
+        <files mask="gxe_multi_line_text_input_up_arrow.c"/>
+        <files mask="gxe_multi_line_text_view_create.c"/>
+        <files mask="gxe_multi_line_text_view_event_process.c"/>
+        <files mask="gxe_multi_line_text_view_font_set.c"/>
+        <files mask="gxe_multi_line_text_view_line_space_set.c"/>
+        <files mask="gxe_multi_line_text_view_scroll_info_get.c"/>
+        <files mask="gxe_multi_line_text_view_text_color_set.c"/>
+        <files mask="gxe_multi_line_text_view_text_id_set.c"/>
+        <files mask="gxe_multi_line_text_view_text_set.c"/>
+        <files mask="gxe_multi_line_text_view_whitespace_set.c"/>
+        <files mask="gxe_numeric_pixelmap_prompt_create.c"/>
+        <files mask="gxe_numeric_pixelmap_prompt_format_function_set.c"/>
+        <files mask="gxe_numeric_pixelmap_prompt_value_set.c"/>
+        <files mask="gxe_numeric_prompt_create.c"/>
+        <files mask="gxe_numeric_prompt_format_function_set.c"/>
+        <files mask="gxe_numeric_prompt_value_set.c"/>
+        <files mask="gxe_numeric_scroll_wheel_create.c"/>
+        <files mask="gxe_numeric_scroll_wheel_range_set.c"/>
+        <files mask="gxe_pixelmap_button_create.c"/>
+        <files mask="gxe_pixelmap_button_event_process.c"/>
+        <files mask="gxe_pixelmap_button_pixelmap_set.c"/>
+        <files mask="gxe_pixelmap_prompt_create.c"/>
+        <files mask="gxe_pixelmap_prompt_pixelmap_set.c"/>
+        <files mask="gxe_pixelmap_slider_create.c"/>
+        <files mask="gxe_pixelmap_slider_event_process.c"/>
+        <files mask="gxe_pixelmap_slider_pixelmap_set.c"/>
+        <files mask="gxe_progress_bar_create.c"/>
+        <files mask="gxe_progress_bar_event_process.c"/>
+        <files mask="gxe_progress_bar_font_set.c"/>
+        <files mask="gxe_progress_bar_info_set.c"/>
+        <files mask="gxe_progress_bar_pixelmap_set.c"/>
+        <files mask="gxe_progress_bar_range_set.c"/>
+        <files mask="gxe_progress_bar_text_color_set.c"/>
+        <files mask="gxe_progress_bar_value_set.c"/>
+        <files mask="gxe_prompt_create.c"/>
+        <files mask="gxe_prompt_event_process.c"/>
+        <files mask="gxe_prompt_font_set.c"/>
+        <files mask="gxe_prompt_text_color_set.c"/>
+        <files mask="gxe_prompt_text_get.c"/>
+        <files mask="gxe_prompt_text_id_set.c"/>
+        <files mask="gxe_prompt_text_set.c"/>
+        <files mask="gxe_radial_progress_bar_anchor_set.c"/>
+        <files mask="gxe_radial_progress_bar_create.c"/>
+        <files mask="gxe_radial_progress_bar_event_process.c"/>
+        <files mask="gxe_radial_progress_bar_font_set.c"/>
+        <files mask="gxe_radial_progress_bar_info_set.c"/>
+        <files mask="gxe_radial_progress_bar_text_color_set.c"/>
+        <files mask="gxe_radial_progress_bar_value_set.c"/>
+        <files mask="gxe_radial_slider_anchor_angles_set.c"/>
+        <files mask="gxe_radial_slider_angle_set.c"/>
+        <files mask="gxe_radial_slider_animation_set.c"/>
+        <files mask="gxe_radial_slider_animation_start.c"/>
+        <files mask="gxe_radial_slider_create.c"/>
+        <files mask="gxe_radial_slider_event_process.c"/>
+        <files mask="gxe_radial_slider_info_get.c"/>
+        <files mask="gxe_radial_slider_info_set.c"/>
+        <files mask="gxe_radial_slider_pixelmap_set.c"/>
+        <files mask="gxe_radio_button_create.c"/>
+        <files mask="gxe_radio_button_pixelmap_set.c"/>
+        <files mask="gxe_rich_text_view_create.c"/>
+        <files mask="gxe_rich_text_view_fonts_set.c"/>
+        <files mask="gxe_screen_stack_create.c"/>
+        <files mask="gxe_screen_stack_pop.c"/>
+        <files mask="gxe_screen_stack_push.c"/>
+        <files mask="gxe_screen_stack_reset.c"/>
+        <files mask="gxe_scroll_thumb_create.c"/>
+        <files mask="gxe_scroll_thumb_event_process.c"/>
+        <files mask="gxe_scroll_wheel_create.c"/>
+        <files mask="gxe_scroll_wheel_event_process.c"/>
+        <files mask="gxe_scroll_wheel_gradient_alpha_set.c"/>
+        <files mask="gxe_scroll_wheel_row_height_set.c"/>
+        <files mask="gxe_scroll_wheel_selected_background_set.c"/>
+        <files mask="gxe_scroll_wheel_selected_get.c"/>
+        <files mask="gxe_scroll_wheel_selected_set.c"/>
+        <files mask="gxe_scroll_wheel_speed_set.c"/>
+        <files mask="gxe_scroll_wheel_total_rows_set.c"/>
+        <files mask="gxe_scrollbar_event_process.c"/>
+        <files mask="gxe_scrollbar_limit_check.c"/>
+        <files mask="gxe_scrollbar_reset.c"/>
+        <files mask="gxe_scrollbar_value_set.c"/>
+        <files mask="gxe_single_line_text_input_backspace.c"/>
+        <files mask="gxe_single_line_text_input_buffer_clear.c"/>
+        <files mask="gxe_single_line_text_input_buffer_get.c"/>
+        <files mask="gxe_single_line_text_input_character_delete.c"/>
+        <files mask="gxe_single_line_text_input_character_insert.c"/>
+        <files mask="gxe_single_line_text_input_create.c"/>
+        <files mask="gxe_single_line_text_input_draw_position_get.c"/>
+        <files mask="gxe_single_line_text_input_end.c"/>
+        <files mask="gxe_single_line_text_input_event_process.c"/>
+        <files mask="gxe_single_line_text_input_fill_color_set.c"/>
+        <files mask="gxe_single_line_text_input_home.c"/>
+        <files mask="gxe_single_line_text_input_left_arrow.c"/>
+        <files mask="gxe_single_line_text_input_position_get.c"/>
+        <files mask="gxe_single_line_text_input_right_arrow.c"/>
+        <files mask="gxe_single_line_text_input_style_add.c"/>
+        <files mask="gxe_single_line_text_input_style_remove.c"/>
+        <files mask="gxe_single_line_text_input_style_set.c"/>
+        <files mask="gxe_single_line_text_input_text_color_set.c"/>
+        <files mask="gxe_single_line_text_input_text_select.c"/>
+        <files mask="gxe_single_line_text_input_text_set.c"/>
+        <files mask="gxe_slider_create.c"/>
+        <files mask="gxe_slider_event_process.c"/>
+        <files mask="gxe_slider_info_set.c"/>
+        <files mask="gxe_slider_needle_position_get.c"/>
+        <files mask="gxe_slider_travel_get.c"/>
+        <files mask="gxe_slider_value_calculate.c"/>
+        <files mask="gxe_slider_value_set.c"/>
+        <files mask="gxe_sprite_create.c"/>
+        <files mask="gxe_sprite_current_frame_set.c"/>
+        <files mask="gxe_sprite_frame_list_set.c"/>
+        <files mask="gxe_sprite_start.c"/>
+        <files mask="gxe_sprite_stop.c"/>
+        <files mask="gxe_string_scroll_wheel_create.c"/>
+        <files mask="gxe_string_scroll_wheel_event_process.c"/>
+        <files mask="gxe_string_scroll_wheel_string_id_list_set.c"/>
+        <files mask="gxe_string_scroll_wheel_string_list_set.c"/>
+        <files mask="gxe_system_active_language_set.c"/>
+        <files mask="gxe_system_animation_free.c"/>
+        <files mask="gxe_system_animation_get.c"/>
+        <files mask="gxe_system_canvas_refresh.c"/>
+        <files mask="gxe_system_dirty_mark.c"/>
+        <files mask="gxe_system_dirty_partial_add.c"/>
+        <files mask="gxe_system_draw_context_get.c"/>
+        <files mask="gxe_system_event_fold.c"/>
+        <files mask="gxe_system_event_send.c"/>
+        <files mask="gxe_system_focus_claim.c"/>
+        <files mask="gxe_system_initialize.c"/>
+        <files mask="gxe_system_language_table_get.c"/>
+        <files mask="gxe_system_language_table_set.c"/>
+        <files mask="gxe_system_memory_allocator_set.c"/>
+        <files mask="gxe_system_pen_configure.c"/>
+        <files mask="gxe_system_screen_stack_create.c"/>
+        <files mask="gxe_system_screen_stack_get.c"/>
+        <files mask="gxe_system_screen_stack_pop.c"/>
+        <files mask="gxe_system_screen_stack_push.c"/>
+        <files mask="gxe_system_scroll_appearance_get.c"/>
+        <files mask="gxe_system_scroll_appearance_set.c"/>
+        <files mask="gxe_system_start.c"/>
+        <files mask="gxe_system_string_get.c"/>
+        <files mask="gxe_system_string_table_get.c"/>
+        <files mask="gxe_system_string_width_get.c"/>
+        <files mask="gxe_system_timer_start.c"/>
+        <files mask="gxe_system_timer_stop.c"/>
+        <files mask="gxe_system_version_string_get.c"/>
+        <files mask="gxe_system_widget_find.c"/>
+        <files mask="gxe_text_button_create.c"/>
+        <files mask="gxe_text_button_event_process.c"/>
+        <files mask="gxe_text_button_font_set.c"/>
+        <files mask="gxe_text_button_text_color_set.c"/>
+        <files mask="gxe_text_button_text_get.c"/>
+        <files mask="gxe_text_button_text_id_set.c"/>
+        <files mask="gxe_text_button_text_set.c"/>
+        <files mask="gxe_text_input_cursor_blink_interval_set.c"/>
+        <files mask="gxe_text_input_cursor_height_set.c"/>
+        <files mask="gxe_text_input_cursor_width_set.c"/>
+        <files mask="gxe_text_scroll_wheel_callback_set.c"/>
+        <files mask="gxe_text_scroll_wheel_create.c"/>
+        <files mask="gxe_text_scroll_wheel_event_process.c"/>
+        <files mask="gxe_text_scroll_wheel_font_set.c"/>
+        <files mask="gxe_text_scroll_wheel_text_color_set.c"/>
+        <files mask="gxe_tree_view_create.c"/>
+        <files mask="gxe_tree_view_event_process.c"/>
+        <files mask="gxe_tree_view_indentation_set.c"/>
+        <files mask="gxe_tree_view_position.c"/>
+        <files mask="gxe_tree_view_root_line_color_set.c"/>
+        <files mask="gxe_tree_view_root_pixelmap_set.c"/>
+        <files mask="gxe_tree_view_selected_get.c"/>
+        <files mask="gxe_tree_view_selected_set.c"/>
+        <files mask="gxe_utility_bidi_paragraph_reorder.c"/>
+        <files mask="gxe_utility_bidi_resolved_text_info_delete.c"/>
+        <files mask="gxe_utility_canvas_to_bmp.c"/>
+        <files mask="gxe_utility_circle_point_get.c"/>
+        <files mask="gxe_utility_gradient_create.c"/>
+        <files mask="gxe_utility_gradient_delete.c"/>
+        <files mask="gxe_utility_ltoa.c"/>
+        <files mask="gxe_utility_pixelmap_resize.c"/>
+        <files mask="gxe_utility_pixelmap_rotate.c"/>
+        <files mask="gxe_utility_pixelmap_simple_rotate.c"/>
+        <files mask="gxe_utility_rectangle_center.c"/>
+        <files mask="gxe_utility_rectangle_center_find.c"/>
+        <files mask="gxe_utility_rectangle_combine.c"/>
+        <files mask="gxe_utility_rectangle_compare.c"/>
+        <files mask="gxe_utility_rectangle_define.c"/>
+        <files mask="gxe_utility_rectangle_overlap_detect.c"/>
+        <files mask="gxe_utility_rectangle_point_detect.c"/>
+        <files mask="gxe_utility_rectangle_resize.c"/>
+        <files mask="gxe_utility_rectangle_shift.c"/>
+        <files mask="gxe_utility_string_to_alphamap.c"/>
+        <files mask="gxe_vertical_list_children_position.c"/>
+        <files mask="gxe_vertical_list_create.c"/>
+        <files mask="gxe_vertical_list_event_process.c"/>
+        <files mask="gxe_vertical_list_page_index_set.c"/>
+        <files mask="gxe_vertical_list_selected_index_get.c"/>
+        <files mask="gxe_vertical_list_selected_set.c"/>
+        <files mask="gxe_vertical_list_selected_widget_get.c"/>
+        <files mask="gxe_vertical_list_total_rows_set.c"/>
+        <files mask="gxe_vertical_scrollbar_create.c"/>
+        <files mask="gxe_widget_allocate.c"/>
+        <files mask="gxe_widget_attach.c"/>
+        <files mask="gxe_widget_back_attach.c"/>
+        <files mask="gxe_widget_back_move.c"/>
+        <files mask="gxe_widget_block_move.c"/>
+        <files mask="gxe_widget_border_style_set.c"/>
+        <files mask="gxe_widget_border_width_get.c"/>
+        <files mask="gxe_widget_canvas_get.c"/>
+        <files mask="gxe_widget_child_detect.c"/>
+        <files mask="gxe_widget_client_get.c"/>
+        <files mask="gxe_widget_color_get.c"/>
+        <files mask="gxe_widget_create.c"/>
+        <files mask="gxe_widget_created_test.c"/>
+        <files mask="gxe_widget_delete.c"/>
+        <files mask="gxe_widget_detach.c"/>
+        <files mask="gxe_widget_draw_set.c"/>
+        <files mask="gxe_widget_event_generate.c"/>
+        <files mask="gxe_widget_event_process.c"/>
+        <files mask="gxe_widget_event_process_set.c"/>
+        <files mask="gxe_widget_event_to_parent.c"/>
+        <files mask="gxe_widget_fill_color_set.c"/>
+        <files mask="gxe_widget_find.c"/>
+        <files mask="gxe_widget_first_child_get.c"/>
+        <files mask="gxe_widget_focus_next.c"/>
+        <files mask="gxe_widget_focus_previous.c"/>
+        <files mask="gxe_widget_font_get.c"/>
+        <files mask="gxe_widget_free.c"/>
+        <files mask="gxe_widget_front_move.c"/>
+        <files mask="gxe_widget_height_get.c"/>
+        <files mask="gxe_widget_hide.c"/>
+        <files mask="gxe_widget_last_child_get.c"/>
+        <files mask="gxe_widget_next_sibling_get.c"/>
+        <files mask="gxe_widget_parent_get.c"/>
+        <files mask="gxe_widget_pixelmap_get.c"/>
+        <files mask="gxe_widget_previous_sibling_get.c"/>
+        <files mask="gxe_widget_resize.c"/>
+        <files mask="gxe_widget_shift.c"/>
+        <files mask="gxe_widget_show.c"/>
+        <files mask="gxe_widget_status_add.c"/>
+        <files mask="gxe_widget_status_get.c"/>
+        <files mask="gxe_widget_status_remove.c"/>
+        <files mask="gxe_widget_status_test.c"/>
+        <files mask="gxe_widget_string_get.c"/>
+        <files mask="gxe_widget_style_add.c"/>
+        <files mask="gxe_widget_style_get.c"/>
+        <files mask="gxe_widget_style_remove.c"/>
+        <files mask="gxe_widget_style_set.c"/>
+        <files mask="gxe_widget_text_blend.c"/>
+        <files mask="gxe_widget_top_visible_child_find.c"/>
+        <files mask="gxe_widget_type_find.c"/>
+        <files mask="gxe_widget_width_get.c"/>
+        <files mask="gxe_window_client_height_get.c"/>
+        <files mask="gxe_window_client_scroll.c"/>
+        <files mask="gxe_window_client_width_get.c"/>
+        <files mask="gxe_window_close.c"/>
+        <files mask="gxe_window_create.c"/>
+        <files mask="gxe_window_event_process.c"/>
+        <files mask="gxe_window_execute.c"/>
+        <files mask="gxe_window_root_create.c"/>
+        <files mask="gxe_window_root_delete.c"/>
+        <files mask="gxe_window_root_event_process.c"/>
+        <files mask="gxe_window_root_find.c"/>
+        <files mask="gxe_window_scroll_info_get.c"/>
+        <files mask="gxe_window_scrollbar_find.c"/>
+        <files mask="gxe_window_wallpaper_get.c"/>
+        <files mask="gxe_window_wallpaper_set.c"/>
+      </source>
+      <source relative_path="./guix/common" project_relative_path="guix/common" type="src">
+        <files mask="gx_source.c"/>
+      </source>
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+        <files mask="tx_api.h"/>
+        <files mask="tx_block_pool.h"/>
+        <files mask="tx_byte_pool.h"/>
+        <files mask="tx_event_flags.h"/>
+        <files mask="tx_initialize.h"/>
+        <files mask="tx_mutex.h"/>
+        <files mask="tx_queue.h"/>
+        <files mask="tx_semaphore.h"/>
+        <files mask="tx_thread.h"/>
+        <files mask="tx_timer.h"/>
+        <files mask="tx_trace.h"/>
+        <files mask="tx_user_sample.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="tx_port.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="gx_port.h"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+      </include_paths>
+    </component>
+    <component id="middleware.azure_rtos.gx.unused_files.MIMXRT1062" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.1.10" full_name="Azure RTOS GUIX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path="./" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./guix" project_relative_path="guix" type="other">
+        <files mask="CONTRIBUTING.md" hidden="true"/>
+        <files mask="SECURITY.md" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./guix/docs" project_relative_path="guix/docs" type="image">
+        <files mask="deps.png" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./guix/common/src" project_relative_path="guix/common/src" type="src">
+        <files mask="gx_accordion_menu_create.c" hidden="true"/>
+        <files mask="gx_accordion_menu_draw.c" hidden="true"/>
+        <files mask="gx_accordion_menu_event_process.c" hidden="true"/>
+        <files mask="gx_accordion_menu_position.c" hidden="true"/>
+        <files mask="gx_animation_canvas_define.c" hidden="true"/>
+        <files mask="gx_animation_complete.c" hidden="true"/>
+        <files mask="gx_animation_create.c" hidden="true"/>
+        <files mask="gx_animation_delete.c" hidden="true"/>
+        <files mask="gx_animation_drag_disable.c" hidden="true"/>
+        <files mask="gx_animation_drag_enable.c" hidden="true"/>
+        <files mask="gx_animation_drag_event_process.c" hidden="true"/>
+        <files mask="gx_animation_drag_tracking.c" hidden="true"/>
+        <files mask="gx_animation_drag_tracking_start.c" hidden="true"/>
+        <files mask="gx_animation_landing_speed_set.c" hidden="true"/>
+        <files mask="gx_animation_slide_landing.c" hidden="true"/>
+        <files mask="gx_animation_slide_landing_start.c" hidden="true"/>
+        <files mask="gx_animation_start.c" hidden="true"/>
+        <files mask="gx_animation_stop.c" hidden="true"/>
+        <files mask="gx_animation_update.c" hidden="true"/>
+        <files mask="gx_binres_language_count_get.c" hidden="true"/>
+        <files mask="gx_binres_language_info_load.c" hidden="true"/>
+        <files mask="gx_binres_language_table_load.c" hidden="true"/>
+        <files mask="gx_binres_theme_load.c" hidden="true"/>
+        <files mask="gx_brush_default.c" hidden="true"/>
+        <files mask="gx_brush_define.c" hidden="true"/>
+        <files mask="gx_button_background_draw.c" hidden="true"/>
+        <files mask="gx_button_create.c" hidden="true"/>
+        <files mask="gx_button_deselect.c" hidden="true"/>
+        <files mask="gx_button_draw.c" hidden="true"/>
+        <files mask="gx_button_event_process.c" hidden="true"/>
+        <files mask="gx_button_select.c" hidden="true"/>
+        <files mask="gx_button_siblings_deselect.c" hidden="true"/>
+        <files mask="gx_canvas_alpha_set.c" hidden="true"/>
+        <files mask="gx_canvas_arc_draw.c" hidden="true"/>
+        <files mask="gx_canvas_block_move.c" hidden="true"/>
+        <files mask="gx_canvas_circle_draw.c" hidden="true"/>
+        <files mask="gx_canvas_composite_create.c" hidden="true"/>
+        <files mask="gx_canvas_create.c" hidden="true"/>
+        <files mask="gx_canvas_delete.c" hidden="true"/>
+        <files mask="gx_canvas_dirty_mark.c" hidden="true"/>
+        <files mask="gx_canvas_drawing_complete.c" hidden="true"/>
+        <files mask="gx_canvas_drawing_initiate.c" hidden="true"/>
+        <files mask="gx_canvas_ellipse_draw.c" hidden="true"/>
+        <files mask="gx_canvas_glyphs_draw.c" hidden="true"/>
+        <files mask="gx_canvas_hardware_layer_bind.c" hidden="true"/>
+        <files mask="gx_canvas_hide.c" hidden="true"/>
+        <files mask="gx_canvas_line_draw.c" hidden="true"/>
+        <files mask="gx_canvas_memory_define.c" hidden="true"/>
+        <files mask="gx_canvas_mouse_define.c" hidden="true"/>
+        <files mask="gx_canvas_mouse_hide.c" hidden="true"/>
+        <files mask="gx_canvas_mouse_show.c" hidden="true"/>
+        <files mask="gx_canvas_offset_set.c" hidden="true"/>
+        <files mask="gx_canvas_pie_draw.c" hidden="true"/>
+        <files mask="gx_canvas_pixel_draw.c" hidden="true"/>
+        <files mask="gx_canvas_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_canvas_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_canvas_pixelmap_get.c" hidden="true"/>
+        <files mask="gx_canvas_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_canvas_pixelmap_tile.c" hidden="true"/>
+        <files mask="gx_canvas_polygon_draw.c" hidden="true"/>
+        <files mask="gx_canvas_rectangle_draw.c" hidden="true"/>
+        <files mask="gx_canvas_rotated_text_draw.c" hidden="true"/>
+        <files mask="gx_canvas_shift.c" hidden="true"/>
+        <files mask="gx_canvas_show.c" hidden="true"/>
+        <files mask="gx_canvas_text_draw.c" hidden="true"/>
+        <files mask="gx_checkbox_create.c" hidden="true"/>
+        <files mask="gx_checkbox_draw.c" hidden="true"/>
+        <files mask="gx_checkbox_event_process.c" hidden="true"/>
+        <files mask="gx_checkbox_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_checkbox_select.c" hidden="true"/>
+        <files mask="gx_circular_gauge_angle_get.c" hidden="true"/>
+        <files mask="gx_circular_gauge_angle_increment_calculate.c" hidden="true"/>
+        <files mask="gx_circular_gauge_angle_set.c" hidden="true"/>
+        <files mask="gx_circular_gauge_animation_set.c" hidden="true"/>
+        <files mask="gx_circular_gauge_background_draw.c" hidden="true"/>
+        <files mask="gx_circular_gauge_create.c" hidden="true"/>
+        <files mask="gx_circular_gauge_draw.c" hidden="true"/>
+        <files mask="gx_circular_gauge_event_process.c" hidden="true"/>
+        <files mask="gx_circular_gauge_needle_dirty_mark.c" hidden="true"/>
+        <files mask="gx_circular_gauge_needle_rectangle_calculate.c" hidden="true"/>
+        <files mask="gx_circular_gauge_needle_rotate.c" hidden="true"/>
+        <files mask="gx_context_brush_default.c" hidden="true"/>
+        <files mask="gx_context_brush_define.c" hidden="true"/>
+        <files mask="gx_context_brush_get.c" hidden="true"/>
+        <files mask="gx_context_brush_pattern_set.c" hidden="true"/>
+        <files mask="gx_context_brush_set.c" hidden="true"/>
+        <files mask="gx_context_brush_style_set.c" hidden="true"/>
+        <files mask="gx_context_brush_width_set.c" hidden="true"/>
+        <files mask="gx_context_color_get.c" hidden="true"/>
+        <files mask="gx_context_fill_color_set.c" hidden="true"/>
+        <files mask="gx_context_font_get.c" hidden="true"/>
+        <files mask="gx_context_font_set.c" hidden="true"/>
+        <files mask="gx_context_line_color_set.c" hidden="true"/>
+        <files mask="gx_context_pixelmap_get.c" hidden="true"/>
+        <files mask="gx_context_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_context_raw_brush_define.c" hidden="true"/>
+        <files mask="gx_context_raw_fill_color_set.c" hidden="true"/>
+        <files mask="gx_context_raw_line_color_set.c" hidden="true"/>
+        <files mask="gx_context_string_get.c" hidden="true"/>
+        <files mask="gx_display_active_language_set.c" hidden="true"/>
+        <files mask="gx_display_canvas_dirty.c" hidden="true"/>
+        <files mask="gx_display_color_set.c" hidden="true"/>
+        <files mask="gx_display_color_table_set.c" hidden="true"/>
+        <files mask="gx_display_create.c" hidden="true"/>
+        <files mask="gx_display_delete.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_jpeg_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_png_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1555xrgb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_mouse_capture.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_mouse_restore.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_rotated_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_row_pitch_get.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_16bpp_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_glyph_1bpp_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_mouse_capture.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_mouse_restore.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_row_pitch_get.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_1bpp_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_jpeg_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_mouse_capture.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_mouse_restore.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_png_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_rotated_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_rotated_jpeg_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_rotated_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_rotated_png_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_rotated_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_24xrgb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_rotated_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_rotated_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_32argb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_rotated_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_row_pitch_get.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_32bpp_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_332rgb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_332rgb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_332rgb_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_332rgb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_332rgb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_4444argb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_glyph_4bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_grayscale_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_mouse_capture.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_mouse_restore.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_row_pitch_get.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_4bpp_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_jpeg_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_png_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_canvas_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_jpeg_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_pixel_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_png_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_rotated_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_565rgb_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_8bit_palette_native_color_get.c" hidden="true"/>
+        <files mask="gx_display_driver_8bit_palette_rotated_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_8bit_palette_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_glyph_3bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_glyph_4bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_mouse_capture.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_mouse_restore.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_blend.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_block_move.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_canvas_copy.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_1bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_3bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_glyph_4bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_horizontal_pixelmap_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixel_write.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixelmap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_rotated_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_row_pitch_get.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_simple_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_vertical_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_8bpp_vertical_pattern_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_arc_clipping_get.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_arc_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_ellipse_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_filled_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_fixed_point_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_wide_arc_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_wide_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_wide_ellipse_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_aliased_wide_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_alphamap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_arc_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_arc_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_circle_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_drawing_complete.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_drawing_initiate.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_ellipse_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_ellipse_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_filled_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_glyph_4bpp_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_glyph_8bpp_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_mouse_cursor_define.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_mouse_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_mouse_enable.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_mouse_position_set.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_pie_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_polygon_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_polygon_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_alphamap_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_arc_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_circle_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_ellipse_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_glyph_4bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_glyph_8bit_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_pie_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_polygon_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_rotated_wide_line_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_simple_pie_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_simple_wide_line_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_wide_arc_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_wide_circle_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_wide_ellipse_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_wide_line_fill.c" hidden="true"/>
+        <files mask="gx_display_driver_generic_wide_line_points_calculate.c" hidden="true"/>
+        <files mask="gx_display_driver_horizontal_line_alpha_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_monochrome_setup.c" hidden="true"/>
+        <files mask="gx_display_driver_simple_line_alpha_draw.c" hidden="true"/>
+        <files mask="gx_display_driver_vertical_line_alpha_draw.c" hidden="true"/>
+        <files mask="gx_display_font_table_set.c" hidden="true"/>
+        <files mask="gx_display_language_table_get.c" hidden="true"/>
+        <files mask="gx_display_language_table_set.c" hidden="true"/>
+        <files mask="gx_display_pixelmap_table_set.c" hidden="true"/>
+        <files mask="gx_display_string_get.c" hidden="true"/>
+        <files mask="gx_display_string_table_get.c" hidden="true"/>
+        <files mask="gx_display_theme_install.c" hidden="true"/>
+        <files mask="gx_drop_list_background_draw.c" hidden="true"/>
+        <files mask="gx_drop_list_close.c" hidden="true"/>
+        <files mask="gx_drop_list_create.c" hidden="true"/>
+        <files mask="gx_drop_list_draw.c" hidden="true"/>
+        <files mask="gx_drop_list_event_process.c" hidden="true"/>
+        <files mask="gx_drop_list_open.c" hidden="true"/>
+        <files mask="gx_drop_list_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_drop_list_popup_get.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_children_position.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_down_wrap.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_draw.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_row_height_set.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_scroll.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_total_rows_set.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_up_wrap.c" hidden="true"/>
+        <files mask="gx_generic_scroll_wheel_wrap_style_check.c" hidden="true"/>
+        <files mask="gx_horizontal_list_children_position.c" hidden="true"/>
+        <files mask="gx_horizontal_list_create.c" hidden="true"/>
+        <files mask="gx_horizontal_list_event_process.c" hidden="true"/>
+        <files mask="gx_horizontal_list_left_wrap.c" hidden="true"/>
+        <files mask="gx_horizontal_list_page_index_set.c" hidden="true"/>
+        <files mask="gx_horizontal_list_right_wrap.c" hidden="true"/>
+        <files mask="gx_horizontal_list_scroll.c" hidden="true"/>
+        <files mask="gx_horizontal_list_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_horizontal_list_selected_index_get.c" hidden="true"/>
+        <files mask="gx_horizontal_list_selected_set.c" hidden="true"/>
+        <files mask="gx_horizontal_list_selected_visible.c" hidden="true"/>
+        <files mask="gx_horizontal_list_selected_widget_get.c" hidden="true"/>
+        <files mask="gx_horizontal_list_slide_back_check.c" hidden="true"/>
+        <files mask="gx_horizontal_list_total_columns_set.c" hidden="true"/>
+        <files mask="gx_horizontal_scrollbar_create.c" hidden="true"/>
+        <files mask="gx_icon_background_draw.c" hidden="true"/>
+        <files mask="gx_icon_button_create.c" hidden="true"/>
+        <files mask="gx_icon_button_draw.c" hidden="true"/>
+        <files mask="gx_icon_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_icon_create.c" hidden="true"/>
+        <files mask="gx_icon_draw.c" hidden="true"/>
+        <files mask="gx_icon_event_process.c" hidden="true"/>
+        <files mask="gx_icon_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_icon_pixelmap_update.c" hidden="true"/>
+        <files mask="gx_image_reader_colorspace_convert.c" hidden="true"/>
+        <files mask="gx_image_reader_create.c" hidden="true"/>
+        <files mask="gx_image_reader_image_decode.c" hidden="true"/>
+        <files mask="gx_image_reader_jpeg_decode.c" hidden="true"/>
+        <files mask="gx_image_reader_nearest_palette_color_get.c" hidden="true"/>
+        <files mask="gx_image_reader_palette_set.c" hidden="true"/>
+        <files mask="gx_image_reader_pixel_read_callback_set.c" hidden="true"/>
+        <files mask="gx_image_reader_pixel_write_callback_set.c" hidden="true"/>
+        <files mask="gx_image_reader_png_decode.c" hidden="true"/>
+        <files mask="gx_image_reader_rle_encode.c" hidden="true"/>
+        <files mask="gx_image_reader_start.c" hidden="true"/>
+        <files mask="gx_line_chart_axis_draw.c" hidden="true"/>
+        <files mask="gx_line_chart_create.c" hidden="true"/>
+        <files mask="gx_line_chart_data_draw.c" hidden="true"/>
+        <files mask="gx_line_chart_draw.c" hidden="true"/>
+        <files mask="gx_line_chart_update.c" hidden="true"/>
+        <files mask="gx_line_chart_y_scale_calculate.c" hidden="true"/>
+        <files mask="gx_menu_create.c" hidden="true"/>
+        <files mask="gx_menu_draw.c" hidden="true"/>
+        <files mask="gx_menu_event_process.c" hidden="true"/>
+        <files mask="gx_menu_insert.c" hidden="true"/>
+        <files mask="gx_menu_position.c" hidden="true"/>
+        <files mask="gx_menu_remove.c" hidden="true"/>
+        <files mask="gx_menu_text_draw.c" hidden="true"/>
+        <files mask="gx_menu_text_offset_set.c" hidden="true"/>
+        <files mask="gx_monochrome_driver_disabled_button_line_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_create.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_event_process.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_line_pointers_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_text_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_text_id_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_button_text_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_backspace.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_buffer_clear.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_buffer_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_char_insert.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_char_remove.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_copy.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_create.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_calculate.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_cursor_pos_update.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_cursor_visible.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_cut.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_delete.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_down_arrow.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_end.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_event_process.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_fill_color_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_highlight_rectangle_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_home.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_keydown_process.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_left_arrow.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_down.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_end.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_home.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_next.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_previous.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_mark_up.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_paste.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_right_arrow.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_style_add.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_style_remove.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_style_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_text_color_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_text_rectangle_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_text_select.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_text_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_input_up_arrow.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_create.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_display_info_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_event_process.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_font_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_line_cache_update.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_line_space_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_scroll.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_string_total_rows_compute.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_text_color_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_text_draw.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_text_id_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_text_set.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_visible_rows_compute.c" hidden="true"/>
+        <files mask="gx_multi_line_text_view_whitespace_set.c" hidden="true"/>
+        <files mask="gx_numeric_pixelmap_prompt_create.c" hidden="true"/>
+        <files mask="gx_numeric_pixelmap_prompt_format.c" hidden="true"/>
+        <files mask="gx_numeric_pixelmap_prompt_format_function_set.c" hidden="true"/>
+        <files mask="gx_numeric_pixelmap_prompt_value_set.c" hidden="true"/>
+        <files mask="gx_numeric_prompt_create.c" hidden="true"/>
+        <files mask="gx_numeric_prompt_format.c" hidden="true"/>
+        <files mask="gx_numeric_prompt_format_function_set.c" hidden="true"/>
+        <files mask="gx_numeric_prompt_value_set.c" hidden="true"/>
+        <files mask="gx_numeric_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gx_numeric_scroll_wheel_range_set.c" hidden="true"/>
+        <files mask="gx_numeric_scroll_wheel_text_get.c" hidden="true"/>
+        <files mask="gx_pixelmap_button_create.c" hidden="true"/>
+        <files mask="gx_pixelmap_button_draw.c" hidden="true"/>
+        <files mask="gx_pixelmap_button_event_process.c" hidden="true"/>
+        <files mask="gx_pixelmap_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_pixelmap_button_transparent_detect.c" hidden="true"/>
+        <files mask="gx_pixelmap_prompt_background_draw.c" hidden="true"/>
+        <files mask="gx_pixelmap_prompt_create.c" hidden="true"/>
+        <files mask="gx_pixelmap_prompt_draw.c" hidden="true"/>
+        <files mask="gx_pixelmap_prompt_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_pixelmap_slider_create.c" hidden="true"/>
+        <files mask="gx_pixelmap_slider_draw.c" hidden="true"/>
+        <files mask="gx_pixelmap_slider_event_process.c" hidden="true"/>
+        <files mask="gx_pixelmap_slider_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_pixelmap_slider_pixelmap_update.c" hidden="true"/>
+        <files mask="gx_popup_list_event_process.c" hidden="true"/>
+        <files mask="gx_progress_bar_background_draw.c" hidden="true"/>
+        <files mask="gx_progress_bar_create.c" hidden="true"/>
+        <files mask="gx_progress_bar_draw.c" hidden="true"/>
+        <files mask="gx_progress_bar_event_process.c" hidden="true"/>
+        <files mask="gx_progress_bar_font_set.c" hidden="true"/>
+        <files mask="gx_progress_bar_info_set.c" hidden="true"/>
+        <files mask="gx_progress_bar_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_progress_bar_range_set.c" hidden="true"/>
+        <files mask="gx_progress_bar_text_color_set.c" hidden="true"/>
+        <files mask="gx_progress_bar_text_draw.c" hidden="true"/>
+        <files mask="gx_progress_bar_value_set.c" hidden="true"/>
+        <files mask="gx_prompt_create.c" hidden="true"/>
+        <files mask="gx_prompt_draw.c" hidden="true"/>
+        <files mask="gx_prompt_event_process.c" hidden="true"/>
+        <files mask="gx_prompt_font_set.c" hidden="true"/>
+        <files mask="gx_prompt_text_color_set.c" hidden="true"/>
+        <files mask="gx_prompt_text_draw.c" hidden="true"/>
+        <files mask="gx_prompt_text_get.c" hidden="true"/>
+        <files mask="gx_prompt_text_id_set.c" hidden="true"/>
+        <files mask="gx_prompt_text_set.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_anchor_set.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_background_draw.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_create.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_draw.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_event_process.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_font_set.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_info_set.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_resize.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_size_update.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_text_color_set.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_text_draw.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_value_calculate.c" hidden="true"/>
+        <files mask="gx_radial_progress_bar_value_set.c" hidden="true"/>
+        <files mask="gx_radial_slider_anchor_angle_calculate.c" hidden="true"/>
+        <files mask="gx_radial_slider_anchor_angles_set.c" hidden="true"/>
+        <files mask="gx_radial_slider_angle_calculate.c" hidden="true"/>
+        <files mask="gx_radial_slider_angle_set.c" hidden="true"/>
+        <files mask="gx_radial_slider_animation_set.c" hidden="true"/>
+        <files mask="gx_radial_slider_animation_start.c" hidden="true"/>
+        <files mask="gx_radial_slider_animation_update.c" hidden="true"/>
+        <files mask="gx_radial_slider_create.c" hidden="true"/>
+        <files mask="gx_radial_slider_draw.c" hidden="true"/>
+        <files mask="gx_radial_slider_event_process.c" hidden="true"/>
+        <files mask="gx_radial_slider_info_get.c" hidden="true"/>
+        <files mask="gx_radial_slider_info_set.c" hidden="true"/>
+        <files mask="gx_radial_slider_needle_rectangle_calculate.c" hidden="true"/>
+        <files mask="gx_radial_slider_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_radio_button_create.c" hidden="true"/>
+        <files mask="gx_radio_button_draw.c" hidden="true"/>
+        <files mask="gx_radio_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_peek.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_pop.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_push.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_reset.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_restore.c" hidden="true"/>
+        <files mask="gx_rich_text_view_context_save.c" hidden="true"/>
+        <files mask="gx_rich_text_view_create.c" hidden="true"/>
+        <files mask="gx_rich_text_view_draw.c" hidden="true"/>
+        <files mask="gx_rich_text_view_fonts_set.c" hidden="true"/>
+        <files mask="gx_rich_text_view_line_info_get.c" hidden="true"/>
+        <files mask="gx_rich_text_view_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_rich_text_view_tag_enter.c" hidden="true"/>
+        <files mask="gx_rich_text_view_text_draw.c" hidden="true"/>
+        <files mask="gx_rich_text_view_text_total_height_calculate.c" hidden="true"/>
+        <files mask="gx_screen_stack_create.c" hidden="true"/>
+        <files mask="gx_screen_stack_pop.c" hidden="true"/>
+        <files mask="gx_screen_stack_push.c" hidden="true"/>
+        <files mask="gx_screen_stack_reset.c" hidden="true"/>
+        <files mask="gx_scroll_thumb_create.c" hidden="true"/>
+        <files mask="gx_scroll_thumb_draw.c" hidden="true"/>
+        <files mask="gx_scroll_thumb_event_process.c" hidden="true"/>
+        <files mask="gx_scroll_thumb_shift_limit.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_gradient_alpha_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_gradient_create.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_row_height_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_scroll.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_selected_background_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_selected_get.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_selected_row_calculate.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_selected_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_speed_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_total_rows_set.c" hidden="true"/>
+        <files mask="gx_scroll_wheel_wrap_style_check.c" hidden="true"/>
+        <files mask="gx_scrollbar_draw.c" hidden="true"/>
+        <files mask="gx_scrollbar_event_process.c" hidden="true"/>
+        <files mask="gx_scrollbar_limit_check.c" hidden="true"/>
+        <files mask="gx_scrollbar_reset.c" hidden="true"/>
+        <files mask="gx_scrollbar_size_update.c" hidden="true"/>
+        <files mask="gx_scrollbar_thumb_position_calculate.c" hidden="true"/>
+        <files mask="gx_scrollbar_value_calculate.c" hidden="true"/>
+        <files mask="gx_scrollbar_value_set.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_backspace.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_buffer_clear.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_buffer_get.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_character_delete.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_character_insert.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_copy.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_create.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_cut.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_draw.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_draw_position_get.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_end.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_event_process.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_fill_color_set.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_home.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_keydown_process.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_left_arrow.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_mark_end.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_mark_home.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_mark_next.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_mark_previous.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_paste.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_position_get.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_position_update.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_right_arrow.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_style_add.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_style_remove.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_style_set.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_text_color_set.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_text_rectangle_get.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_text_select.c" hidden="true"/>
+        <files mask="gx_single_line_text_input_text_set.c" hidden="true"/>
+        <files mask="gx_slider_create.c" hidden="true"/>
+        <files mask="gx_slider_draw.c" hidden="true"/>
+        <files mask="gx_slider_event_process.c" hidden="true"/>
+        <files mask="gx_slider_info_set.c" hidden="true"/>
+        <files mask="gx_slider_needle_draw.c" hidden="true"/>
+        <files mask="gx_slider_needle_position_get.c" hidden="true"/>
+        <files mask="gx_slider_tickmarks_draw.c" hidden="true"/>
+        <files mask="gx_slider_travel_get.c" hidden="true"/>
+        <files mask="gx_slider_value_calculate.c" hidden="true"/>
+        <files mask="gx_slider_value_set.c" hidden="true"/>
+        <files mask="gx_sprite_create.c" hidden="true"/>
+        <files mask="gx_sprite_current_frame_set.c" hidden="true"/>
+        <files mask="gx_sprite_draw.c" hidden="true"/>
+        <files mask="gx_sprite_event_process.c" hidden="true"/>
+        <files mask="gx_sprite_frame_list_set.c" hidden="true"/>
+        <files mask="gx_sprite_start.c" hidden="true"/>
+        <files mask="gx_sprite_stop.c" hidden="true"/>
+        <files mask="gx_sprite_update.c" hidden="true"/>
+        <files mask="gx_string_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gx_string_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gx_string_scroll_wheel_string_id_list_set.c" hidden="true"/>
+        <files mask="gx_string_scroll_wheel_string_list_set.c" hidden="true"/>
+        <files mask="gx_string_scroll_wheel_text_get.c" hidden="true"/>
+        <files mask="gx_system_active_language_set.c" hidden="true"/>
+        <files mask="gx_system_all_canvas_dirty.c" hidden="true"/>
+        <files mask="gx_system_all_views_free.c" hidden="true"/>
+        <files mask="gx_system_animation_free.c" hidden="true"/>
+        <files mask="gx_system_animation_get.c" hidden="true"/>
+        <files mask="gx_system_bidi_text_disable.c" hidden="true"/>
+        <files mask="gx_system_bidi_text_enable.c" hidden="true"/>
+        <files mask="gx_system_canvas_refresh.c" hidden="true"/>
+        <files mask="gx_system_clipboard_get.c" hidden="true"/>
+        <files mask="gx_system_clipboard_put.c" hidden="true"/>
+        <files mask="gx_system_dirty_list_remove.c" hidden="true"/>
+        <files mask="gx_system_dirty_list_trim.c" hidden="true"/>
+        <files mask="gx_system_dirty_mark.c" hidden="true"/>
+        <files mask="gx_system_dirty_partial_add.c" hidden="true"/>
+        <files mask="gx_system_draw_context_get.c" hidden="true"/>
+        <files mask="gx_system_error_process.c" hidden="true"/>
+        <files mask="gx_system_event_dispatch.c" hidden="true"/>
+        <files mask="gx_system_event_fold.c" hidden="true"/>
+        <files mask="gx_system_event_remove.c" hidden="true"/>
+        <files mask="gx_system_event_send.c" hidden="true"/>
+        <files mask="gx_system_focus_claim.c" hidden="true"/>
+        <files mask="gx_system_font_4bpp.c" hidden="true"/>
+        <files mask="gx_system_font_8bpp.c" hidden="true"/>
+        <files mask="gx_system_font_mono.c" hidden="true"/>
+        <files mask="gx_system_free_view_get.c" hidden="true"/>
+        <files mask="gx_system_initialize.c" hidden="true"/>
+        <files mask="gx_system_input_capture.c" hidden="true"/>
+        <files mask="gx_system_input_release.c" hidden="true"/>
+        <files mask="gx_system_language_table_get.c" hidden="true"/>
+        <files mask="gx_system_language_table_set.c" hidden="true"/>
+        <files mask="gx_system_lock.c" hidden="true"/>
+        <files mask="gx_system_memory_allocator_set.c" hidden="true"/>
+        <files mask="gx_system_pen_configure.c" hidden="true"/>
+        <files mask="gx_system_pen_flick_test.c" hidden="true"/>
+        <files mask="gx_system_pen_speed_init.c" hidden="true"/>
+        <files mask="gx_system_pen_speed_update.c" hidden="true"/>
+        <files mask="gx_system_private_string.c" hidden="true"/>
+        <files mask="gx_system_root_view_add.c" hidden="true"/>
+        <files mask="gx_system_rtos_bind.c" hidden="true"/>
+        <files mask="gx_system_screen_stack_create.c" hidden="true"/>
+        <files mask="gx_system_screen_stack_get.c" hidden="true"/>
+        <files mask="gx_system_screen_stack_pop.c" hidden="true"/>
+        <files mask="gx_system_screen_stack_push.c" hidden="true"/>
+        <files mask="gx_system_screen_stack_reset.c" hidden="true"/>
+        <files mask="gx_system_scroll_appearance_get.c" hidden="true"/>
+        <files mask="gx_system_scroll_appearance_set.c" hidden="true"/>
+        <files mask="gx_system_start.c" hidden="true"/>
+        <files mask="gx_system_string_get.c" hidden="true"/>
+        <files mask="gx_system_string_table_get.c" hidden="true"/>
+        <files mask="gx_system_string_width_get.c" hidden="true"/>
+        <files mask="gx_system_text_render_style_set.c" hidden="true"/>
+        <files mask="gx_system_thread_entry.c" hidden="true"/>
+        <files mask="gx_system_timer_expiration.c" hidden="true"/>
+        <files mask="gx_system_timer_start.c" hidden="true"/>
+        <files mask="gx_system_timer_stop.c" hidden="true"/>
+        <files mask="gx_system_timer_update.c" hidden="true"/>
+        <files mask="gx_system_top_root_find.c" hidden="true"/>
+        <files mask="gx_system_top_widget_find.c" hidden="true"/>
+        <files mask="gx_system_unlock.c" hidden="true"/>
+        <files mask="gx_system_version_string_get.c" hidden="true"/>
+        <files mask="gx_system_view_add.c" hidden="true"/>
+        <files mask="gx_system_view_fold.c" hidden="true"/>
+        <files mask="gx_system_view_split.c" hidden="true"/>
+        <files mask="gx_system_views_free.c" hidden="true"/>
+        <files mask="gx_system_views_update.c" hidden="true"/>
+        <files mask="gx_system_widget_find.c" hidden="true"/>
+        <files mask="gx_text_button_create.c" hidden="true"/>
+        <files mask="gx_text_button_draw.c" hidden="true"/>
+        <files mask="gx_text_button_event_process.c" hidden="true"/>
+        <files mask="gx_text_button_font_set.c" hidden="true"/>
+        <files mask="gx_text_button_text_color_set.c" hidden="true"/>
+        <files mask="gx_text_button_text_draw.c" hidden="true"/>
+        <files mask="gx_text_button_text_get.c" hidden="true"/>
+        <files mask="gx_text_button_text_id_set.c" hidden="true"/>
+        <files mask="gx_text_button_text_set.c" hidden="true"/>
+        <files mask="gx_text_input_cursor_blink_interval_set.c" hidden="true"/>
+        <files mask="gx_text_input_cursor_dirty_rectangle_get.c" hidden="true"/>
+        <files mask="gx_text_input_cursor_draw.c" hidden="true"/>
+        <files mask="gx_text_input_cursor_height_set.c" hidden="true"/>
+        <files mask="gx_text_input_cursor_width_set.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_callback_set.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_draw.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_dynamic_bidi_text_delete.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_font_set.c" hidden="true"/>
+        <files mask="gx_text_scroll_wheel_text_color_set.c" hidden="true"/>
+        <files mask="gx_touch_driver_generic_resistive.c" hidden="true"/>
+        <files mask="gx_tree_view_create.c" hidden="true"/>
+        <files mask="gx_tree_view_draw.c" hidden="true"/>
+        <files mask="gx_tree_view_event_process.c" hidden="true"/>
+        <files mask="gx_tree_view_indentation_set.c" hidden="true"/>
+        <files mask="gx_tree_view_position.c" hidden="true"/>
+        <files mask="gx_tree_view_root_line_color_set.c" hidden="true"/>
+        <files mask="gx_tree_view_root_pixelmap_set.c" hidden="true"/>
+        <files mask="gx_tree_view_scroll.c" hidden="true"/>
+        <files mask="gx_tree_view_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_tree_view_selected_get.c" hidden="true"/>
+        <files mask="gx_tree_view_selected_set.c" hidden="true"/>
+        <files mask="gx_utility_1555xrgb_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_1555xrgb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_16bpp_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_1bpp_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_1bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_32argb_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_32argb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_332rgb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_4444argb_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_4444argb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_4bpp_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_4bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_565rgb_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_8bpp_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_8bpp_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_alphamap_create.c" hidden="true"/>
+        <files mask="gx_utility_bidi_arabic_shaping.c" hidden="true"/>
+        <files mask="gx_utility_bidi_bracket_pair_get.c" hidden="true"/>
+        <files mask="gx_utility_bidi_character_type_get.c" hidden="true"/>
+        <files mask="gx_utility_bidi_mirroring_get.c" hidden="true"/>
+        <files mask="gx_utility_bidi_paragraph_reorder.c" hidden="true"/>
+        <files mask="gx_utility_bidi_resolved_text_info_delete.c" hidden="true"/>
+        <files mask="gx_utility_canvas_to_bmp.c" hidden="true"/>
+        <files mask="gx_utility_circle_point_get.c" hidden="true"/>
+        <files mask="gx_utility_easing_function_calculate.c" hidden="true"/>
+        <files mask="gx_utility_gradient_create.c" hidden="true"/>
+        <files mask="gx_utility_gradient_delete.c" hidden="true"/>
+        <files mask="gx_utility_ltoa.c" hidden="true"/>
+        <files mask="gx_utility_math_acos.c" hidden="true"/>
+        <files mask="gx_utility_math_asin.c" hidden="true"/>
+        <files mask="gx_utility_math_cos.c" hidden="true"/>
+        <files mask="gx_utility_math_sin.c" hidden="true"/>
+        <files mask="gx_utility_math_sqrt.c" hidden="true"/>
+        <files mask="gx_utility_pixelmap_resize.c" hidden="true"/>
+        <files mask="gx_utility_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gx_utility_pixelmap_simple_rotate.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_center.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_center_find.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_combine.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_compare.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_define.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_inside_detect.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_overlap_detect.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_point_detect.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_resize.c" hidden="true"/>
+        <files mask="gx_utility_rectangle_shift.c" hidden="true"/>
+        <files mask="gx_utility_string_compare.c" hidden="true"/>
+        <files mask="gx_utility_string_length_check.c" hidden="true"/>
+        <files mask="gx_utility_string_to_alphamap.c" hidden="true"/>
+        <files mask="gx_utility_thai_glyph_shaping.c" hidden="true"/>
+        <files mask="gx_utility_unicode_to_utf8.c" hidden="true"/>
+        <files mask="gx_utility_utf8_string_backward_character_length_get.c" hidden="true"/>
+        <files mask="gx_utility_utf8_string_character_get.c" hidden="true"/>
+        <files mask="gx_vertical_list_children_position.c" hidden="true"/>
+        <files mask="gx_vertical_list_create.c" hidden="true"/>
+        <files mask="gx_vertical_list_down_wrap.c" hidden="true"/>
+        <files mask="gx_vertical_list_event_process.c" hidden="true"/>
+        <files mask="gx_vertical_list_page_index_set.c" hidden="true"/>
+        <files mask="gx_vertical_list_scroll.c" hidden="true"/>
+        <files mask="gx_vertical_list_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_vertical_list_selected_index_get.c" hidden="true"/>
+        <files mask="gx_vertical_list_selected_set.c" hidden="true"/>
+        <files mask="gx_vertical_list_selected_visible.c" hidden="true"/>
+        <files mask="gx_vertical_list_selected_widget_get.c" hidden="true"/>
+        <files mask="gx_vertical_list_slide_back_check.c" hidden="true"/>
+        <files mask="gx_vertical_list_total_rows_set.c" hidden="true"/>
+        <files mask="gx_vertical_list_up_wrap.c" hidden="true"/>
+        <files mask="gx_vertical_scrollbar_create.c" hidden="true"/>
+        <files mask="gx_widget_allocate.c" hidden="true"/>
+        <files mask="gx_widget_attach.c" hidden="true"/>
+        <files mask="gx_widget_back_attach.c" hidden="true"/>
+        <files mask="gx_widget_back_link.c" hidden="true"/>
+        <files mask="gx_widget_back_move.c" hidden="true"/>
+        <files mask="gx_widget_background_draw.c" hidden="true"/>
+        <files mask="gx_widget_block_move.c" hidden="true"/>
+        <files mask="gx_widget_border_draw.c" hidden="true"/>
+        <files mask="gx_widget_border_style_set.c" hidden="true"/>
+        <files mask="gx_widget_border_width_get.c" hidden="true"/>
+        <files mask="gx_widget_canvas_get.c" hidden="true"/>
+        <files mask="gx_widget_child_clipping_update.c" hidden="true"/>
+        <files mask="gx_widget_child_detect.c" hidden="true"/>
+        <files mask="gx_widget_child_focus_assign.c" hidden="true"/>
+        <files mask="gx_widget_children_draw.c" hidden="true"/>
+        <files mask="gx_widget_children_event_process.c" hidden="true"/>
+        <files mask="gx_widget_client_get.c" hidden="true"/>
+        <files mask="gx_widget_client_index_get.c" hidden="true"/>
+        <files mask="gx_widget_clipping_update.c" hidden="true"/>
+        <files mask="gx_widget_color_get.c" hidden="true"/>
+        <files mask="gx_widget_context_fill_set.c" hidden="true"/>
+        <files mask="gx_widget_create.c" hidden="true"/>
+        <files mask="gx_widget_created_test.c" hidden="true"/>
+        <files mask="gx_widget_delete.c" hidden="true"/>
+        <files mask="gx_widget_detach.c" hidden="true"/>
+        <files mask="gx_widget_draw.c" hidden="true"/>
+        <files mask="gx_widget_draw_set.c" hidden="true"/>
+        <files mask="gx_widget_event_generate.c" hidden="true"/>
+        <files mask="gx_widget_event_process.c" hidden="true"/>
+        <files mask="gx_widget_event_process_set.c" hidden="true"/>
+        <files mask="gx_widget_event_to_parent.c" hidden="true"/>
+        <files mask="gx_widget_fill_color_set.c" hidden="true"/>
+        <files mask="gx_widget_find.c" hidden="true"/>
+        <files mask="gx_widget_first_child_get.c" hidden="true"/>
+        <files mask="gx_widget_first_client_child_get.c" hidden="true"/>
+        <files mask="gx_widget_focus_next.c" hidden="true"/>
+        <files mask="gx_widget_focus_previous.c" hidden="true"/>
+        <files mask="gx_widget_font_get.c" hidden="true"/>
+        <files mask="gx_widget_free.c" hidden="true"/>
+        <files mask="gx_widget_front_move.c" hidden="true"/>
+        <files mask="gx_widget_height_get.c" hidden="true"/>
+        <files mask="gx_widget_hide.c" hidden="true"/>
+        <files mask="gx_widget_last_child_get.c" hidden="true"/>
+        <files mask="gx_widget_last_client_child_get.c" hidden="true"/>
+        <files mask="gx_widget_link.c" hidden="true"/>
+        <files mask="gx_widget_nav_order_initialize.c" hidden="true"/>
+        <files mask="gx_widget_next_client_child_get.c" hidden="true"/>
+        <files mask="gx_widget_next_sibling_get.c" hidden="true"/>
+        <files mask="gx_widget_parent_get.c" hidden="true"/>
+        <files mask="gx_widget_pixelmap_get.c" hidden="true"/>
+        <files mask="gx_widget_previous_sibling_get.c" hidden="true"/>
+        <files mask="gx_widget_resize.c" hidden="true"/>
+        <files mask="gx_widget_scroll_shift.c" hidden="true"/>
+        <files mask="gx_widget_shift.c" hidden="true"/>
+        <files mask="gx_widget_show.c" hidden="true"/>
+        <files mask="gx_widget_status_add.c" hidden="true"/>
+        <files mask="gx_widget_status_get.c" hidden="true"/>
+        <files mask="gx_widget_status_remove.c" hidden="true"/>
+        <files mask="gx_widget_status_test.c" hidden="true"/>
+        <files mask="gx_widget_string_get.c" hidden="true"/>
+        <files mask="gx_widget_style_add.c" hidden="true"/>
+        <files mask="gx_widget_style_get.c" hidden="true"/>
+        <files mask="gx_widget_style_remove.c" hidden="true"/>
+        <files mask="gx_widget_style_set.c" hidden="true"/>
+        <files mask="gx_widget_text_blend.c" hidden="true"/>
+        <files mask="gx_widget_text_draw.c" hidden="true"/>
+        <files mask="gx_widget_text_id_draw.c" hidden="true"/>
+        <files mask="gx_widget_top_visible_child_find.c" hidden="true"/>
+        <files mask="gx_widget_transparent_pixelmap_detect.c" hidden="true"/>
+        <files mask="gx_widget_type_find.c" hidden="true"/>
+        <files mask="gx_widget_unlink.c" hidden="true"/>
+        <files mask="gx_widget_width_get.c" hidden="true"/>
+        <files mask="gx_window_background_draw.c" hidden="true"/>
+        <files mask="gx_window_border_draw.c" hidden="true"/>
+        <files mask="gx_window_client_height_get.c" hidden="true"/>
+        <files mask="gx_window_client_scroll.c" hidden="true"/>
+        <files mask="gx_window_client_width_get.c" hidden="true"/>
+        <files mask="gx_window_close.c" hidden="true"/>
+        <files mask="gx_window_create.c" hidden="true"/>
+        <files mask="gx_window_draw.c" hidden="true"/>
+        <files mask="gx_window_event_process.c" hidden="true"/>
+        <files mask="gx_window_execute.c" hidden="true"/>
+        <files mask="gx_window_root_create.c" hidden="true"/>
+        <files mask="gx_window_root_delete.c" hidden="true"/>
+        <files mask="gx_window_root_event_process.c" hidden="true"/>
+        <files mask="gx_window_root_find.c" hidden="true"/>
+        <files mask="gx_window_scroll.c" hidden="true"/>
+        <files mask="gx_window_scroll_info_get.c" hidden="true"/>
+        <files mask="gx_window_scrollbar_find.c" hidden="true"/>
+        <files mask="gx_window_view_update_detect.c" hidden="true"/>
+        <files mask="gx_window_wallpaper_get.c" hidden="true"/>
+        <files mask="gx_window_wallpaper_set.c" hidden="true"/>
+        <files mask="gxe_accordion_menu_create.c" hidden="true"/>
+        <files mask="gxe_accordion_menu_event_process.c" hidden="true"/>
+        <files mask="gxe_accordion_menu_position.c" hidden="true"/>
+        <files mask="gxe_animation_canvas_define.c" hidden="true"/>
+        <files mask="gxe_animation_create.c" hidden="true"/>
+        <files mask="gxe_animation_delete.c" hidden="true"/>
+        <files mask="gxe_animation_drag_disable.c" hidden="true"/>
+        <files mask="gxe_animation_drag_enable.c" hidden="true"/>
+        <files mask="gxe_animation_landing_speed_set.c" hidden="true"/>
+        <files mask="gxe_animation_start.c" hidden="true"/>
+        <files mask="gxe_animation_stop.c" hidden="true"/>
+        <files mask="gxe_binres_language_count_get.c" hidden="true"/>
+        <files mask="gxe_binres_language_info_load.c" hidden="true"/>
+        <files mask="gxe_binres_language_table_load.c" hidden="true"/>
+        <files mask="gxe_binres_theme_load.c" hidden="true"/>
+        <files mask="gxe_brush_default.c" hidden="true"/>
+        <files mask="gxe_brush_define.c" hidden="true"/>
+        <files mask="gxe_button_create.c" hidden="true"/>
+        <files mask="gxe_button_deselect.c" hidden="true"/>
+        <files mask="gxe_button_event_process.c" hidden="true"/>
+        <files mask="gxe_button_select.c" hidden="true"/>
+        <files mask="gxe_canvas_alpha_set.c" hidden="true"/>
+        <files mask="gxe_canvas_arc_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_block_move.c" hidden="true"/>
+        <files mask="gxe_canvas_circle_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_create.c" hidden="true"/>
+        <files mask="gxe_canvas_delete.c" hidden="true"/>
+        <files mask="gxe_canvas_drawing_complete.c" hidden="true"/>
+        <files mask="gxe_canvas_drawing_initiate.c" hidden="true"/>
+        <files mask="gxe_canvas_ellipse_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_hardware_layer_bind.c" hidden="true"/>
+        <files mask="gxe_canvas_hide.c" hidden="true"/>
+        <files mask="gxe_canvas_line_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_memory_define.c" hidden="true"/>
+        <files mask="gxe_canvas_mouse_define.c" hidden="true"/>
+        <files mask="gxe_canvas_mouse_hide.c" hidden="true"/>
+        <files mask="gxe_canvas_mouse_show.c" hidden="true"/>
+        <files mask="gxe_canvas_offset_set.c" hidden="true"/>
+        <files mask="gxe_canvas_pie_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_pixel_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_pixelmap_blend.c" hidden="true"/>
+        <files mask="gxe_canvas_pixelmap_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_pixelmap_get.c" hidden="true"/>
+        <files mask="gxe_canvas_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gxe_canvas_pixelmap_tile.c" hidden="true"/>
+        <files mask="gxe_canvas_polygon_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_rectangle_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_rotated_text_draw.c" hidden="true"/>
+        <files mask="gxe_canvas_shift.c" hidden="true"/>
+        <files mask="gxe_canvas_show.c" hidden="true"/>
+        <files mask="gxe_canvas_text_draw.c" hidden="true"/>
+        <files mask="gxe_checkbox_create.c" hidden="true"/>
+        <files mask="gxe_checkbox_event_process.c" hidden="true"/>
+        <files mask="gxe_checkbox_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_checkbox_select.c" hidden="true"/>
+        <files mask="gxe_circular_gauge_angle_get.c" hidden="true"/>
+        <files mask="gxe_circular_gauge_angle_set.c" hidden="true"/>
+        <files mask="gxe_circular_gauge_animation_set.c" hidden="true"/>
+        <files mask="gxe_circular_gauge_create.c" hidden="true"/>
+        <files mask="gxe_circular_gauge_event_process.c" hidden="true"/>
+        <files mask="gxe_context_brush_default.c" hidden="true"/>
+        <files mask="gxe_context_brush_define.c" hidden="true"/>
+        <files mask="gxe_context_brush_get.c" hidden="true"/>
+        <files mask="gxe_context_brush_pattern_set.c" hidden="true"/>
+        <files mask="gxe_context_brush_set.c" hidden="true"/>
+        <files mask="gxe_context_brush_style_set.c" hidden="true"/>
+        <files mask="gxe_context_brush_width_set.c" hidden="true"/>
+        <files mask="gxe_context_color_get.c" hidden="true"/>
+        <files mask="gxe_context_fill_color_set.c" hidden="true"/>
+        <files mask="gxe_context_font_get.c" hidden="true"/>
+        <files mask="gxe_context_font_set.c" hidden="true"/>
+        <files mask="gxe_context_line_color_set.c" hidden="true"/>
+        <files mask="gxe_context_pixelmap_get.c" hidden="true"/>
+        <files mask="gxe_context_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_context_raw_brush_define.c" hidden="true"/>
+        <files mask="gxe_context_raw_fill_color_set.c" hidden="true"/>
+        <files mask="gxe_context_raw_line_color_set.c" hidden="true"/>
+        <files mask="gxe_context_string_get.c" hidden="true"/>
+        <files mask="gxe_display_active_language_set.c" hidden="true"/>
+        <files mask="gxe_display_color_set.c" hidden="true"/>
+        <files mask="gxe_display_color_table_set.c" hidden="true"/>
+        <files mask="gxe_display_create.c" hidden="true"/>
+        <files mask="gxe_display_delete.c" hidden="true"/>
+        <files mask="gxe_display_font_table_set.c" hidden="true"/>
+        <files mask="gxe_display_language_table_get.c" hidden="true"/>
+        <files mask="gxe_display_language_table_set.c" hidden="true"/>
+        <files mask="gxe_display_pixelmap_table_set.c" hidden="true"/>
+        <files mask="gxe_display_string_get.c" hidden="true"/>
+        <files mask="gxe_display_string_table_get.c" hidden="true"/>
+        <files mask="gxe_display_theme_install.c" hidden="true"/>
+        <files mask="gxe_drop_list_close.c" hidden="true"/>
+        <files mask="gxe_drop_list_create.c" hidden="true"/>
+        <files mask="gxe_drop_list_event_process.c" hidden="true"/>
+        <files mask="gxe_drop_list_open.c" hidden="true"/>
+        <files mask="gxe_drop_list_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_drop_list_popup_get.c" hidden="true"/>
+        <files mask="gxe_generic_scroll_wheel_children_position.c" hidden="true"/>
+        <files mask="gxe_generic_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gxe_generic_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gxe_generic_scroll_wheel_row_height_set.c" hidden="true"/>
+        <files mask="gxe_generic_scroll_wheel_total_rows_set.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_children_position.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_create.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_event_process.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_page_index_set.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_selected_index_get.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_selected_set.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_selected_widget_get.c" hidden="true"/>
+        <files mask="gxe_horizontal_list_total_columns_set.c" hidden="true"/>
+        <files mask="gxe_horizontal_scrollbar_create.c" hidden="true"/>
+        <files mask="gxe_icon_button_create.c" hidden="true"/>
+        <files mask="gxe_icon_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_icon_create.c" hidden="true"/>
+        <files mask="gxe_icon_event_process.c" hidden="true"/>
+        <files mask="gxe_icon_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_image_reader_create.c" hidden="true"/>
+        <files mask="gxe_image_reader_palette_set.c" hidden="true"/>
+        <files mask="gxe_image_reader_start.c" hidden="true"/>
+        <files mask="gxe_line_chart_create.c" hidden="true"/>
+        <files mask="gxe_line_chart_update.c" hidden="true"/>
+        <files mask="gxe_line_chart_y_scale_calculate.c" hidden="true"/>
+        <files mask="gxe_menu_create.c" hidden="true"/>
+        <files mask="gxe_menu_event_process.c" hidden="true"/>
+        <files mask="gxe_menu_insert.c" hidden="true"/>
+        <files mask="gxe_menu_remove.c" hidden="true"/>
+        <files mask="gxe_menu_text_offset_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_button_create.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_button_event_process.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_button_text_id_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_button_text_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_backspace.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_buffer_clear.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_buffer_get.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_char_insert.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_create.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_cursor_pos_get.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_delete.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_down_arrow.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_end.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_event_process.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_fill_color_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_home.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_left_arrow.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_right_arrow.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_style_add.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_style_remove.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_style_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_text_color_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_text_select.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_text_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_input_up_arrow.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_create.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_event_process.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_font_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_line_space_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_scroll_info_get.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_text_color_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_text_id_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_text_set.c" hidden="true"/>
+        <files mask="gxe_multi_line_text_view_whitespace_set.c" hidden="true"/>
+        <files mask="gxe_numeric_pixelmap_prompt_create.c" hidden="true"/>
+        <files mask="gxe_numeric_pixelmap_prompt_format_function_set.c" hidden="true"/>
+        <files mask="gxe_numeric_pixelmap_prompt_value_set.c" hidden="true"/>
+        <files mask="gxe_numeric_prompt_create.c" hidden="true"/>
+        <files mask="gxe_numeric_prompt_format_function_set.c" hidden="true"/>
+        <files mask="gxe_numeric_prompt_value_set.c" hidden="true"/>
+        <files mask="gxe_numeric_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gxe_numeric_scroll_wheel_range_set.c" hidden="true"/>
+        <files mask="gxe_pixelmap_button_create.c" hidden="true"/>
+        <files mask="gxe_pixelmap_button_event_process.c" hidden="true"/>
+        <files mask="gxe_pixelmap_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_pixelmap_prompt_create.c" hidden="true"/>
+        <files mask="gxe_pixelmap_prompt_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_pixelmap_slider_create.c" hidden="true"/>
+        <files mask="gxe_pixelmap_slider_event_process.c" hidden="true"/>
+        <files mask="gxe_pixelmap_slider_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_create.c" hidden="true"/>
+        <files mask="gxe_progress_bar_event_process.c" hidden="true"/>
+        <files mask="gxe_progress_bar_font_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_info_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_range_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_text_color_set.c" hidden="true"/>
+        <files mask="gxe_progress_bar_value_set.c" hidden="true"/>
+        <files mask="gxe_prompt_create.c" hidden="true"/>
+        <files mask="gxe_prompt_event_process.c" hidden="true"/>
+        <files mask="gxe_prompt_font_set.c" hidden="true"/>
+        <files mask="gxe_prompt_text_color_set.c" hidden="true"/>
+        <files mask="gxe_prompt_text_get.c" hidden="true"/>
+        <files mask="gxe_prompt_text_id_set.c" hidden="true"/>
+        <files mask="gxe_prompt_text_set.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_anchor_set.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_create.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_event_process.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_font_set.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_info_set.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_text_color_set.c" hidden="true"/>
+        <files mask="gxe_radial_progress_bar_value_set.c" hidden="true"/>
+        <files mask="gxe_radial_slider_anchor_angles_set.c" hidden="true"/>
+        <files mask="gxe_radial_slider_angle_set.c" hidden="true"/>
+        <files mask="gxe_radial_slider_animation_set.c" hidden="true"/>
+        <files mask="gxe_radial_slider_animation_start.c" hidden="true"/>
+        <files mask="gxe_radial_slider_create.c" hidden="true"/>
+        <files mask="gxe_radial_slider_event_process.c" hidden="true"/>
+        <files mask="gxe_radial_slider_info_get.c" hidden="true"/>
+        <files mask="gxe_radial_slider_info_set.c" hidden="true"/>
+        <files mask="gxe_radial_slider_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_radio_button_create.c" hidden="true"/>
+        <files mask="gxe_radio_button_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_rich_text_view_create.c" hidden="true"/>
+        <files mask="gxe_rich_text_view_fonts_set.c" hidden="true"/>
+        <files mask="gxe_screen_stack_create.c" hidden="true"/>
+        <files mask="gxe_screen_stack_pop.c" hidden="true"/>
+        <files mask="gxe_screen_stack_push.c" hidden="true"/>
+        <files mask="gxe_screen_stack_reset.c" hidden="true"/>
+        <files mask="gxe_scroll_thumb_create.c" hidden="true"/>
+        <files mask="gxe_scroll_thumb_event_process.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_gradient_alpha_set.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_row_height_set.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_selected_background_set.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_selected_get.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_selected_set.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_speed_set.c" hidden="true"/>
+        <files mask="gxe_scroll_wheel_total_rows_set.c" hidden="true"/>
+        <files mask="gxe_scrollbar_event_process.c" hidden="true"/>
+        <files mask="gxe_scrollbar_limit_check.c" hidden="true"/>
+        <files mask="gxe_scrollbar_reset.c" hidden="true"/>
+        <files mask="gxe_scrollbar_value_set.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_backspace.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_buffer_clear.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_buffer_get.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_character_delete.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_character_insert.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_create.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_draw_position_get.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_end.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_event_process.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_fill_color_set.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_home.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_left_arrow.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_position_get.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_right_arrow.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_style_add.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_style_remove.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_style_set.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_text_color_set.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_text_select.c" hidden="true"/>
+        <files mask="gxe_single_line_text_input_text_set.c" hidden="true"/>
+        <files mask="gxe_slider_create.c" hidden="true"/>
+        <files mask="gxe_slider_event_process.c" hidden="true"/>
+        <files mask="gxe_slider_info_set.c" hidden="true"/>
+        <files mask="gxe_slider_needle_position_get.c" hidden="true"/>
+        <files mask="gxe_slider_travel_get.c" hidden="true"/>
+        <files mask="gxe_slider_value_calculate.c" hidden="true"/>
+        <files mask="gxe_slider_value_set.c" hidden="true"/>
+        <files mask="gxe_sprite_create.c" hidden="true"/>
+        <files mask="gxe_sprite_current_frame_set.c" hidden="true"/>
+        <files mask="gxe_sprite_frame_list_set.c" hidden="true"/>
+        <files mask="gxe_sprite_start.c" hidden="true"/>
+        <files mask="gxe_sprite_stop.c" hidden="true"/>
+        <files mask="gxe_string_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gxe_string_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gxe_string_scroll_wheel_string_id_list_set.c" hidden="true"/>
+        <files mask="gxe_string_scroll_wheel_string_list_set.c" hidden="true"/>
+        <files mask="gxe_system_active_language_set.c" hidden="true"/>
+        <files mask="gxe_system_animation_free.c" hidden="true"/>
+        <files mask="gxe_system_animation_get.c" hidden="true"/>
+        <files mask="gxe_system_canvas_refresh.c" hidden="true"/>
+        <files mask="gxe_system_dirty_mark.c" hidden="true"/>
+        <files mask="gxe_system_dirty_partial_add.c" hidden="true"/>
+        <files mask="gxe_system_draw_context_get.c" hidden="true"/>
+        <files mask="gxe_system_event_fold.c" hidden="true"/>
+        <files mask="gxe_system_event_send.c" hidden="true"/>
+        <files mask="gxe_system_focus_claim.c" hidden="true"/>
+        <files mask="gxe_system_initialize.c" hidden="true"/>
+        <files mask="gxe_system_language_table_get.c" hidden="true"/>
+        <files mask="gxe_system_language_table_set.c" hidden="true"/>
+        <files mask="gxe_system_memory_allocator_set.c" hidden="true"/>
+        <files mask="gxe_system_pen_configure.c" hidden="true"/>
+        <files mask="gxe_system_screen_stack_create.c" hidden="true"/>
+        <files mask="gxe_system_screen_stack_get.c" hidden="true"/>
+        <files mask="gxe_system_screen_stack_pop.c" hidden="true"/>
+        <files mask="gxe_system_screen_stack_push.c" hidden="true"/>
+        <files mask="gxe_system_scroll_appearance_get.c" hidden="true"/>
+        <files mask="gxe_system_scroll_appearance_set.c" hidden="true"/>
+        <files mask="gxe_system_start.c" hidden="true"/>
+        <files mask="gxe_system_string_get.c" hidden="true"/>
+        <files mask="gxe_system_string_table_get.c" hidden="true"/>
+        <files mask="gxe_system_string_width_get.c" hidden="true"/>
+        <files mask="gxe_system_timer_start.c" hidden="true"/>
+        <files mask="gxe_system_timer_stop.c" hidden="true"/>
+        <files mask="gxe_system_version_string_get.c" hidden="true"/>
+        <files mask="gxe_system_widget_find.c" hidden="true"/>
+        <files mask="gxe_text_button_create.c" hidden="true"/>
+        <files mask="gxe_text_button_event_process.c" hidden="true"/>
+        <files mask="gxe_text_button_font_set.c" hidden="true"/>
+        <files mask="gxe_text_button_text_color_set.c" hidden="true"/>
+        <files mask="gxe_text_button_text_get.c" hidden="true"/>
+        <files mask="gxe_text_button_text_id_set.c" hidden="true"/>
+        <files mask="gxe_text_button_text_set.c" hidden="true"/>
+        <files mask="gxe_text_input_cursor_blink_interval_set.c" hidden="true"/>
+        <files mask="gxe_text_input_cursor_height_set.c" hidden="true"/>
+        <files mask="gxe_text_input_cursor_width_set.c" hidden="true"/>
+        <files mask="gxe_text_scroll_wheel_callback_set.c" hidden="true"/>
+        <files mask="gxe_text_scroll_wheel_create.c" hidden="true"/>
+        <files mask="gxe_text_scroll_wheel_event_process.c" hidden="true"/>
+        <files mask="gxe_text_scroll_wheel_font_set.c" hidden="true"/>
+        <files mask="gxe_text_scroll_wheel_text_color_set.c" hidden="true"/>
+        <files mask="gxe_tree_view_create.c" hidden="true"/>
+        <files mask="gxe_tree_view_event_process.c" hidden="true"/>
+        <files mask="gxe_tree_view_indentation_set.c" hidden="true"/>
+        <files mask="gxe_tree_view_position.c" hidden="true"/>
+        <files mask="gxe_tree_view_root_line_color_set.c" hidden="true"/>
+        <files mask="gxe_tree_view_root_pixelmap_set.c" hidden="true"/>
+        <files mask="gxe_tree_view_selected_get.c" hidden="true"/>
+        <files mask="gxe_tree_view_selected_set.c" hidden="true"/>
+        <files mask="gxe_utility_bidi_paragraph_reorder.c" hidden="true"/>
+        <files mask="gxe_utility_bidi_resolved_text_info_delete.c" hidden="true"/>
+        <files mask="gxe_utility_canvas_to_bmp.c" hidden="true"/>
+        <files mask="gxe_utility_circle_point_get.c" hidden="true"/>
+        <files mask="gxe_utility_gradient_create.c" hidden="true"/>
+        <files mask="gxe_utility_gradient_delete.c" hidden="true"/>
+        <files mask="gxe_utility_ltoa.c" hidden="true"/>
+        <files mask="gxe_utility_pixelmap_resize.c" hidden="true"/>
+        <files mask="gxe_utility_pixelmap_rotate.c" hidden="true"/>
+        <files mask="gxe_utility_pixelmap_simple_rotate.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_center.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_center_find.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_combine.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_compare.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_define.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_overlap_detect.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_point_detect.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_resize.c" hidden="true"/>
+        <files mask="gxe_utility_rectangle_shift.c" hidden="true"/>
+        <files mask="gxe_utility_string_to_alphamap.c" hidden="true"/>
+        <files mask="gxe_vertical_list_children_position.c" hidden="true"/>
+        <files mask="gxe_vertical_list_create.c" hidden="true"/>
+        <files mask="gxe_vertical_list_event_process.c" hidden="true"/>
+        <files mask="gxe_vertical_list_page_index_set.c" hidden="true"/>
+        <files mask="gxe_vertical_list_selected_index_get.c" hidden="true"/>
+        <files mask="gxe_vertical_list_selected_set.c" hidden="true"/>
+        <files mask="gxe_vertical_list_selected_widget_get.c" hidden="true"/>
+        <files mask="gxe_vertical_list_total_rows_set.c" hidden="true"/>
+        <files mask="gxe_vertical_scrollbar_create.c" hidden="true"/>
+        <files mask="gxe_widget_allocate.c" hidden="true"/>
+        <files mask="gxe_widget_attach.c" hidden="true"/>
+        <files mask="gxe_widget_back_attach.c" hidden="true"/>
+        <files mask="gxe_widget_back_move.c" hidden="true"/>
+        <files mask="gxe_widget_block_move.c" hidden="true"/>
+        <files mask="gxe_widget_border_style_set.c" hidden="true"/>
+        <files mask="gxe_widget_border_width_get.c" hidden="true"/>
+        <files mask="gxe_widget_canvas_get.c" hidden="true"/>
+        <files mask="gxe_widget_child_detect.c" hidden="true"/>
+        <files mask="gxe_widget_client_get.c" hidden="true"/>
+        <files mask="gxe_widget_color_get.c" hidden="true"/>
+        <files mask="gxe_widget_create.c" hidden="true"/>
+        <files mask="gxe_widget_created_test.c" hidden="true"/>
+        <files mask="gxe_widget_delete.c" hidden="true"/>
+        <files mask="gxe_widget_detach.c" hidden="true"/>
+        <files mask="gxe_widget_draw_set.c" hidden="true"/>
+        <files mask="gxe_widget_event_generate.c" hidden="true"/>
+        <files mask="gxe_widget_event_process.c" hidden="true"/>
+        <files mask="gxe_widget_event_process_set.c" hidden="true"/>
+        <files mask="gxe_widget_event_to_parent.c" hidden="true"/>
+        <files mask="gxe_widget_fill_color_set.c" hidden="true"/>
+        <files mask="gxe_widget_find.c" hidden="true"/>
+        <files mask="gxe_widget_first_child_get.c" hidden="true"/>
+        <files mask="gxe_widget_focus_next.c" hidden="true"/>
+        <files mask="gxe_widget_focus_previous.c" hidden="true"/>
+        <files mask="gxe_widget_font_get.c" hidden="true"/>
+        <files mask="gxe_widget_free.c" hidden="true"/>
+        <files mask="gxe_widget_front_move.c" hidden="true"/>
+        <files mask="gxe_widget_height_get.c" hidden="true"/>
+        <files mask="gxe_widget_hide.c" hidden="true"/>
+        <files mask="gxe_widget_last_child_get.c" hidden="true"/>
+        <files mask="gxe_widget_next_sibling_get.c" hidden="true"/>
+        <files mask="gxe_widget_parent_get.c" hidden="true"/>
+        <files mask="gxe_widget_pixelmap_get.c" hidden="true"/>
+        <files mask="gxe_widget_previous_sibling_get.c" hidden="true"/>
+        <files mask="gxe_widget_resize.c" hidden="true"/>
+        <files mask="gxe_widget_shift.c" hidden="true"/>
+        <files mask="gxe_widget_show.c" hidden="true"/>
+        <files mask="gxe_widget_status_add.c" hidden="true"/>
+        <files mask="gxe_widget_status_get.c" hidden="true"/>
+        <files mask="gxe_widget_status_remove.c" hidden="true"/>
+        <files mask="gxe_widget_status_test.c" hidden="true"/>
+        <files mask="gxe_widget_string_get.c" hidden="true"/>
+        <files mask="gxe_widget_style_add.c" hidden="true"/>
+        <files mask="gxe_widget_style_get.c" hidden="true"/>
+        <files mask="gxe_widget_style_remove.c" hidden="true"/>
+        <files mask="gxe_widget_style_set.c" hidden="true"/>
+        <files mask="gxe_widget_text_blend.c" hidden="true"/>
+        <files mask="gxe_widget_top_visible_child_find.c" hidden="true"/>
+        <files mask="gxe_widget_type_find.c" hidden="true"/>
+        <files mask="gxe_widget_width_get.c" hidden="true"/>
+        <files mask="gxe_window_client_height_get.c" hidden="true"/>
+        <files mask="gxe_window_client_scroll.c" hidden="true"/>
+        <files mask="gxe_window_client_width_get.c" hidden="true"/>
+        <files mask="gxe_window_close.c" hidden="true"/>
+        <files mask="gxe_window_create.c" hidden="true"/>
+        <files mask="gxe_window_event_process.c" hidden="true"/>
+        <files mask="gxe_window_execute.c" hidden="true"/>
+        <files mask="gxe_window_root_create.c" hidden="true"/>
+        <files mask="gxe_window_root_delete.c" hidden="true"/>
+        <files mask="gxe_window_root_event_process.c" hidden="true"/>
+        <files mask="gxe_window_root_find.c" hidden="true"/>
+        <files mask="gxe_window_scroll_info_get.c" hidden="true"/>
+        <files mask="gxe_window_scrollbar_find.c" hidden="true"/>
+        <files mask="gxe_window_wallpaper_get.c" hidden="true"/>
+        <files mask="gxe_window_wallpaper_set.c" hidden="true"/>
+      </source>
+    </component>
+  </components>
+</ksdk:manifest>

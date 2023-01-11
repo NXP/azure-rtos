@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_tx_MIMXRT1064_manifest_v3_10" name="Azure RTOS ThreadX" brief="Azure RTOS ThreadX" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:19:04.064483-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <!--Timestamp (UTC): 2023-01-09 15:36:23.339474-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="MIMXRT1064xxxxA"/>
     <definition extID="core0_MIMXRT1064xxxxA"/>
     <definition extID="mcuxpresso"/>
     <definition extID="armgcc"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_tx_MIMXRT1064_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_tx_MIMXRT1064_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_tx_MIMXRT1064_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_tx_MIMXRT1064_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.tx.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.1.10" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1064"/>
       </dependencies>
@@ -21,7 +21,7 @@
         <files mask="middleware_azure_rtos_tx_MIMXRT1064.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx.lib.MIMXRT1064" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.1.10" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.lib.MIMXRT1064" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -235,7 +235,7 @@
         <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1064xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.sp.MIMXRT1064" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.1.10" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1064xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.sp.MIMXRT1064" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1064xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1064"/>
       </dependencies>
@@ -243,7 +243,7 @@
         <files mask="libthreadx_sp.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx.template.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.1.10" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.template.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -286,6 +286,7 @@
         <files mask="tx_port.h"/>
       </source>
       <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/src" project_relative_path="threadx/ports/cortex_m7/gnu/src" type="asm_include" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="tx_misra.S"/>
         <files mask="tx_thread_context_restore.S"/>
         <files mask="tx_thread_context_save.S"/>
         <files mask="tx_thread_interrupt_control.S"/>
@@ -307,7 +308,7 @@
         <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1064xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.unused_files.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.1.10" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.unused_files.MIMXRT1064" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1064xxxxA" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>
@@ -347,6 +348,11 @@
       <source exclude="true" relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
         <files mask="txm_module_manager_dispatch.h" hidden="true"/>
         <files mask="txm_module_manager_util.h" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./threadx/common_modules/module_manager/utilities" project_relative_path="threadx/common_modules/module_manager/utilities" type="src">
+        <files mask="module_binary_to_c_array.c" hidden="true"/>
+        <files mask="module_to_c_array.c" hidden="true"/>
+        <files mask="module_to_binary.c" hidden="true"/>
       </source>
       <source exclude="true" relative_path="./threadx/common_modules/module_lib/src" project_relative_path="threadx/common_modules/module_lib/src" type="src">
         <files mask="txm_thread_stack_error_notify.c" hidden="true"/>
@@ -478,6 +484,483 @@
         <files mask="txm_module_manager_mm_register_setup.c" hidden="true"/>
         <files mask="txm_module_manager_memory_fault_notify.c" hidden="true"/>
       </source>
+      <source exclude="true" relative_path="./threadx/utility/rtos_compatibility_layers/FreeRTOS" project_relative_path="threadx/utility/rtos_compatibility_layers/FreeRTOS" type="src">
+        <files mask="tx_freertos.c" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./threadx/utility/rtos_compatibility_layers/FreeRTOS" project_relative_path="threadx/utility/rtos_compatibility_layers/FreeRTOS" type="c_include">
+        <files mask="FreeRTOS.h" hidden="true"/>
+        <files mask="event_groups.h" hidden="true"/>
+        <files mask="timers.h" hidden="true"/>
+        <files mask="semphr.h" hidden="true"/>
+        <files mask="queue.h" hidden="true"/>
+        <files mask="task.h" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./threadx/utility/rtos_compatibility_layers/FreeRTOS" project_relative_path="threadx/utility/rtos_compatibility_layers/FreeRTOS" type="doc">
+        <files mask="revision_history.txt" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./threadx/utility/rtos_compatibility_layers/FreeRTOS" project_relative_path="threadx/utility/rtos_compatibility_layers/FreeRTOS" type="other">
+        <files mask="readme.md" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./threadx/utility/rtos_compatibility_layers/FreeRTOS/config_template" project_relative_path="threadx/utility/rtos_compatibility_layers/FreeRTOS/config_template" type="c_include">
+        <files mask="FreeRTOSConfig.h" hidden="true"/>
+      </source>
+    </component>
+    <component id="middleware.azure_rtos.tx_mgr.MIMXRT1064" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1064xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+      <dependencies>
+        <component_dependency value="middleware.azure_rtos.tx_mgr.template.MIMXRT1064"/>
+      </dependencies>
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="libthreadx-txm.a"/>
+      </source>
+    </component>
+    <component id="middleware.azure_rtos.tx_mgr.lib.MIMXRT1064" name="Azure RTOS ThreadX Module Manager(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1064xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+        <files mask="tx_api.h"/>
+        <files mask="tx_block_pool.h"/>
+        <files mask="tx_byte_pool.h"/>
+        <files mask="tx_event_flags.h"/>
+        <files mask="tx_initialize.h"/>
+        <files mask="tx_mutex.h"/>
+        <files mask="tx_queue.h"/>
+        <files mask="tx_semaphore.h"/>
+        <files mask="tx_thread.h"/>
+        <files mask="tx_timer.h"/>
+        <files mask="tx_trace.h"/>
+        <files mask="tx_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common/src" project_relative_path="threadx/common/src" type="src">
+        <files mask="tx_block_allocate.c"/>
+        <files mask="tx_block_pool_cleanup.c"/>
+        <files mask="tx_block_pool_create.c"/>
+        <files mask="tx_block_pool_delete.c"/>
+        <files mask="tx_block_pool_info_get.c"/>
+        <files mask="tx_block_pool_initialize.c"/>
+        <files mask="tx_block_pool_performance_info_get.c"/>
+        <files mask="tx_block_pool_performance_system_info_get.c"/>
+        <files mask="tx_block_pool_prioritize.c"/>
+        <files mask="tx_block_release.c"/>
+        <files mask="tx_byte_allocate.c"/>
+        <files mask="tx_byte_pool_cleanup.c"/>
+        <files mask="tx_byte_pool_create.c"/>
+        <files mask="tx_byte_pool_delete.c"/>
+        <files mask="tx_byte_pool_info_get.c"/>
+        <files mask="tx_byte_pool_initialize.c"/>
+        <files mask="tx_byte_pool_performance_info_get.c"/>
+        <files mask="tx_byte_pool_performance_system_info_get.c"/>
+        <files mask="tx_byte_pool_prioritize.c"/>
+        <files mask="tx_byte_pool_search.c"/>
+        <files mask="tx_byte_release.c"/>
+        <files mask="tx_event_flags_cleanup.c"/>
+        <files mask="tx_event_flags_create.c"/>
+        <files mask="tx_event_flags_delete.c"/>
+        <files mask="tx_event_flags_get.c"/>
+        <files mask="tx_event_flags_info_get.c"/>
+        <files mask="tx_event_flags_initialize.c"/>
+        <files mask="tx_event_flags_performance_info_get.c"/>
+        <files mask="tx_event_flags_performance_system_info_get.c"/>
+        <files mask="tx_event_flags_set.c"/>
+        <files mask="tx_event_flags_set_notify.c"/>
+        <files mask="tx_initialize_high_level.c"/>
+        <files mask="tx_initialize_kernel_enter.c"/>
+        <files mask="tx_initialize_kernel_setup.c"/>
+        <files mask="tx_mutex_cleanup.c"/>
+        <files mask="tx_mutex_create.c"/>
+        <files mask="tx_mutex_delete.c"/>
+        <files mask="tx_mutex_get.c"/>
+        <files mask="tx_mutex_info_get.c"/>
+        <files mask="tx_mutex_initialize.c"/>
+        <files mask="tx_mutex_performance_info_get.c"/>
+        <files mask="tx_mutex_performance_system_info_get.c"/>
+        <files mask="tx_mutex_prioritize.c"/>
+        <files mask="tx_mutex_priority_change.c"/>
+        <files mask="tx_mutex_put.c"/>
+        <files mask="tx_queue_cleanup.c"/>
+        <files mask="tx_queue_create.c"/>
+        <files mask="tx_queue_delete.c"/>
+        <files mask="tx_queue_flush.c"/>
+        <files mask="tx_queue_front_send.c"/>
+        <files mask="tx_queue_info_get.c"/>
+        <files mask="tx_queue_initialize.c"/>
+        <files mask="tx_queue_performance_info_get.c"/>
+        <files mask="tx_queue_performance_system_info_get.c"/>
+        <files mask="tx_queue_prioritize.c"/>
+        <files mask="tx_queue_receive.c"/>
+        <files mask="tx_queue_send.c"/>
+        <files mask="tx_queue_send_notify.c"/>
+        <files mask="tx_semaphore_ceiling_put.c"/>
+        <files mask="tx_semaphore_cleanup.c"/>
+        <files mask="tx_semaphore_create.c"/>
+        <files mask="tx_semaphore_delete.c"/>
+        <files mask="tx_semaphore_get.c"/>
+        <files mask="tx_semaphore_info_get.c"/>
+        <files mask="tx_semaphore_initialize.c"/>
+        <files mask="tx_semaphore_performance_info_get.c"/>
+        <files mask="tx_semaphore_performance_system_info_get.c"/>
+        <files mask="tx_semaphore_prioritize.c"/>
+        <files mask="tx_semaphore_put.c"/>
+        <files mask="tx_semaphore_put_notify.c"/>
+        <files mask="tx_thread_create.c"/>
+        <files mask="tx_thread_delete.c"/>
+        <files mask="tx_thread_entry_exit_notify.c"/>
+        <files mask="tx_thread_identify.c"/>
+        <files mask="tx_thread_info_get.c"/>
+        <files mask="tx_thread_initialize.c"/>
+        <files mask="tx_thread_performance_info_get.c"/>
+        <files mask="tx_thread_performance_system_info_get.c"/>
+        <files mask="tx_thread_preemption_change.c"/>
+        <files mask="tx_thread_priority_change.c"/>
+        <files mask="tx_thread_relinquish.c"/>
+        <files mask="tx_thread_reset.c"/>
+        <files mask="tx_thread_resume.c"/>
+        <files mask="tx_thread_shell_entry.c"/>
+        <files mask="tx_thread_sleep.c"/>
+        <files mask="tx_thread_stack_analyze.c"/>
+        <files mask="tx_thread_stack_error_handler.c"/>
+        <files mask="tx_thread_stack_error_notify.c"/>
+        <files mask="tx_thread_suspend.c"/>
+        <files mask="tx_thread_system_preempt_check.c"/>
+        <files mask="tx_thread_system_resume.c"/>
+        <files mask="tx_thread_system_suspend.c"/>
+        <files mask="tx_thread_terminate.c"/>
+        <files mask="tx_thread_time_slice.c"/>
+        <files mask="tx_thread_time_slice_change.c"/>
+        <files mask="tx_thread_timeout.c"/>
+        <files mask="tx_thread_wait_abort.c"/>
+        <files mask="tx_time_get.c"/>
+        <files mask="tx_time_set.c"/>
+        <files mask="tx_timer_activate.c"/>
+        <files mask="tx_timer_change.c"/>
+        <files mask="tx_timer_create.c"/>
+        <files mask="tx_timer_deactivate.c"/>
+        <files mask="tx_timer_delete.c"/>
+        <files mask="tx_timer_expiration_process.c"/>
+        <files mask="tx_timer_info_get.c"/>
+        <files mask="tx_timer_initialize.c"/>
+        <files mask="tx_timer_performance_info_get.c"/>
+        <files mask="tx_timer_performance_system_info_get.c"/>
+        <files mask="tx_timer_system_activate.c"/>
+        <files mask="tx_timer_system_deactivate.c"/>
+        <files mask="tx_timer_thread_entry.c"/>
+        <files mask="tx_trace_buffer_full_notify.c"/>
+        <files mask="tx_trace_disable.c"/>
+        <files mask="tx_trace_enable.c"/>
+        <files mask="tx_trace_event_filter.c"/>
+        <files mask="tx_trace_event_unfilter.c"/>
+        <files mask="tx_trace_initialize.c"/>
+        <files mask="tx_trace_interrupt_control.c"/>
+        <files mask="tx_trace_isr_enter_insert.c"/>
+        <files mask="tx_trace_isr_exit_insert.c"/>
+        <files mask="tx_trace_object_register.c"/>
+        <files mask="tx_trace_object_unregister.c"/>
+        <files mask="tx_trace_user_event_insert.c"/>
+        <files mask="txe_block_allocate.c"/>
+        <files mask="txe_block_pool_create.c"/>
+        <files mask="txe_block_pool_delete.c"/>
+        <files mask="txe_block_pool_info_get.c"/>
+        <files mask="txe_block_pool_prioritize.c"/>
+        <files mask="txe_block_release.c"/>
+        <files mask="txe_byte_allocate.c"/>
+        <files mask="txe_byte_pool_create.c"/>
+        <files mask="txe_byte_pool_delete.c"/>
+        <files mask="txe_byte_pool_info_get.c"/>
+        <files mask="txe_byte_pool_prioritize.c"/>
+        <files mask="txe_byte_release.c"/>
+        <files mask="txe_event_flags_create.c"/>
+        <files mask="txe_event_flags_delete.c"/>
+        <files mask="txe_event_flags_get.c"/>
+        <files mask="txe_event_flags_info_get.c"/>
+        <files mask="txe_event_flags_set.c"/>
+        <files mask="txe_event_flags_set_notify.c"/>
+        <files mask="txe_mutex_create.c"/>
+        <files mask="txe_mutex_delete.c"/>
+        <files mask="txe_mutex_get.c"/>
+        <files mask="txe_mutex_info_get.c"/>
+        <files mask="txe_mutex_prioritize.c"/>
+        <files mask="txe_mutex_put.c"/>
+        <files mask="txe_queue_create.c"/>
+        <files mask="txe_queue_delete.c"/>
+        <files mask="txe_queue_flush.c"/>
+        <files mask="txe_queue_front_send.c"/>
+        <files mask="txe_queue_info_get.c"/>
+        <files mask="txe_queue_prioritize.c"/>
+        <files mask="txe_queue_receive.c"/>
+        <files mask="txe_queue_send.c"/>
+        <files mask="txe_queue_send_notify.c"/>
+        <files mask="txe_semaphore_ceiling_put.c"/>
+        <files mask="txe_semaphore_create.c"/>
+        <files mask="txe_semaphore_delete.c"/>
+        <files mask="txe_semaphore_get.c"/>
+        <files mask="txe_semaphore_info_get.c"/>
+        <files mask="txe_semaphore_prioritize.c"/>
+        <files mask="txe_semaphore_put.c"/>
+        <files mask="txe_semaphore_put_notify.c"/>
+        <files mask="txe_thread_create.c"/>
+        <files mask="txe_thread_delete.c"/>
+        <files mask="txe_thread_entry_exit_notify.c"/>
+        <files mask="txe_thread_info_get.c"/>
+        <files mask="txe_thread_preemption_change.c"/>
+        <files mask="txe_thread_priority_change.c"/>
+        <files mask="txe_thread_relinquish.c"/>
+        <files mask="txe_thread_reset.c"/>
+        <files mask="txe_thread_resume.c"/>
+        <files mask="txe_thread_suspend.c"/>
+        <files mask="txe_thread_terminate.c"/>
+        <files mask="txe_thread_time_slice_change.c"/>
+        <files mask="txe_thread_wait_abort.c"/>
+        <files mask="txe_timer_activate.c"/>
+        <files mask="txe_timer_change.c"/>
+        <files mask="txe_timer_create.c"/>
+        <files mask="txe_timer_deactivate.c"/>
+        <files mask="txe_timer_delete.c"/>
+        <files mask="txe_timer_info_get.c"/>
+      </source>
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+        <files mask="txm_module.h"/>
+        <files mask="txm_module_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
+        <files mask="txm_module_manager_dispatch.h"/>
+        <files mask="txm_module_manager_util.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/module_manager/src" project_relative_path="threadx/common_modules/module_manager/src" type="src">
+        <files mask="txm_module_manager_absolute_load.c"/>
+        <files mask="txm_module_manager_application_request.c"/>
+        <files mask="txm_module_manager_callback_request.c"/>
+        <files mask="txm_module_manager_event_flags_notify_trampoline.c"/>
+        <files mask="txm_module_manager_file_load.c"/>
+        <files mask="txm_module_manager_in_place_load.c"/>
+        <files mask="txm_module_manager_initialize.c"/>
+        <files mask="txm_module_manager_internal_load.c"/>
+        <files mask="txm_module_manager_kernel_dispatch.c"/>
+        <files mask="txm_module_manager_maximum_module_priority_set.c"/>
+        <files mask="txm_module_manager_memory_load.c"/>
+        <files mask="txm_module_manager_object_allocate.c"/>
+        <files mask="txm_module_manager_object_deallocate.c"/>
+        <files mask="txm_module_manager_object_pointer_get.c"/>
+        <files mask="txm_module_manager_object_pointer_get_extended.c"/>
+        <files mask="txm_module_manager_object_pool_create.c"/>
+        <files mask="txm_module_manager_properties_get.c"/>
+        <files mask="txm_module_manager_queue_notify_trampoline.c"/>
+        <files mask="txm_module_manager_semaphore_notify_trampoline.c"/>
+        <files mask="txm_module_manager_start.c"/>
+        <files mask="txm_module_manager_stop.c"/>
+        <files mask="txm_module_manager_thread_create.c"/>
+        <files mask="txm_module_manager_thread_notify_trampoline.c"/>
+        <files mask="txm_module_manager_thread_reset.c"/>
+        <files mask="txm_module_manager_timer_notify_trampoline.c"/>
+        <files mask="txm_module_manager_unload.c"/>
+        <files mask="txm_module_manager_util.c"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="tx_port.h"/>
+        <files mask="txm_module_port.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="tx_thread_schedule.S"/>
+        <files mask="tx_thread_stack_build.S"/>
+        <files mask="tx_thread_system_return.S"/>
+        <files mask="tx_thread_interrupt_disable.S"/>
+        <files mask="tx_timer_interrupt.S"/>
+        <files mask="tx_thread_interrupt_restore.S"/>
+        <files mask="tx_thread_interrupt_control.S"/>
+        <files mask="txm_module_manager_thread_stack_build.s"/>
+        <files mask="tx_thread_context_restore.S"/>
+        <files mask="tx_thread_context_save.S"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="txm_module_manager_external_memory_enable.c"/>
+        <files mask="txm_module_manager_alignment_adjust.c"/>
+        <files mask="txm_module_manager_memory_fault_handler.c"/>
+        <files mask="txm_module_manager_mm_register_setup.c"/>
+        <files mask="txm_module_manager_memory_fault_notify.c"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1064xxxxA"/>
+      </include_paths>
+    </component>
+    <component id="middleware.azure_rtos.tx_mgr.template.MIMXRT1064" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1064xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+        <files mask="tx_api.h"/>
+        <files mask="tx_block_pool.h"/>
+        <files mask="tx_byte_pool.h"/>
+        <files mask="tx_event_flags.h"/>
+        <files mask="tx_initialize.h"/>
+        <files mask="tx_mutex.h"/>
+        <files mask="tx_queue.h"/>
+        <files mask="tx_semaphore.h"/>
+        <files mask="tx_thread.h"/>
+        <files mask="tx_timer.h"/>
+        <files mask="tx_trace.h"/>
+        <files mask="tx_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+        <files mask="txm_module.h"/>
+        <files mask="txm_module_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
+        <files mask="txm_module_manager_dispatch.h"/>
+        <files mask="txm_module_manager_util.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="tx_port.h"/>
+        <files mask="txm_module_port.h"/>
+      </source>
+      <source relative_path="./threadx/ports/common" project_relative_path="threadx/ports/common" type="src">
+        <files mask="tx_initialize_low_level.c"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1064xxxxA"/>
+      </include_paths>
+    </component>
+    <component id="middleware.azure_rtos.txm.lib.MIMXRT1064" name="Azure RTOS ThreadX Module(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module" devices="MIMXRT1064xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
+        <files mask="LICENSED-HARDWARE.txt"/>
+        <files mask="LICENSE.txt"/>
+      </source>
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+        <files mask="tx_api.h"/>
+        <files mask="tx_block_pool.h"/>
+        <files mask="tx_byte_pool.h"/>
+        <files mask="tx_event_flags.h"/>
+        <files mask="tx_initialize.h"/>
+        <files mask="tx_mutex.h"/>
+        <files mask="tx_queue.h"/>
+        <files mask="tx_semaphore.h"/>
+        <files mask="tx_thread.h"/>
+        <files mask="tx_timer.h"/>
+        <files mask="tx_trace.h"/>
+        <files mask="tx_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+        <files mask="txm_module.h"/>
+        <files mask="txm_module_user_sample.h"/>
+      </source>
+      <source relative_path="./threadx/common_modules/module_lib/src" project_relative_path="threadx/common_modules/module_lib/src" type="src">
+        <files mask="txm_block_allocate.c"/>
+        <files mask="txm_block_pool_create.c"/>
+        <files mask="txm_block_pool_delete.c"/>
+        <files mask="txm_block_pool_info_get.c"/>
+        <files mask="txm_block_pool_performance_info_get.c"/>
+        <files mask="txm_block_pool_performance_system_info_get.c"/>
+        <files mask="txm_block_pool_prioritize.c"/>
+        <files mask="txm_block_release.c"/>
+        <files mask="txm_byte_allocate.c"/>
+        <files mask="txm_byte_pool_create.c"/>
+        <files mask="txm_byte_pool_delete.c"/>
+        <files mask="txm_byte_pool_info_get.c"/>
+        <files mask="txm_byte_pool_performance_info_get.c"/>
+        <files mask="txm_byte_pool_performance_system_info_get.c"/>
+        <files mask="txm_byte_pool_prioritize.c"/>
+        <files mask="txm_byte_release.c"/>
+        <files mask="txm_event_flags_create.c"/>
+        <files mask="txm_event_flags_delete.c"/>
+        <files mask="txm_event_flags_get.c"/>
+        <files mask="txm_event_flags_info_get.c"/>
+        <files mask="txm_event_flags_performance_info_get.c"/>
+        <files mask="txm_event_flags_performance_system_info_get.c"/>
+        <files mask="txm_event_flags_set.c"/>
+        <files mask="txm_event_flags_set_notify.c"/>
+        <files mask="txm_module_application_request.c"/>
+        <files mask="txm_module_callback_request_thread_entry.c"/>
+        <files mask="txm_module_object_allocate.c"/>
+        <files mask="txm_module_object_deallocate.c"/>
+        <files mask="txm_module_object_pointer_get.c"/>
+        <files mask="txm_module_object_pointer_get_extended.c"/>
+        <files mask="txm_module_thread_system_suspend.c"/>
+        <files mask="txm_mutex_create.c"/>
+        <files mask="txm_mutex_delete.c"/>
+        <files mask="txm_mutex_get.c"/>
+        <files mask="txm_mutex_info_get.c"/>
+        <files mask="txm_mutex_performance_info_get.c"/>
+        <files mask="txm_mutex_performance_system_info_get.c"/>
+        <files mask="txm_mutex_prioritize.c"/>
+        <files mask="txm_mutex_put.c"/>
+        <files mask="txm_queue_create.c"/>
+        <files mask="txm_queue_delete.c"/>
+        <files mask="txm_queue_flush.c"/>
+        <files mask="txm_queue_front_send.c"/>
+        <files mask="txm_queue_info_get.c"/>
+        <files mask="txm_queue_performance_info_get.c"/>
+        <files mask="txm_queue_performance_system_info_get.c"/>
+        <files mask="txm_queue_prioritize.c"/>
+        <files mask="txm_queue_receive.c"/>
+        <files mask="txm_queue_send.c"/>
+        <files mask="txm_queue_send_notify.c"/>
+        <files mask="txm_semaphore_ceiling_put.c"/>
+        <files mask="txm_semaphore_create.c"/>
+        <files mask="txm_semaphore_delete.c"/>
+        <files mask="txm_semaphore_get.c"/>
+        <files mask="txm_semaphore_info_get.c"/>
+        <files mask="txm_semaphore_performance_info_get.c"/>
+        <files mask="txm_semaphore_performance_system_info_get.c"/>
+        <files mask="txm_semaphore_prioritize.c"/>
+        <files mask="txm_semaphore_put.c"/>
+        <files mask="txm_semaphore_put_notify.c"/>
+        <files mask="txm_thread_create.c"/>
+        <files mask="txm_thread_delete.c"/>
+        <files mask="txm_thread_entry_exit_notify.c"/>
+        <files mask="txm_thread_identify.c"/>
+        <files mask="txm_thread_info_get.c"/>
+        <files mask="txm_thread_interrupt_control.c"/>
+        <files mask="txm_thread_performance_info_get.c"/>
+        <files mask="txm_thread_performance_system_info_get.c"/>
+        <files mask="txm_thread_preemption_change.c"/>
+        <files mask="txm_thread_priority_change.c"/>
+        <files mask="txm_thread_relinquish.c"/>
+        <files mask="txm_thread_reset.c"/>
+        <files mask="txm_thread_resume.c"/>
+        <files mask="txm_thread_sleep.c"/>
+        <files mask="txm_thread_stack_error_notify.c"/>
+        <files mask="txm_thread_suspend.c"/>
+        <files mask="txm_thread_terminate.c"/>
+        <files mask="txm_thread_time_slice_change.c"/>
+        <files mask="txm_thread_wait_abort.c"/>
+        <files mask="txm_time_get.c"/>
+        <files mask="txm_time_set.c"/>
+        <files mask="txm_timer_activate.c"/>
+        <files mask="txm_timer_change.c"/>
+        <files mask="txm_timer_create.c"/>
+        <files mask="txm_timer_deactivate.c"/>
+        <files mask="txm_timer_delete.c"/>
+        <files mask="txm_timer_info_get.c"/>
+        <files mask="txm_timer_performance_info_get.c"/>
+        <files mask="txm_timer_performance_system_info_get.c"/>
+        <files mask="txm_trace_buffer_full_notify.c"/>
+        <files mask="txm_trace_disable.c"/>
+        <files mask="txm_trace_enable.c"/>
+        <files mask="txm_trace_event_filter.c"/>
+        <files mask="txm_trace_event_unfilter.c"/>
+        <files mask="txm_trace_interrupt_control.c"/>
+        <files mask="txm_trace_isr_enter_insert.c"/>
+        <files mask="txm_trace_isr_exit_insert.c"/>
+        <files mask="txm_trace_user_event_insert.c"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="tx_port.h"/>
+        <files mask="txm_module_port.h"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="core0_MIMXRT1064xxxxA">
+        <files mask="txm_module_thread_shell_entry.c"/>
+      </source>
+      <include_paths>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1064xxxxA"/>
+      </include_paths>
     </component>
   </components>
 </ksdk:manifest>

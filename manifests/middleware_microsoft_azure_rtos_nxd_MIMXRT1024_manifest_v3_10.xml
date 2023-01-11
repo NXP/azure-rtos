@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_nxd_MIMXRT1024_manifest_v3_10" name="Azure RTOS NetX Duo" brief="A Network Protocol Stack Based On Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:18:15.015416-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <!--Timestamp (UTC): 2023-01-09 15:34:30.326749-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="MIMXRT1024xxxxx"/>
     <definition extID="middleware.azure_rtos.fx.MIMXRT1024"/>
@@ -10,9 +10,9 @@
     <definition extID="armgcc"/>
     <definition extID="middleware.azure_rtos.fx.sp.MIMXRT1024"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_nxd_MIMXRT1024_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_nxd_MIMXRT1024_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_nxd_MIMXRT1024_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_nxd_MIMXRT1024_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.nxd.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.1.10" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1024"/>
@@ -26,7 +26,7 @@
         <files mask="middleware_azure_rtos_nxd_MIMXRT1024.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1024" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.1.10" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1024" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -63,6 +63,7 @@
         <files mask="nx_arp_static_entry_create.c"/>
         <files mask="nx_arp_static_entry_delete.c"/>
         <files mask="nx_arp_static_entry_delete_internal.c"/>
+        <files mask="nx_http_proxy_client.c"/>
         <files mask="nx_icmp_cleanup.c"/>
         <files mask="nx_icmp_enable.c"/>
         <files mask="nx_icmp_info_get.c"/>
@@ -624,7 +625,6 @@
         <files mask="nx_crypto_method_self_test_rsa.c"/>
         <files mask="nx_crypto_method_self_test_sha.c"/>
         <files mask="nx_crypto_methods.c"/>
-        <files mask="nx_crypto_module_start.c"/>
         <files mask="nx_crypto_null_cipher.c"/>
         <files mask="nx_crypto_phash.c"/>
         <files mask="nx_crypto_pkcs1_v1.5.c"/>
@@ -714,7 +714,16 @@
         <files mask="nx_secure_dtls_session_trusted_certificate_add.c"/>
         <files mask="nx_secure_dtls_session_trusted_certificate_remove.c"/>
         <files mask="nx_secure_dtls_verify_mac.c"/>
+        <files mask="nx_secure_generate_client_key_exchange.c"/>
+        <files mask="nx_secure_generate_master_secret.c"/>
+        <files mask="nx_secure_generate_premaster_secret.c"/>
+        <files mask="nx_secure_generate_server_key_exchange.c"/>
+        <files mask="nx_secure_generate_session_keys.c"/>
         <files mask="nx_secure_module_hash_compute.c"/>
+        <files mask="nx_secure_process_client_key_exchange.c"/>
+        <files mask="nx_secure_process_server_key_exchange.c"/>
+        <files mask="nx_secure_remote_certificate_verify.c"/>
+        <files mask="nx_secure_session_keys_set.c"/>
         <files mask="nx_secure_tls_1_3_client_handshake.c"/>
         <files mask="nx_secure_tls_1_3_crypto_init.c"/>
         <files mask="nx_secure_tls_1_3_finished_hash_generate.c"/>
@@ -812,6 +821,7 @@
         <files mask="nx_secure_tls_session_iv_size_get.c"/>
         <files mask="nx_secure_tls_session_keys_set.c"/>
         <files mask="nx_secure_tls_session_packet_buffer_set.c"/>
+        <files mask="nx_secure_tls_session_packet_pool_set.c"/>
         <files mask="nx_secure_tls_session_protocol_version_override.c"/>
         <files mask="nx_secure_tls_session_receive.c"/>
         <files mask="nx_secure_tls_session_receive_records.c"/>
@@ -829,6 +839,8 @@
         <files mask="nx_secure_tls_trusted_certificate_add.c"/>
         <files mask="nx_secure_tls_trusted_certificate_remove.c"/>
         <files mask="nx_secure_tls_verify_mac.c"/>
+        <files mask="nx_secure_trusted_certificate_add.c"/>
+        <files mask="nx_secure_verify_mac.c"/>
         <files mask="nx_secure_x509.c"/>
         <files mask="nx_secure_x509_asn1_tlv_block_parse.c"/>
         <files mask="nx_secure_x509_certificate_chain_verify.c"/>
@@ -919,6 +931,7 @@
         <files mask="nxe_secure_tls_session_delete.c"/>
         <files mask="nxe_secure_tls_session_end.c"/>
         <files mask="nxe_secure_tls_session_packet_buffer_set.c"/>
+        <files mask="nxe_secure_tls_session_packet_pool_set.c"/>
         <files mask="nxe_secure_tls_session_protocol_version_override.c"/>
         <files mask="nxe_secure_tls_session_receive.c"/>
         <files mask="nxe_secure_tls_session_renegotiate.c"/>
@@ -973,6 +986,7 @@
       <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
+        <files mask="nx_http_proxy_client.h"/>
         <files mask="nx_icmp.h"/>
         <files mask="nx_icmpv4.h"/>
         <files mask="nx_icmpv6.h"/>
@@ -996,6 +1010,9 @@
       <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1024xxxxx">
         <files mask="fx_port.h"/>
       </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="core0_MIMXRT1024xxxxx">
+        <files mask="fx_port.h"/>
+      </source>
       <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1024xxxxx">
         <files mask="nx_port.h"/>
       </source>
@@ -1011,7 +1028,7 @@
         <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1024xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1024" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.1.10" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1024" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1024"/>
@@ -1022,7 +1039,7 @@
         <files mask="libnetxduo_sp.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.nxd.template.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.1.10" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.template.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -1192,6 +1209,7 @@
       <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
+        <files mask="nx_http_proxy_client.h"/>
         <files mask="nx_icmp.h"/>
         <files mask="nx_icmpv4.h"/>
         <files mask="nx_icmpv6.h"/>
@@ -1296,6 +1314,7 @@
         <include_path relative_path="./netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="c_include"/>
         <include_path relative_path="./netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="c_include"/>
         <include_path relative_path="./netxduo/addons/web" project_relative_path="netxduo/addons/web" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include"/>
         <include_path relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
         <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
         <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
@@ -1303,7 +1322,7 @@
         <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1024xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.unused_files.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.1.10" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.unused_files.MIMXRT1024" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1024xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>
@@ -1336,6 +1355,7 @@
         <files mask="nx_arp_static_entry_create.c" hidden="true"/>
         <files mask="nx_arp_static_entry_delete.c" hidden="true"/>
         <files mask="nx_arp_static_entry_delete_internal.c" hidden="true"/>
+        <files mask="nx_http_proxy_client.c" hidden="true"/>
         <files mask="nx_icmp_cleanup.c" hidden="true"/>
         <files mask="nx_icmp_enable.c" hidden="true"/>
         <files mask="nx_icmp_info_get.c" hidden="true"/>
@@ -1821,6 +1841,14 @@
       </source>
       <source exclude="true" relative_path="./netxduo/addons/BSD" project_relative_path="netxduo/addons/BSD" type="c_include">
         <files mask="nxd_bsd.h" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="src">
+        <files mask="nx_sha1.c" hidden="true"/>
+        <files mask="nx_websocket_client.c" hidden="true"/>
+      </source>
+      <source exclude="true" relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include">
+        <files mask="nx_sha1.h" hidden="true"/>
+        <files mask="nx_websocket_client.h" hidden="true"/>
       </source>
       <source exclude="true" relative_path="./netxduo/samples" project_relative_path="netxduo/samples" type="src">
         <files mask="demo_netxduo_sntp_client.c" hidden="true"/>

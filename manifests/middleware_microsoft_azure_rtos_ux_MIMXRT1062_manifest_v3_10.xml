@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_ux_MIMXRT1062_manifest_v3_10" name="Azure RTOS USBX" brief="A USB Library Based On Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2022-07-15 08:18:37.559552-->
-  <!--This manifest is generated based on sdk repo commit: 45d71c921a1dd3e0403549aa377535344ed9bc97-->
+  <!--Timestamp (UTC): 2023-01-09 15:35:18.116255-->
+  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
   <externalDefinitions>
     <definition extID="MIMXRT1062xxxxA"/>
     <definition extID="MIMXRT1062xxxxB"/>
@@ -12,9 +12,9 @@
     <definition extID="armgcc"/>
     <definition extID="middleware.azure_rtos.nxd.sp.MIMXRT1062"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_ux_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2120_middleware_microsoft_azure_rtos_ux_MIMXRT1062_manifest_v3_10" version="2.12.0"/>
+  <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_ux_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_ux_MIMXRT1062_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.ux.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.1.10" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.ux.template.MIMXRT1062"/>
@@ -28,7 +28,7 @@
         <files mask="middleware_azure_rtos_ux_MIMXRT1062.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.ux.lib.MIMXRT1062" name="Azure RTOS USBX(lib)" brief="A USB library based on azure RTOS" version="6.1.10" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.lib.MIMXRT1062" name="Azure RTOS USBX(lib)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./usbx" project_relative_path="usbx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -62,6 +62,7 @@
       <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
+        <files mask="nx_http_proxy_client.h"/>
         <files mask="nx_icmp.h"/>
         <files mask="nx_icmpv4.h"/>
         <files mask="nx_icmpv6.h"/>
@@ -131,6 +132,8 @@
       </source>
       <source relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
         <files mask="ux_api.h"/>
+        <files mask="ux_class_audio10.h"/>
+        <files mask="ux_class_audio20.h"/>
         <files mask="ux_dcd_sim_slave.h"/>
         <files mask="ux_device_class_dpump.h"/>
         <files mask="ux_device_stack.h"/>
@@ -145,6 +148,7 @@
         <files mask="ux_device_class_audio.h"/>
         <files mask="ux_device_class_audio10.h"/>
         <files mask="ux_device_class_audio20.h"/>
+        <files mask="ux_device_class_ccid.h"/>
         <files mask="ux_device_class_cdc_acm.h"/>
         <files mask="ux_device_class_cdc_ecm.h"/>
         <files mask="ux_device_class_dfu.h"/>
@@ -153,6 +157,7 @@
         <files mask="ux_device_class_printer.h"/>
         <files mask="ux_device_class_rndis.h"/>
         <files mask="ux_device_class_storage.h"/>
+        <files mask="ux_device_class_video.h"/>
       </source>
       <source relative_path="./usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include">
         <files mask="ux_host_class_asix.h"/>
@@ -418,12 +423,17 @@
         <files mask="ux_device_class_audio_entry.c"/>
         <files mask="ux_device_class_audio_feedback_get.c"/>
         <files mask="ux_device_class_audio_feedback_set.c"/>
+        <files mask="ux_device_class_audio_feedback_task_function.c"/>
         <files mask="ux_device_class_audio_feedback_thread_entry.c"/>
         <files mask="ux_device_class_audio_frame_write.c"/>
         <files mask="ux_device_class_audio_initialize.c"/>
+        <files mask="ux_device_class_audio_interrupt_send.c"/>
+        <files mask="ux_device_class_audio_interrupt_task_function.c"/>
+        <files mask="ux_device_class_audio_interrupt_thread_entry.c"/>
         <files mask="ux_device_class_audio_ioctl.c"/>
         <files mask="ux_device_class_audio_read_frame_free.c"/>
         <files mask="ux_device_class_audio_read_frame_get.c"/>
+        <files mask="ux_device_class_audio_read_task_function.c"/>
         <files mask="ux_device_class_audio_read_thread_entry.c"/>
         <files mask="ux_device_class_audio_reception_start.c"/>
         <files mask="ux_device_class_audio_sample_read16.c"/>
@@ -432,11 +442,30 @@
         <files mask="ux_device_class_audio_sample_read8.c"/>
         <files mask="ux_device_class_audio_speed_get.c"/>
         <files mask="ux_device_class_audio_stream_get.c"/>
+        <files mask="ux_device_class_audio_tasks_run.c"/>
         <files mask="ux_device_class_audio_transmission_start.c"/>
         <files mask="ux_device_class_audio_unitialize.c"/>
         <files mask="ux_device_class_audio_write_frame_commit.c"/>
         <files mask="ux_device_class_audio_write_frame_get.c"/>
+        <files mask="ux_device_class_audio_write_task_function.c"/>
         <files mask="ux_device_class_audio_write_thread_entry.c"/>
+        <files mask="ux_device_class_ccid_activate.c"/>
+        <files mask="ux_device_class_ccid_auto_seq_done.c"/>
+        <files mask="ux_device_class_ccid_auto_seq_start.c"/>
+        <files mask="ux_device_class_ccid_control_abort.c"/>
+        <files mask="ux_device_class_ccid_control_request.c"/>
+        <files mask="ux_device_class_ccid_deactivate.c"/>
+        <files mask="ux_device_class_ccid_entry.c"/>
+        <files mask="ux_device_class_ccid_hardware_error.c"/>
+        <files mask="ux_device_class_ccid_icc_insert.c"/>
+        <files mask="ux_device_class_ccid_icc_remove.c"/>
+        <files mask="ux_device_class_ccid_initialize.c"/>
+        <files mask="ux_device_class_ccid_notify_thread_entry.c"/>
+        <files mask="ux_device_class_ccid_response.c"/>
+        <files mask="ux_device_class_ccid_runner_thread_entry.c"/>
+        <files mask="ux_device_class_ccid_thread_entry.c"/>
+        <files mask="ux_device_class_ccid_time_extension.c"/>
+        <files mask="ux_device_class_ccid_uninitialize.c"/>
         <files mask="ux_device_class_cdc_acm_activate.c"/>
         <files mask="ux_device_class_cdc_acm_bulkin_thread.c"/>
         <files mask="ux_device_class_cdc_acm_bulkout_thread.c"/>
@@ -482,9 +511,11 @@
         <files mask="ux_device_class_hid_initialize.c"/>
         <files mask="ux_device_class_hid_interrupt_thread.c"/>
         <files mask="ux_device_class_hid_read.c"/>
+        <files mask="ux_device_class_hid_read_run.c"/>
         <files mask="ux_device_class_hid_receiver_event_free.c"/>
         <files mask="ux_device_class_hid_receiver_event_get.c"/>
         <files mask="ux_device_class_hid_receiver_initialize.c"/>
+        <files mask="ux_device_class_hid_receiver_tasks_run.c"/>
         <files mask="ux_device_class_hid_receiver_thread.c"/>
         <files mask="ux_device_class_hid_receiver_uninitialize.c"/>
         <files mask="ux_device_class_hid_report_get.c"/>
@@ -532,9 +563,11 @@
         <files mask="ux_device_class_printer_initialize.c"/>
         <files mask="ux_device_class_printer_ioctl.c"/>
         <files mask="ux_device_class_printer_read.c"/>
+        <files mask="ux_device_class_printer_read_run.c"/>
         <files mask="ux_device_class_printer_soft_reset.c"/>
         <files mask="ux_device_class_printer_uninitialize.c"/>
         <files mask="ux_device_class_printer_write.c"/>
+        <files mask="ux_device_class_printer_write_run.c"/>
         <files mask="ux_device_class_rndis_activate.c"/>
         <files mask="ux_device_class_rndis_bulkin_thread.c"/>
         <files mask="ux_device_class_rndis_bulkout_thread.c"/>
@@ -579,6 +612,27 @@
         <files mask="ux_device_class_storage_uninitialize.c"/>
         <files mask="ux_device_class_storage_verify.c"/>
         <files mask="ux_device_class_storage_write.c"/>
+        <files mask="ux_device_class_video_activate.c"/>
+        <files mask="ux_device_class_video_change.c"/>
+        <files mask="ux_device_class_video_control_request.c"/>
+        <files mask="ux_device_class_video_deactivate.c"/>
+        <files mask="ux_device_class_video_entry.c"/>
+        <files mask="ux_device_class_video_initialize.c"/>
+        <files mask="ux_device_class_video_ioctl.c"/>
+        <files mask="ux_device_class_video_max_payload_get.c"/>
+        <files mask="ux_device_class_video_read_payload_free.c"/>
+        <files mask="ux_device_class_video_read_payload_get.c"/>
+        <files mask="ux_device_class_video_read_task_function.c"/>
+        <files mask="ux_device_class_video_read_thread_entry.c"/>
+        <files mask="ux_device_class_video_reception_start.c"/>
+        <files mask="ux_device_class_video_stream_get.c"/>
+        <files mask="ux_device_class_video_tasks_run.c"/>
+        <files mask="ux_device_class_video_transmission_start.c"/>
+        <files mask="ux_device_class_video_uninitialize.c"/>
+        <files mask="ux_device_class_video_write_payload_commit.c"/>
+        <files mask="ux_device_class_video_write_payload_get.c"/>
+        <files mask="ux_device_class_video_write_task_function.c"/>
+        <files mask="ux_device_class_video_write_thread_entry.c"/>
       </source>
       <source relative_path="./usbx/common/usbx_host_classes" project_relative_path="usbx/common/usbx_host_classes" type="src">
         <files mask="usbx_host_classes_source.c"/>
@@ -600,15 +654,27 @@
         <files mask="ux_host_class_audio_alternate_setting_locate.c"/>
         <files mask="ux_host_class_audio_configure.c"/>
         <files mask="ux_host_class_audio_control_get.c"/>
+        <files mask="ux_host_class_audio_control_request.c"/>
         <files mask="ux_host_class_audio_control_value_get.c"/>
         <files mask="ux_host_class_audio_control_value_set.c"/>
         <files mask="ux_host_class_audio_deactivate.c"/>
         <files mask="ux_host_class_audio_descriptor_get.c"/>
+        <files mask="ux_host_class_audio_descriptors_parse.c"/>
         <files mask="ux_host_class_audio_device_controls_list_get.c"/>
         <files mask="ux_host_class_audio_device_type_get.c"/>
         <files mask="ux_host_class_audio_endpoints_get.c"/>
+        <files mask="ux_host_class_audio_entity_control_get.c"/>
+        <files mask="ux_host_class_audio_entity_control_value_get.c"/>
+        <files mask="ux_host_class_audio_entity_control_value_set.c"/>
         <files mask="ux_host_class_audio_entry.c"/>
+        <files mask="ux_host_class_audio_feedback_get.c"/>
+        <files mask="ux_host_class_audio_feedback_set.c"/>
+        <files mask="ux_host_class_audio_feedback_transfer_completed.c"/>
+        <files mask="ux_host_class_audio_interrupt_notification.c"/>
+        <files mask="ux_host_class_audio_interrupt_start.c"/>
+        <files mask="ux_host_class_audio_raw_sampling_parse.c"/>
         <files mask="ux_host_class_audio_read.c"/>
+        <files mask="ux_host_class_audio_stop.c"/>
         <files mask="ux_host_class_audio_streaming_sampling_get.c"/>
         <files mask="ux_host_class_audio_streaming_sampling_set.c"/>
         <files mask="ux_host_class_audio_streaming_terminal_get.c"/>
@@ -724,6 +790,7 @@
         <files mask="ux_host_class_hub_port_reset.c"/>
         <files mask="ux_host_class_hub_ports_power.c"/>
         <files mask="ux_host_class_hub_status_get.c"/>
+        <files mask="ux_host_class_hub_tasks_run.c"/>
         <files mask="ux_host_class_hub_transfer_request_completed.c"/>
         <files mask="ux_host_class_pima_activate.c"/>
         <files mask="ux_host_class_pima_command.c"/>
@@ -1058,6 +1125,9 @@
       <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
         <files mask="fx_port.h"/>
       </source>
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+        <files mask="fx_port.h"/>
+      </source>
       <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
         <files mask="nx_port.h"/>
       </source>
@@ -1083,7 +1153,7 @@
         <include_path relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.sp.MIMXRT1062" name="Azure RTOS USBX(Single Precision FPU)" brief="A USB library based on azure RTOS" version="6.1.10" full_name="Azure RTOS USBX(Single Precision FPU)" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.sp.MIMXRT1062" name="Azure RTOS USBX(Single Precision FPU)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX(Single Precision FPU)" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.ux.template.MIMXRT1062"/>
@@ -1094,7 +1164,7 @@
         <files mask="libusbx_sp.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.ux.template.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.1.10" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.template.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source relative_path="./usbx" project_relative_path="usbx" type="doc">
         <files mask="LICENSE.txt"/>
         <files mask="LICENSED-HARDWARE.txt"/>
@@ -1119,6 +1189,8 @@
       </source>
       <source relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
         <files mask="ux_api.h"/>
+        <files mask="ux_class_audio10.h"/>
+        <files mask="ux_class_audio20.h"/>
         <files mask="ux_dcd_sim_slave.h"/>
         <files mask="ux_device_class_dpump.h"/>
         <files mask="ux_device_stack.h"/>
@@ -1133,6 +1205,7 @@
         <files mask="ux_device_class_audio.h"/>
         <files mask="ux_device_class_audio10.h"/>
         <files mask="ux_device_class_audio20.h"/>
+        <files mask="ux_device_class_ccid.h"/>
         <files mask="ux_device_class_cdc_acm.h"/>
         <files mask="ux_device_class_cdc_ecm.h"/>
         <files mask="ux_device_class_dfu.h"/>
@@ -1141,6 +1214,7 @@
         <files mask="ux_device_class_printer.h"/>
         <files mask="ux_device_class_rndis.h"/>
         <files mask="ux_device_class_storage.h"/>
+        <files mask="ux_device_class_video.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./usbx/common/usbx_device_classes" project_relative_path="usbx/common/usbx_device_classes" type="doc">
         <files mask="CMakeLists.txt"/>
@@ -1210,7 +1284,7 @@
         <include_path relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.unused_files.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.1.10" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.unused_files.MIMXRT1062" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./usbx" project_relative_path="usbx" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>
@@ -1451,12 +1525,17 @@
         <files mask="ux_device_class_audio_entry.c" hidden="true"/>
         <files mask="ux_device_class_audio_feedback_get.c" hidden="true"/>
         <files mask="ux_device_class_audio_feedback_set.c" hidden="true"/>
+        <files mask="ux_device_class_audio_feedback_task_function.c" hidden="true"/>
         <files mask="ux_device_class_audio_feedback_thread_entry.c" hidden="true"/>
         <files mask="ux_device_class_audio_frame_write.c" hidden="true"/>
         <files mask="ux_device_class_audio_initialize.c" hidden="true"/>
+        <files mask="ux_device_class_audio_interrupt_send.c" hidden="true"/>
+        <files mask="ux_device_class_audio_interrupt_task_function.c" hidden="true"/>
+        <files mask="ux_device_class_audio_interrupt_thread_entry.c" hidden="true"/>
         <files mask="ux_device_class_audio_ioctl.c" hidden="true"/>
         <files mask="ux_device_class_audio_read_frame_free.c" hidden="true"/>
         <files mask="ux_device_class_audio_read_frame_get.c" hidden="true"/>
+        <files mask="ux_device_class_audio_read_task_function.c" hidden="true"/>
         <files mask="ux_device_class_audio_read_thread_entry.c" hidden="true"/>
         <files mask="ux_device_class_audio_reception_start.c" hidden="true"/>
         <files mask="ux_device_class_audio_sample_read16.c" hidden="true"/>
@@ -1465,11 +1544,30 @@
         <files mask="ux_device_class_audio_sample_read8.c" hidden="true"/>
         <files mask="ux_device_class_audio_speed_get.c" hidden="true"/>
         <files mask="ux_device_class_audio_stream_get.c" hidden="true"/>
+        <files mask="ux_device_class_audio_tasks_run.c" hidden="true"/>
         <files mask="ux_device_class_audio_transmission_start.c" hidden="true"/>
         <files mask="ux_device_class_audio_unitialize.c" hidden="true"/>
         <files mask="ux_device_class_audio_write_frame_commit.c" hidden="true"/>
         <files mask="ux_device_class_audio_write_frame_get.c" hidden="true"/>
+        <files mask="ux_device_class_audio_write_task_function.c" hidden="true"/>
         <files mask="ux_device_class_audio_write_thread_entry.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_activate.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_auto_seq_done.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_auto_seq_start.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_control_abort.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_control_request.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_deactivate.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_entry.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_hardware_error.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_icc_insert.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_icc_remove.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_initialize.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_notify_thread_entry.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_response.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_runner_thread_entry.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_thread_entry.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_time_extension.c" hidden="true"/>
+        <files mask="ux_device_class_ccid_uninitialize.c" hidden="true"/>
         <files mask="ux_device_class_cdc_acm_activate.c" hidden="true"/>
         <files mask="ux_device_class_cdc_acm_bulkin_thread.c" hidden="true"/>
         <files mask="ux_device_class_cdc_acm_bulkout_thread.c" hidden="true"/>
@@ -1515,9 +1613,11 @@
         <files mask="ux_device_class_hid_initialize.c" hidden="true"/>
         <files mask="ux_device_class_hid_interrupt_thread.c" hidden="true"/>
         <files mask="ux_device_class_hid_read.c" hidden="true"/>
+        <files mask="ux_device_class_hid_read_run.c" hidden="true"/>
         <files mask="ux_device_class_hid_receiver_event_free.c" hidden="true"/>
         <files mask="ux_device_class_hid_receiver_event_get.c" hidden="true"/>
         <files mask="ux_device_class_hid_receiver_initialize.c" hidden="true"/>
+        <files mask="ux_device_class_hid_receiver_tasks_run.c" hidden="true"/>
         <files mask="ux_device_class_hid_receiver_thread.c" hidden="true"/>
         <files mask="ux_device_class_hid_receiver_uninitialize.c" hidden="true"/>
         <files mask="ux_device_class_hid_report_get.c" hidden="true"/>
@@ -1565,9 +1665,11 @@
         <files mask="ux_device_class_printer_initialize.c" hidden="true"/>
         <files mask="ux_device_class_printer_ioctl.c" hidden="true"/>
         <files mask="ux_device_class_printer_read.c" hidden="true"/>
+        <files mask="ux_device_class_printer_read_run.c" hidden="true"/>
         <files mask="ux_device_class_printer_soft_reset.c" hidden="true"/>
         <files mask="ux_device_class_printer_uninitialize.c" hidden="true"/>
         <files mask="ux_device_class_printer_write.c" hidden="true"/>
+        <files mask="ux_device_class_printer_write_run.c" hidden="true"/>
         <files mask="ux_device_class_rndis_activate.c" hidden="true"/>
         <files mask="ux_device_class_rndis_bulkin_thread.c" hidden="true"/>
         <files mask="ux_device_class_rndis_bulkout_thread.c" hidden="true"/>
@@ -1612,6 +1714,27 @@
         <files mask="ux_device_class_storage_uninitialize.c" hidden="true"/>
         <files mask="ux_device_class_storage_verify.c" hidden="true"/>
         <files mask="ux_device_class_storage_write.c" hidden="true"/>
+        <files mask="ux_device_class_video_activate.c" hidden="true"/>
+        <files mask="ux_device_class_video_change.c" hidden="true"/>
+        <files mask="ux_device_class_video_control_request.c" hidden="true"/>
+        <files mask="ux_device_class_video_deactivate.c" hidden="true"/>
+        <files mask="ux_device_class_video_entry.c" hidden="true"/>
+        <files mask="ux_device_class_video_initialize.c" hidden="true"/>
+        <files mask="ux_device_class_video_ioctl.c" hidden="true"/>
+        <files mask="ux_device_class_video_max_payload_get.c" hidden="true"/>
+        <files mask="ux_device_class_video_read_payload_free.c" hidden="true"/>
+        <files mask="ux_device_class_video_read_payload_get.c" hidden="true"/>
+        <files mask="ux_device_class_video_read_task_function.c" hidden="true"/>
+        <files mask="ux_device_class_video_read_thread_entry.c" hidden="true"/>
+        <files mask="ux_device_class_video_reception_start.c" hidden="true"/>
+        <files mask="ux_device_class_video_stream_get.c" hidden="true"/>
+        <files mask="ux_device_class_video_tasks_run.c" hidden="true"/>
+        <files mask="ux_device_class_video_transmission_start.c" hidden="true"/>
+        <files mask="ux_device_class_video_uninitialize.c" hidden="true"/>
+        <files mask="ux_device_class_video_write_payload_commit.c" hidden="true"/>
+        <files mask="ux_device_class_video_write_payload_get.c" hidden="true"/>
+        <files mask="ux_device_class_video_write_task_function.c" hidden="true"/>
+        <files mask="ux_device_class_video_write_thread_entry.c" hidden="true"/>
       </source>
       <source exclude="true" relative_path="./usbx/common/usbx_host_classes/src" project_relative_path="usbx/common/usbx_host_classes/src" type="src">
         <files mask="ux_host_class_asix_activate.c" hidden="true"/>
@@ -1630,15 +1753,27 @@
         <files mask="ux_host_class_audio_alternate_setting_locate.c" hidden="true"/>
         <files mask="ux_host_class_audio_configure.c" hidden="true"/>
         <files mask="ux_host_class_audio_control_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_control_request.c" hidden="true"/>
         <files mask="ux_host_class_audio_control_value_get.c" hidden="true"/>
         <files mask="ux_host_class_audio_control_value_set.c" hidden="true"/>
         <files mask="ux_host_class_audio_deactivate.c" hidden="true"/>
         <files mask="ux_host_class_audio_descriptor_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_descriptors_parse.c" hidden="true"/>
         <files mask="ux_host_class_audio_device_controls_list_get.c" hidden="true"/>
         <files mask="ux_host_class_audio_device_type_get.c" hidden="true"/>
         <files mask="ux_host_class_audio_endpoints_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_entity_control_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_entity_control_value_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_entity_control_value_set.c" hidden="true"/>
         <files mask="ux_host_class_audio_entry.c" hidden="true"/>
+        <files mask="ux_host_class_audio_feedback_get.c" hidden="true"/>
+        <files mask="ux_host_class_audio_feedback_set.c" hidden="true"/>
+        <files mask="ux_host_class_audio_feedback_transfer_completed.c" hidden="true"/>
+        <files mask="ux_host_class_audio_interrupt_notification.c" hidden="true"/>
+        <files mask="ux_host_class_audio_interrupt_start.c" hidden="true"/>
+        <files mask="ux_host_class_audio_raw_sampling_parse.c" hidden="true"/>
         <files mask="ux_host_class_audio_read.c" hidden="true"/>
+        <files mask="ux_host_class_audio_stop.c" hidden="true"/>
         <files mask="ux_host_class_audio_streaming_sampling_get.c" hidden="true"/>
         <files mask="ux_host_class_audio_streaming_sampling_set.c" hidden="true"/>
         <files mask="ux_host_class_audio_streaming_terminal_get.c" hidden="true"/>
@@ -1754,6 +1889,7 @@
         <files mask="ux_host_class_hub_port_reset.c" hidden="true"/>
         <files mask="ux_host_class_hub_ports_power.c" hidden="true"/>
         <files mask="ux_host_class_hub_status_get.c" hidden="true"/>
+        <files mask="ux_host_class_hub_tasks_run.c" hidden="true"/>
         <files mask="ux_host_class_hub_transfer_request_completed.c" hidden="true"/>
         <files mask="ux_host_class_pima_activate.c" hidden="true"/>
         <files mask="ux_host_class_pima_command.c" hidden="true"/>
