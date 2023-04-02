@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_tx_MIMXRT1062_manifest_v3_10" name="Azure RTOS ThreadX" brief="Azure RTOS ThreadX" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2023-01-09 15:35:17.829845-->
-  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
+  <!--Timestamp (UTC): 2023-03-27 10:46:24.677546-->
+  <!--This manifest is generated based on sdk repo commit: 7a3cf97dd3582e3ee8a98ede814ff1f2a45ea519-->
   <externalDefinitions>
     <definition extID="MIMXRT1062xxxxA"/>
-    <definition extID="MIMXRT1062xxxxB"/>
     <definition extID="core0_MIMXRT1062xxxxA"/>
-    <definition extID="core0_MIMXRT1062xxxxB"/>
     <definition extID="mcuxpresso"/>
     <definition extID="armgcc"/>
   </externalDefinitions>
   <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_tx_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_tx_MIMXRT1062_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.tx.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1062"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="libthreadx.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
         <files mask="middleware_azure_rtos_tx_MIMXRT1062.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx.lib.MIMXRT1062" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.lib.MIMXRT1062" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -229,23 +227,23 @@
         <files mask="txe_timer_delete.c"/>
         <files mask="txe_timer_info_get.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
       </source>
       <include_paths>
         <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.sp.MIMXRT1062" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.sp.MIMXRT1062" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1062xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1062"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="libthreadx_sp.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx.template.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.template.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -267,7 +265,7 @@
       <source toolchain="armgcc" relative_path="./threadx/common" project_relative_path="threadx/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="./threadx/ports/cortex_m7/gnu" project_relative_path="threadx/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc" relative_path="./threadx/ports/cortex_m7/gnu" project_relative_path="threadx/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="CMakeLists.txt"/>
       </source>
       <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
@@ -284,10 +282,10 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/src" project_relative_path="threadx/ports/cortex_m7/gnu/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/src" project_relative_path="threadx/ports/cortex_m7/gnu/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_misra.S"/>
         <files mask="tx_thread_context_restore.S"/>
         <files mask="tx_thread_context_save.S"/>
@@ -307,10 +305,10 @@
       </source>
       <include_paths>
         <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.unused_files.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.unused_files.MIMXRT1062" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>
@@ -460,14 +458,14 @@
         <files mask="txm_module_user_sample.h" hidden="true"/>
         <files mask="txm_module.h" hidden="true"/>
       </source>
-      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="txm_module_port.h" hidden="true"/>
         <files mask="tx_port.h" hidden="true"/>
       </source>
-      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="txm_module_thread_shell_entry.c" hidden="true"/>
       </source>
-      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_thread_schedule.S" hidden="true"/>
         <files mask="tx_thread_stack_build.S" hidden="true"/>
         <files mask="tx_thread_system_return.S" hidden="true"/>
@@ -479,7 +477,7 @@
         <files mask="tx_thread_context_restore.S" hidden="true"/>
         <files mask="tx_thread_context_save.S" hidden="true"/>
       </source>
-      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc mcuxpresso" exclude="true" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="txm_module_manager_external_memory_enable.c" hidden="true"/>
         <files mask="txm_module_manager_alignment_adjust.c" hidden="true"/>
         <files mask="txm_module_manager_memory_fault_handler.c" hidden="true"/>
@@ -507,15 +505,15 @@
         <files mask="FreeRTOSConfig.h" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.MIMXRT1062" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.MIMXRT1062" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx_mgr.template.MIMXRT1062"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="libthreadx-txm.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.lib.MIMXRT1062" name="Azure RTOS ThreadX Module Manager(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.lib.MIMXRT1062" name="Azure RTOS ThreadX Module Manager(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -757,11 +755,11 @@
         <files mask="txm_module_manager_unload.c"/>
         <files mask="txm_module_manager_util.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_thread_schedule.S"/>
         <files mask="tx_thread_stack_build.S"/>
         <files mask="tx_thread_system_return.S"/>
@@ -773,7 +771,7 @@
         <files mask="tx_thread_context_restore.S"/>
         <files mask="tx_thread_context_save.S"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="txm_module_manager_external_memory_enable.c"/>
         <files mask="txm_module_manager_alignment_adjust.c"/>
         <files mask="txm_module_manager_memory_fault_handler.c"/>
@@ -784,10 +782,10 @@
         <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
         <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
         <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
-        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.template.MIMXRT1062" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.template.MIMXRT1062" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1062xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -814,7 +812,7 @@
         <files mask="txm_module_manager_dispatch.h"/>
         <files mask="txm_module_manager_util.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
@@ -825,10 +823,10 @@
         <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
         <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
         <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
-        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.txm.lib.MIMXRT1062" name="Azure RTOS ThreadX Module(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.txm.lib.MIMXRT1062" name="Azure RTOS ThreadX Module(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module" devices="MIMXRT1062xxxxA" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -951,17 +949,17 @@
         <files mask="txm_trace_isr_exit_insert.c"/>
         <files mask="txm_trace_user_event_insert.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="txm_module_thread_shell_entry.c"/>
       </source>
       <include_paths>
         <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
         <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
-        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
   </components>

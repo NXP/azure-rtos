@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_nxd_MIMXRT1062_manifest_v3_10" name="Azure RTOS NetX Duo" brief="A Network Protocol Stack Based On Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2023-01-09 15:35:17.755271-->
-  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
+  <!--Timestamp (UTC): 2023-03-27 10:46:24.587417-->
+  <!--This manifest is generated based on sdk repo commit: 7a3cf97dd3582e3ee8a98ede814ff1f2a45ea519-->
   <externalDefinitions>
     <definition extID="MIMXRT1062xxxxA"/>
-    <definition extID="MIMXRT1062xxxxB"/>
     <definition extID="middleware.azure_rtos.fx.MIMXRT1062"/>
     <definition extID="core0_MIMXRT1062xxxxA"/>
-    <definition extID="core0_MIMXRT1062xxxxB"/>
     <definition extID="mcuxpresso"/>
     <definition extID="armgcc"/>
     <definition extID="middleware.azure_rtos.fx.sp.MIMXRT1062"/>
   </externalDefinitions>
   <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_nxd_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_nxd_MIMXRT1062_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.nxd.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1062"/>
           <component_dependency value="middleware.azure_rtos.fx.MIMXRT1062"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="libnetxduo.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
         <files mask="middleware_azure_rtos_nxd_MIMXRT1062.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1062" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1062" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -1006,16 +1004,16 @@
         <files mask="nx_udp.h"/>
         <files mask="nx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="nx_port.h"/>
       </source>
       <include_paths>
@@ -1025,23 +1023,23 @@
         <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
         <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
         <include_path relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
-        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
-        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
-        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
+        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1062" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1062" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1062"/>
           <component_dependency value="middleware.azure_rtos.fx.sp.MIMXRT1062"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="libnetxduo_sp.a"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.nxd.template.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.template.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
@@ -1285,10 +1283,10 @@
       <source toolchain="armgcc" relative_path="./netxduo/nx_secure" project_relative_path="netxduo/nx_secure" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="./netxduo/ports/cortex_m7/gnu" project_relative_path="netxduo/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="armgcc" relative_path="./netxduo/ports/cortex_m7/gnu" project_relative_path="netxduo/ports/cortex_m7/gnu" type="doc" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB">
+      <source toolchain="mcuxpresso armgcc" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="core0_MIMXRT1062xxxxA">
         <files mask="nx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" project_relative_path="." type="workspace">
@@ -1321,10 +1319,10 @@
         <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
         <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
         <include_path relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
-        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA core0_MIMXRT1062xxxxB"/>
+        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="core0_MIMXRT1062xxxxA"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.unused_files.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.unused_files.MIMXRT1062" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="false" type="other" package_base_path=".././" project_base_path="azure-rtos">
       <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="other">
         <files mask="CONTRIBUTING.md" hidden="true"/>
         <files mask="SECURITY.md" hidden="true"/>

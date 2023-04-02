@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1062_manifest_v3_10" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" format_version="3.10" api_version="2.0.0" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.10.xsd">
-  <!--Timestamp (UTC): 2023-01-09 15:35:17.313856-->
-  <!--This manifest is generated based on sdk repo commit: dcc319a0105d6a9ebec0bc625dd7aae64718cd3d-->
+  <!--Timestamp (UTC): 2023-03-27 10:46:24.058267-->
+  <!--This manifest is generated based on sdk repo commit: 7a3cf97dd3582e3ee8a98ede814ff1f2a45ea519-->
   <externalDefinitions>
     <definition extID="MIMXRT1062xxxxA"/>
-    <definition extID="MIMXRT1062xxxxB"/>
     <definition extID="middleware.azure_rtos.nxd.sp.MIMXRT1062"/>
     <definition extID="middleware.azure_rtos.nxd.MIMXRT1062"/>
     <definition extID="armgcc"/>
   </externalDefinitions>
   <ksdk id="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1062_manifest_v3_10" name="MCUXpressoSDK2130_middleware_microsoft_azure_rtos_azure_iot_MIMXRT1062_manifest_v3_10" version="2.13.0"/>
   <components>
-    <component id="middleware.azure_rtos.azure_iot.MIMXRT1062" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.2.0" full_name="Azure RTOS IoT" devices="MIMXRT1062xxxxA MIMXRT1062xxxxB" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.azure_iot.MIMXRT1062" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.2.0" full_name="Azure RTOS IoT" devices="MIMXRT1062xxxxA" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <any_of>
           <component_dependency value="middleware.azure_rtos.nxd.MIMXRT1062"/>
