@@ -6,21 +6,6 @@ if (CONFIG_USE_middleware_azure_rtos_tx_template)
 
 message("middleware_azure_rtos_tx_template component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_misra.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_context_save.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_disable.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_schedule.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_stack_build.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_timer_interrupt.S
-  )
-endif()
-
 target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/common/tx_initialize_low_level.c
 )
@@ -42,12 +27,6 @@ endif()
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -88,12 +67,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -305,12 +278,6 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -551,37 +518,11 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/src/txm_module_manager_util.c
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_stack_build.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_handler.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_disable.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_timer_interrupt.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_thread_stack_build.s
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
-  )
-endif()
-
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -702,22 +643,10 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_lib/src/txm_trace_user_event_insert.c
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_lib/src/txm_module_thread_shell_entry.c
-  )
-endif()
-
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -740,12 +669,6 @@ message("middleware_azure_rtos_fx_template component is included from ${CMAKE_CU
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/common/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -1021,22 +944,10 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/common/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
 )
 endif()
 
@@ -1061,301 +972,12 @@ message("middleware_azure_rtos_gx_lib component is included from ${CMAKE_CURRENT
 
 target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./guix/common/gx_source.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_jpeg_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_png_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1555xrgb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_mouse_capture.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_mouse_restore.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_rotated_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_row_pitch_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_16bpp_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_glyph_1bpp_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_mouse_capture.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_mouse_restore.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_row_pitch_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_1bpp_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_jpeg_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_mouse_capture.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_mouse_restore.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_png_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_rotated_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_rotated_jpeg_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_rotated_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_rotated_png_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_rotated_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_24xrgb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_rotated_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_rotated_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32argb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_rotated_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_row_pitch_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_32bpp_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_332rgb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_332rgb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_332rgb_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_332rgb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_332rgb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4444argb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_glyph_4bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_grayscale_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_mouse_capture.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_mouse_restore.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_row_pitch_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_4bpp_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_jpeg_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_png_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_canvas_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_jpeg_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_pixel_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_png_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_rotated_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_565rgb_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bit_palette_native_color_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bit_palette_rotated_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bit_palette_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_glyph_3bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_glyph_4bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_mouse_capture.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_mouse_restore.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_pixelmap_blend.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_block_move.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_canvas_copy.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_glyph_1bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_glyph_3bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_glyph_4bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_horizontal_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_horizontal_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_horizontal_pixelmap_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_pixel_write.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_pixelmap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_rotated_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_row_pitch_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_simple_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_vertical_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_8bpp_vertical_pattern_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_arc_clipping_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_arc_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_ellipse_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_filled_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_fixed_point_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_wide_arc_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_wide_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_wide_ellipse_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_aliased_wide_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_alphamap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_arc_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_arc_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_circle_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_drawing_complete.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_drawing_initiate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_ellipse_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_ellipse_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_filled_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_glyph_4bpp_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_glyph_8bpp_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_mouse_cursor_define.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_mouse_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_mouse_enable.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_mouse_position_set.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_pie_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_polygon_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_polygon_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_alphamap_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_arc_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_circle_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_ellipse_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_glyph_4bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_glyph_8bit_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_pie_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_polygon_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_rotated_wide_line_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_simple_pie_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_simple_wide_line_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_wide_arc_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_wide_circle_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_wide_ellipse_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_wide_line_fill.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_generic_wide_line_points_calculate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_horizontal_line_alpha_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_monochrome_setup.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_simple_line_alpha_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_display_driver_vertical_line_alpha_draw.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_system_font_4bpp.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_system_font_8bpp.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_system_font_mono.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_system_initialize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_1555xrgb_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_1555xrgb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_16bpp_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_1bpp_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_1bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_32argb_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_32argb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_332rgb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_4444argb_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_4444argb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_4bpp_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_4bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_565rgb_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_8bpp_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_8bpp_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_alphamap_create.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_arabic_shaping.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_bracket_pair_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_character_type_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_mirroring_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_paragraph_reorder.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_bidi_resolved_text_info_delete.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_canvas_to_bmp.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_circle_point_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_easing_function_calculate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_gradient_create.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_gradient_delete.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_ltoa.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_math_acos.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_math_asin.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_math_cos.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_math_sin.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_math_sqrt.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_pixelmap_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_pixelmap_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_pixelmap_simple_rotate.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_center.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_center_find.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_combine.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_compare.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_define.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_inside_detect.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_overlap_detect.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_point_detect.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_resize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_rectangle_shift.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_string_compare.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_string_length_check.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_string_to_alphamap.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_thai_glyph_shaping.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_unicode_to_utf8.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_utf8_string_backward_character_length_get.c
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/common/src/gx_utility_utf8_string_character_get.c
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
   ${CMAKE_CURRENT_LIST_DIR}/./guix/common/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -1364,6 +986,90 @@ if(CONFIG_USE_COMPONENT_CONFIGURATION)
     -DTX_INCLUDE_USER_DEFINE_FILE
     -DGX_INCLUDE_USER_DEFINE_FILE
   )
+
+endif()
+
+
+endif()
+
+
+if (CONFIG_USE_middleware_azure_rtos_lx)
+# Add set(CONFIG_USE_middleware_azure_rtos_lx true) in config.cmake to use this component
+
+message("middleware_azure_rtos_lx component is included from ${CMAKE_CURRENT_LIST_FILE}.")
+
+if(CONFIG_TOOLCHAIN STREQUAL mcux)
+  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/fx_nand_flash_simulated_driver.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/fx_nor_flash_simulator_driver.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_256byte_ecc_check.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_256byte_ecc_compute.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_full_update.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_obsoleted_check.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_reclaim.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_close.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_defragment.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_erase.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_erased_verify.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_status_get.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_status_set.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_extra_bytes_get.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_extra_bytes_set.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_page_erased_verify.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_read.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_write.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_extended_cache_enable.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_initialize.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_logical_sector_find.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_next_block_to_erase_find.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_open.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_page_ecc_check.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_page_ecc_compute.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_partial_defragment.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_physical_page_allocate.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_mapping_cache_invalidate.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_read.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_release.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_write.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_simulator.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_system_error.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_block_reclaim.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_close.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_defragment.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_block_erase.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_read.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_write.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_extended_cache_enable.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_initialize.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_logical_sector_find.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_next_block_to_erase_find.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_open.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_partial_defragment.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_physical_sector_allocate.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_mapping_cache_invalidate.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_read.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_release.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_write.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_simulator.c
+      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_system_error.c
+  )
+endif()
+
+target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
+  ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/inc
+)
+
+if(CONFIG_USE_COMPONENT_CONFIGURATION)
+  message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
+
+  target_compile_definitions(${MCUX_SDK_PROJECT_NAME} PUBLIC
+    -DLX_THREAD_SAFE_ENABLE
+  )
+
+  if(CONFIG_TOOLCHAIN STREQUAL armgcc)
+    target_compile_options(${MCUX_SDK_PROJECT_NAME} PUBLIC
+    )
+  endif()
 
 endif()
 
@@ -1409,7 +1115,6 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/web/nx_tcpserver.c
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/web/nx_web_http_client.c
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/web/nx_web_http_server.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/websocket/nx_websocket_client.c
 )
 
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -1440,12 +1145,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/inc
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/ports
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -1478,11 +1177,6 @@ message("middleware_azure_rtos_nxd_lib component is included from ${CMAKE_CURREN
 
 target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/netxduo_common_source.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/src/nx_ip_initialize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/src/nx_packet_pool_initialize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/src/nx_ram_network_driver.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/src/nx_system_initialize.c
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/common/src/nx_tcp_initialize.c
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/crypto_libraries/src/nx_crypto_3des.c
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/crypto_libraries/src/nx_crypto_aes.c
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/crypto_libraries/src/nx_crypto_cbc.c
@@ -1855,19 +1549,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/ports
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
@@ -1908,12 +1589,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_network/inc
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_pictbridge/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -2191,20 +1866,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_pictbridge/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
@@ -2243,14 +1904,6 @@ message("middleware_azure_rtos_tx component is included from ${CMAKE_CURRENT_LIS
 
 if(CONFIG_USE_middleware_azure_rtos_tx_template)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_tx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2267,14 +1920,6 @@ message("middleware_azure_rtos_tx_mgr component is included from ${CMAKE_CURRENT
 
 if(CONFIG_USE_middleware_azure_rtos_tx_mgr_template)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx-txm.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_tx_mgr dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2290,14 +1935,6 @@ if (CONFIG_USE_middleware_azure_rtos_tx_sp)
 message("middleware_azure_rtos_tx_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_tx_template)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2323,14 +1960,6 @@ message("middleware_azure_rtos_fx component is included from ${CMAKE_CURRENT_LIS
 
 if(CONFIG_USE_middleware_azure_rtos_fx_template AND CONFIG_USE_middleware_azure_rtos_tx)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m7/mcux/libfilex.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_fx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2346,14 +1975,6 @@ if (CONFIG_USE_middleware_azure_rtos_fx_sp)
 message("middleware_azure_rtos_fx_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_fx_template AND CONFIG_USE_middleware_azure_rtos_tx_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m7/mcux/libfilex_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2383,12 +2004,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./guix/common/inc
 )
 
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -2403,108 +2018,9 @@ if(CONFIG_USE_COMPONENT_CONFIGURATION)
 
 endif()
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/guix/cortex_m7/mcux/libguix.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_gx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
-
-endif()
-
-endif()
-
-
-if (CONFIG_USE_middleware_azure_rtos_lx)
-# Add set(CONFIG_USE_middleware_azure_rtos_lx true) in config.cmake to use this component
-
-message("middleware_azure_rtos_lx component is included from ${CMAKE_CURRENT_LIST_FILE}.")
-
-if(CONFIG_USE_middleware_azure_rtos_fx)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/fx_nand_flash_simulated_driver.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/fx_nor_flash_simulator_driver.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_256byte_ecc_check.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_256byte_ecc_compute.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_full_update.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_obsoleted_check.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_block_reclaim.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_close.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_defragment.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_erase.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_erased_verify.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_status_get.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_block_status_set.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_extra_bytes_get.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_extra_bytes_set.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_page_erased_verify.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_read.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_driver_write.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_extended_cache_enable.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_initialize.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_logical_sector_find.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_next_block_to_erase_find.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_open.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_page_ecc_check.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_page_ecc_compute.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_partial_defragment.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_physical_page_allocate.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_mapping_cache_invalidate.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_read.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_release.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_sector_write.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_simulator.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nand_flash_system_error.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_block_reclaim.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_close.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_defragment.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_block_erase.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_read.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_driver_write.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_extended_cache_enable.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_initialize.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_logical_sector_find.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_next_block_to_erase_find.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_open.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_partial_defragment.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_physical_sector_allocate.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_mapping_cache_invalidate.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_read.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_release.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_sector_write.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_simulator.c
-      ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/src/lx_nor_flash_system_error.c
-  )
-endif()
-
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./levelx/common/inc
-)
-
-if(CONFIG_USE_COMPONENT_CONFIGURATION)
-  message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
-
-  target_compile_definitions(${MCUX_SDK_PROJECT_NAME} PUBLIC
-    -DLX_THREAD_SAFE_ENABLE
-  )
-
-  if(CONFIG_TOOLCHAIN STREQUAL armgcc)
-    target_compile_options(${MCUX_SDK_PROJECT_NAME} PUBLIC
-    )
-  endif()
-
-endif()
-
-else()
-
-message(SEND_ERROR "middleware_azure_rtos_lx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
 
 endif()
 
@@ -2517,14 +2033,6 @@ if (CONFIG_USE_middleware_azure_rtos_nxd)
 message("middleware_azure_rtos_nxd component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_nxd_template AND CONFIG_USE_middleware_azure_rtos_fx)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/netxduo/cortex_m7/mcux/libnetxduo.a
-      -Wl,--end-group
-  )
-endif()
 
 else()
 
@@ -2541,14 +2049,6 @@ if (CONFIG_USE_middleware_azure_rtos_nxd_sp)
 message("middleware_azure_rtos_nxd_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_nxd_template AND CONFIG_USE_middleware_azure_rtos_fx_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/netxduo/cortex_m7/mcux/libnetxduo_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2567,41 +2067,12 @@ endif()
 endif()
 
 
-if (CONFIG_USE_middleware_netxduo_imxrt)
-# Add set(CONFIG_USE_middleware_netxduo_imxrt true) in config.cmake to use this component
-
-message("middleware_netxduo_imxrt component is included from ${CMAKE_CURRENT_LIST_FILE}.")
-
-if(CONFIG_USE_middleware_azure_rtos_nxd)
-
-target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-  ${CMAKE_CURRENT_LIST_DIR}/./ports/netxduo/nx_driver_imxrt_irq.c
-  ${CMAKE_CURRENT_LIST_DIR}/./ports/netxduo/nx_driver_imxrt.c
-)
-
-else()
-
-message(SEND_ERROR "middleware_netxduo_imxrt dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
-
-endif()
-
-endif()
-
-
 if (CONFIG_USE_middleware_azure_rtos_ux)
 # Add set(CONFIG_USE_middleware_azure_rtos_ux true) in config.cmake to use this component
 
 message("middleware_azure_rtos_ux component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_ux_template AND CONFIG_USE_middleware_azure_rtos_nxd)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m7/mcux/libusbx.a
-      -Wl,--end-group
-  )
-endif()
 
 else()
 
@@ -2618,14 +2089,6 @@ if (CONFIG_USE_middleware_azure_rtos_ux_sp)
 message("middleware_azure_rtos_ux_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_ux_template AND CONFIG_USE_middleware_azure_rtos_nxd_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m7/mcux/libusbx_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
