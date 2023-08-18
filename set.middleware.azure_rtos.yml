@@ -6,160 +6,160 @@ container.azure_rtos.tx.unused_files:
     - source: rtos/azure-rtos/threadx/docs/deps.png
     - source: rtos/azure-rtos/threadx/SECURITY.md
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_stop.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_kernel_dispatch.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_callback_request.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_initialize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pointer_get_extended.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_start.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_internal_load.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_properties_get.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_in_place_load.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_timer_notify_trampoline.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_deallocate.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_util.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_file_load.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pointer_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_semaphore_notify_trampoline.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_memory_load.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_queue_notify_trampoline.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_maximum_module_priority_set.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_reset.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_event_flags_notify_trampoline.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_absolute_load.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_notify_trampoline.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_allocate.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_application_request.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pool_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_timer_notify_trampoline.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_notify_trampoline.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_event_flags_notify_trampoline.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_unload.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/inc/txm_module_manager_dispatch.h
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/inc/txm_module_manager_util.h
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_absolute_load.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_start.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_internal_load.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_reset.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pointer_get_extended.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_properties_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_queue_notify_trampoline.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_initialize.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_thread_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_maximum_module_priority_set.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_kernel_dispatch.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_file_load.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pool_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_pointer_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_object_allocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_callback_request.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/src/txm_module_manager_semaphore_notify_trampoline.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/utilities/module_to_binary.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/utilities/module_binary_to_c_array.c
     - source: rtos/azure-rtos/threadx/common_modules/module_manager/utilities/module_to_c_array.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_manager/utilities/module_to_binary.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_stack_error_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_set_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_interrupt_control.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_activate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_relinquish.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_event_unfilter.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_resume.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_thread_system_suspend.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_pointer_get_extended.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_callback_request_thread_entry.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/inc/txm_module_manager_dispatch.h
+    - source: rtos/azure-rtos/threadx/common_modules/module_manager/inc/txm_module_manager_util.h
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_interrupt_control.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_time_slice_change.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_put_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_performance_info_get.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_flush.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_pointer_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_prioritize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_ceiling_put.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_allocate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_send_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_put_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_front_send.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_preemption_change.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_application_request.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_event_filter.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_wait_abort.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_identify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_user_event_insert.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_change.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_send.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_release.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_buffer_full_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_enable.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_suspend.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_time_slice_change.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_reset.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_allocate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_deactivate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_prioritize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_priority_change.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_release.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_time_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_receive.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_prioritize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_delete.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_time_set.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_set.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_info_get.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_terminate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_disable.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_create.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_put.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_allocate.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_performance_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_entry_exit_notify.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_prioritize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_isr_exit_insert.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_put.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_prioritize.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_deallocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_time_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_send.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_identify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_set.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_front_send.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_reset.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_interrupt_control.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_prioritize.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_interrupt_control.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_entry_exit_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_wait_abort.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_thread_system_suspend.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_buffer_full_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_change.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_activate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_relinquish.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_stack_error_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_info_get.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_performance_system_info_get.c
-    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_isr_enter_insert.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_preemption_change.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_enable.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_resume.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_delete.c
     - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_sleep.c
-    - source: rtos/azure-rtos/threadx/common_modules/inc/txm_module_user_sample.h
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_event_filter.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_release.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_timer_deactivate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_prioritize.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_allocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_prioritize.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_event_unfilter.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_application_request.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_deallocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_put.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_send_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_allocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_user_event_insert.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_disable.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_create.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_callback_request_thread_entry.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_isr_exit_insert.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_byte_pool_prioritize.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_put.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_queue_receive.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_trace_isr_enter_insert.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_priority_change.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_release.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_mutex_performance_system_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_suspend.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_semaphore_ceiling_put.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_performance_info_get.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_thread_delete.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_allocate.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_event_flags_set_notify.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_time_set.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_module_object_pointer_get_extended.c
+    - source: rtos/azure-rtos/threadx/common_modules/module_lib/src/txm_block_pool_prioritize.c
     - source: rtos/azure-rtos/threadx/common_modules/inc/txm_module.h
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/tx_freertos.c
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/FreeRTOS.h
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/event_groups.h
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/revision_history.txt
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/readme.md
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/config_template/FreeRTOSConfig.h
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/timers.h
-    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/semphr.h
+    - source: rtos/azure-rtos/threadx/common_modules/inc/txm_module_user_sample.h
     - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/queue.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/semphr.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/timers.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/tx_freertos.c
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/revision_history.txt
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/event_groups.h
     - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/task.h
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/inc/txm_module_port.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/FreeRTOS.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/config_template/FreeRTOSConfig.h
+    - source: rtos/azure-rtos/threadx/utility/rtos_compatibility_layers/FreeRTOS/readme.md
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/inc/tx_port.h
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/inc/tx_port.h
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/inc/txm_module_port.h
       toolchains: armgcc mcux
       cores: cm7f
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_lib/src/txm_module_thread_shell_entry.c
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
       toolchains: armgcc mcux
       cores: cm7f
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_stack_build.S
@@ -168,7 +168,19 @@ container.azure_rtos.tx.unused_files:
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_system_return.S
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
+      toolchains: armgcc mcux
+      cores: cm7f
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
+      toolchains: armgcc mcux
+      cores: cm7f
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
+      toolchains: armgcc mcux
+      cores: cm7f
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
+      toolchains: armgcc mcux
+      cores: cm7f
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
       toolchains: armgcc mcux
       cores: cm7f
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_handler.c
@@ -177,51 +189,18 @@ container.azure_rtos.tx.unused_files:
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_disable.S
       toolchains: armgcc mcux
       cores: cm7f
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
+      toolchains: armgcc mcux
+      cores: cm7f
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_timer_interrupt.S
-      toolchains: armgcc mcux
-      cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
-      toolchains: armgcc mcux
-      cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
-      toolchains: armgcc mcux
-      cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
-      toolchains: armgcc mcux
-      cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
       toolchains: armgcc mcux
       cores: cm7f
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_thread_stack_build.s
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
       toolchains: armgcc mcux
       cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
-      toolchains: armgcc mcux
-      cores: cm7f
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_misra.S
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack.c
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_allocate.S
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_free.S
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_secure_stack_initialize.S
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/txe_thread_secure_stack_allocate.c
-      toolchains: mcux armgcc
-      cores: cm33
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/txe_thread_secure_stack_free.c
-      toolchains: mcux armgcc
-      cores: cm33
     repo_base_path: rtos/azure-rtos
     package_base_path: rtos/azure-rtos
     project_base_path: azure-rtos
@@ -238,11 +217,6 @@ middleware.azure_rtos.tx.template:
       cores: cm7f
       project_relative_path: threadx/ports/cortex_m7/gnu/inc
       package_relative_path: threadx/ports/cortex_m7/gnu/inc
-    - repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      toolchains: armgcc mcux
-      cores: cm33
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/threadx/LICENSED-HARDWARE.txt
       exclude: true
@@ -256,37 +230,13 @@ middleware.azure_rtos.tx.template:
       project_relative_path: threadx
       package_relative_path: threadx
       type: doc
-    - source: rtos/azure-rtos/threadx/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: threadx/cmake
-      project_relative_path: threadx/cmake
-      package_relative_path: threadx/cmake
-      type: script
-    - source: rtos/azure-rtos/threadx/cmake/cortex_m0.cmake
-      toolchains: armgcc
-      repo_relative_path: threadx/cmake
-      project_relative_path: threadx/cmake
-      package_relative_path: threadx/cmake
-      type: script
-    - source: rtos/azure-rtos/threadx/cmake/cortex_m33.cmake
-      toolchains: armgcc
-      repo_relative_path: threadx/cmake
-      project_relative_path: threadx/cmake
-      package_relative_path: threadx/cmake
-      type: script
     - source: rtos/azure-rtos/threadx/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: threadx/cmake
       project_relative_path: threadx/cmake
       package_relative_path: threadx/cmake
       type: script
-    - source: rtos/azure-rtos/threadx/cmake/cortex_m3.cmake
-      toolchains: armgcc
-      repo_relative_path: threadx/cmake
-      project_relative_path: threadx/cmake
-      package_relative_path: threadx/cmake
-      type: script
-    - source: rtos/azure-rtos/threadx/cmake/utilities.cmake
+    - source: rtos/azure-rtos/threadx/cmake/cortex_m33.cmake
       toolchains: armgcc
       repo_relative_path: threadx/cmake
       project_relative_path: threadx/cmake
@@ -299,6 +249,30 @@ middleware.azure_rtos.tx.template:
       package_relative_path: threadx/cmake
       type: script
     - source: rtos/azure-rtos/threadx/cmake/arm-none-eabi.cmake
+      toolchains: armgcc
+      repo_relative_path: threadx/cmake
+      project_relative_path: threadx/cmake
+      package_relative_path: threadx/cmake
+      type: script
+    - source: rtos/azure-rtos/threadx/cmake/utilities.cmake
+      toolchains: armgcc
+      repo_relative_path: threadx/cmake
+      project_relative_path: threadx/cmake
+      package_relative_path: threadx/cmake
+      type: script
+    - source: rtos/azure-rtos/threadx/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: threadx/cmake
+      project_relative_path: threadx/cmake
+      package_relative_path: threadx/cmake
+      type: script
+    - source: rtos/azure-rtos/threadx/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: threadx/cmake
+      project_relative_path: threadx/cmake
+      package_relative_path: threadx/cmake
+      type: script
+    - source: rtos/azure-rtos/threadx/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: threadx/cmake
       project_relative_path: threadx/cmake
@@ -328,13 +302,6 @@ middleware.azure_rtos.tx.template:
       repo_relative_path: threadx/ports/cortex_m7/gnu
       project_relative_path: threadx/ports/cortex_m7/gnu
       package_relative_path: threadx/ports/cortex_m7/gnu
-      type: doc
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/CMakeLists.txt
-      toolchains: armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu
-      project_relative_path: threadx/ports/cortex_m33/gnu
-      package_relative_path: threadx/ports/cortex_m33/gnu
       type: doc
     - source: rtos/azure-rtos/threadx/common/inc/tx_api.h
       repo_relative_path: threadx/common/inc
@@ -478,83 +445,6 @@ middleware.azure_rtos.tx.template:
       project_relative_path: threadx/ports/common
       package_relative_path: threadx/ports/common
       type: src
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_secure_interface.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_context_restore.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_context_save.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_control.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_disable.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_restore.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_schedule.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_stack_build.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_thread_system_return.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/src/tx_timer_interrupt.S
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/src
-      project_relative_path: threadx/ports/cortex_m33/gnu/src
-      package_relative_path: threadx/ports/cortex_m33/gnu/src
-      type: asm_include
     - source: rtos/azure-rtos/middleware_azure_rtos_tx_template.cmake
       type: workspace
       toolchains: armgcc
@@ -753,11 +643,6 @@ middleware.azure_rtos.tx.lib:
       cores: cm7f
       project_relative_path: threadx/ports/cortex_m7/gnu/inc
       package_relative_path: threadx/ports/cortex_m7/gnu/inc
-    - repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/threadx/LICENSED-HARDWARE.txt
       exclude: true
@@ -1762,13 +1647,6 @@ middleware.azure_rtos.tx.lib:
       repo_relative_path: threadx/ports/cortex_m7/gnu/inc
       project_relative_path: threadx/ports/cortex_m7/gnu/inc
       package_relative_path: threadx/ports/cortex_m7/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_tx_lib.cmake
       type: workspace
@@ -2980,14 +2858,14 @@ middleware.azure_rtos.tx_mgr.lib:
       project_relative_path: threadx/ports_module/cortex_m7/gnu/inc
       package_relative_path: threadx/ports_module/cortex_m7/gnu/inc
       type: c_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
       toolchains: mcux
       cores: cm7f
       repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
+      type: src
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
       toolchains: mcux
       cores: cm7f
       repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
@@ -3008,13 +2886,41 @@ middleware.azure_rtos.tx_mgr.lib:
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
+      toolchains: mcux
+      cores: cm7f
+      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      type: asm_include
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
       toolchains: mcux
       cores: cm7f
       repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       type: src
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
+      toolchains: mcux
+      cores: cm7f
+      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      type: asm_include
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
+      toolchains: mcux
+      cores: cm7f
+      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      type: asm_include
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
+      toolchains: mcux
+      cores: cm7f
+      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      type: asm_include
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_handler.c
       toolchains: mcux
       cores: cm7f
@@ -3029,6 +2935,13 @@ middleware.azure_rtos.tx_mgr.lib:
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       type: asm_include
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
+      toolchains: mcux
+      cores: cm7f
+      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
+      type: src
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_timer_interrupt.S
       toolchains: mcux
       cores: cm7f
@@ -3036,34 +2949,6 @@ middleware.azure_rtos.tx_mgr.lib:
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
-      toolchains: mcux
-      cores: cm7f
-      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
-      toolchains: mcux
-      cores: cm7f
-      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: src
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
-      toolchains: mcux
-      cores: cm7f
-      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
-      toolchains: mcux
-      cores: cm7f
-      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: src
     - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_thread_stack_build.s
       toolchains: mcux
       cores: cm7f
@@ -3071,14 +2956,7 @@ middleware.azure_rtos.tx_mgr.lib:
       project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
       type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
-      toolchains: mcux
-      cores: cm7f
-      repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      project_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      package_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
-      type: asm_include
-    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
+    - source: rtos/azure-rtos/threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
       toolchains: mcux
       cores: cm7f
       repo_relative_path: threadx/ports_module/cortex_m7/gnu/module_manager/src
@@ -3756,11 +3634,6 @@ middleware.azure_rtos.fx.template:
       cores: cm7f
       project_relative_path: filex/ports/cortex_m7/gnu/inc
       package_relative_path: filex/ports/cortex_m7/gnu/inc
-    - repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      toolchains: armgcc mcux
-      cores: cm33
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/filex/docs/deps.png
       hidden: true
@@ -3838,13 +3711,7 @@ middleware.azure_rtos.fx.template:
       project_relative_path: filex/common/inc
       package_relative_path: filex/common/inc
       type: c_include
-    - source: rtos/azure-rtos/filex/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: filex/cmake
-      project_relative_path: filex/cmake
-      package_relative_path: filex/cmake
-      type: script
-    - source: rtos/azure-rtos/filex/cmake/cortex_m0.cmake
+    - source: rtos/azure-rtos/filex/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: filex/cmake
       project_relative_path: filex/cmake
@@ -3856,13 +3723,7 @@ middleware.azure_rtos.fx.template:
       project_relative_path: filex/cmake
       package_relative_path: filex/cmake
       type: script
-    - source: rtos/azure-rtos/filex/cmake/cortex_m4.cmake
-      toolchains: armgcc
-      repo_relative_path: filex/cmake
-      project_relative_path: filex/cmake
-      package_relative_path: filex/cmake
-      type: script
-    - source: rtos/azure-rtos/filex/cmake/cortex_m3.cmake
+    - source: rtos/azure-rtos/filex/cmake/arm-none-eabi.cmake
       toolchains: armgcc
       repo_relative_path: filex/cmake
       project_relative_path: filex/cmake
@@ -3874,7 +3735,19 @@ middleware.azure_rtos.fx.template:
       project_relative_path: filex/cmake
       package_relative_path: filex/cmake
       type: script
-    - source: rtos/azure-rtos/filex/cmake/arm-none-eabi.cmake
+    - source: rtos/azure-rtos/filex/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: filex/cmake
+      project_relative_path: filex/cmake
+      package_relative_path: filex/cmake
+      type: script
+    - source: rtos/azure-rtos/filex/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: filex/cmake
+      project_relative_path: filex/cmake
+      package_relative_path: filex/cmake
+      type: script
+    - source: rtos/azure-rtos/filex/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: filex/cmake
       project_relative_path: filex/cmake
@@ -3908,24 +3781,10 @@ middleware.azure_rtos.fx.template:
       type: c_include
     - source: rtos/azure-rtos/filex/ports/generic/inc/fx_port.h
       toolchains: mcux armgcc
-      cores: cm7f cm33
+      cores: cm7f
       repo_relative_path: filex/ports/generic/inc
       project_relative_path: filex/ports/generic/inc
       package_relative_path: filex/ports/generic/inc
-      type: c_include
-    - source: rtos/azure-rtos/filex/ports/cortex_m33/gnu/CMakeLists.txt
-      toolchains: armgcc
-      cores: cm33
-      repo_relative_path: filex/ports/cortex_m33/gnu
-      project_relative_path: filex/ports/cortex_m33/gnu
-      package_relative_path: filex/ports/cortex_m33/gnu
-      type: doc
-    - source: rtos/azure-rtos/filex/ports/cortex_m33/gnu/inc/fx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_fx_template.cmake
       type: workspace
@@ -3971,21 +3830,11 @@ middleware.azure_rtos.fx.lib:
       cores: cm7f
       project_relative_path: threadx/ports/cortex_m7/gnu/inc
       package_relative_path: threadx/ports/cortex_m7/gnu/inc
-    - repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      toolchains: mcux armgcc
-      cores: cm33
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
     - repo_relative_path: filex/ports/cortex_m7/gnu/inc
       toolchains: mcux armgcc
       cores: cm7f
       project_relative_path: filex/ports/cortex_m7/gnu/inc
       package_relative_path: filex/ports/cortex_m7/gnu/inc
-    - repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      toolchains: mcux armgcc
-      cores: cm33
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/threadx/common/inc/tx_api.h
       repo_relative_path: threadx/common/inc
@@ -5301,13 +5150,6 @@ middleware.azure_rtos.fx.lib:
       project_relative_path: threadx/ports/cortex_m7/gnu/inc
       package_relative_path: threadx/ports/cortex_m7/gnu/inc
       type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-      type: c_include
     - source: rtos/azure-rtos/filex/ports/cortex_m7/gnu/inc/fx_port.h
       toolchains: mcux armgcc
       cores: cm7f
@@ -5317,17 +5159,10 @@ middleware.azure_rtos.fx.lib:
       type: c_include
     - source: rtos/azure-rtos/filex/ports/generic/inc/fx_port.h
       toolchains: mcux armgcc
-      cores: cm7f cm33
+      cores: cm7f
       repo_relative_path: filex/ports/generic/inc
       project_relative_path: filex/ports/generic/inc
       package_relative_path: filex/ports/generic/inc
-      type: c_include
-    - source: rtos/azure-rtos/filex/ports/cortex_m33/gnu/inc/fx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_fx_lib.cmake
       type: workspace
@@ -14808,40 +14643,40 @@ container.azure_rtos.nxd.unused_files:
     - source: rtos/azure-rtos/netxduo/common/src/nxe_udp_source_extract.c
     - source: rtos/azure-rtos/netxduo/addons/BSD/nxd_bsd.c
     - source: rtos/azure-rtos/netxduo/addons/BSD/nxd_bsd.h
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_sntp_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dhcpv6_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_udp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_snmp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_ppp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_ftp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_raw.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dhcp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_mdns.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_multihome_udp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_nat.c
     - source: rtos/azure-rtos/netxduo/samples/demo_snmp_helper.h
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_http.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_pppoe_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dhcp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_ptp_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dhcpv6_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_ppp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_mqtt_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_tftp.c
     - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dhcpv6.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dns.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_pppoe_server.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_smtp_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_sntp_client.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_udp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_tcp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_tcp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_udp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_raw.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_snmp.c
     - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_https.c
     - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_multihome_tcp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_smtp_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_lwm2m_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_mqtt_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_ptp_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_auto_ip.c
     - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_multihome_dhcp_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_tftp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_telnet.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_nat.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_tcp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_bsd_tcp.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_pppoe_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_pppoe_server.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_ftp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_multihome_udp.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_dns.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_mdns.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_lwm2m_client.c
     - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_pop3_client.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_http.c
-    - source: rtos/azure-rtos/netxduo/samples/demo_netx_duo_udp.c
-    - source: rtos/azure-rtos/netxduo/utility/iperf/nx_iperf.c
-    - source: rtos/azure-rtos/netxduo/utility/iperf/nx_iperf.h
+    - source: rtos/azure-rtos/netxduo/samples/demo_netxduo_telnet.c
+    - source: rtos/azure-rtos/netxduo/samples/demo_netx_auto_ip.c
     - source: rtos/azure-rtos/netxduo/utility/iperf/demo_iperf.c
+    - source: rtos/azure-rtos/netxduo/utility/iperf/nx_iperf.h
+    - source: rtos/azure-rtos/netxduo/utility/iperf/nx_iperf.c
     - source: rtos/azure-rtos/netxduo/utility/CMakeLists.txt
     repo_base_path: rtos/azure-rtos
     package_base_path: rtos/azure-rtos
@@ -14934,11 +14769,6 @@ middleware.azure_rtos.nxd.template:
       cores: cm7f
       project_relative_path: netxduo/ports/cortex_m7/gnu/inc
       package_relative_path: netxduo/ports/cortex_m7/gnu/inc
-    - repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      toolchains: armgcc mcux
-      cores: cm33
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/netxduo/LICENSED-HARDWARE.txt
       exclude: true
@@ -15293,25 +15123,13 @@ middleware.azure_rtos.nxd.template:
       project_relative_path: netxduo/addons
       package_relative_path: netxduo/addons
       type: doc
-    - source: rtos/azure-rtos/netxduo/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: netxduo/cmake
-      project_relative_path: netxduo/cmake
-      package_relative_path: netxduo/cmake
-      type: script
-    - source: rtos/azure-rtos/netxduo/cmake/cortex_m0.cmake
-      toolchains: armgcc
-      repo_relative_path: netxduo/cmake
-      project_relative_path: netxduo/cmake
-      package_relative_path: netxduo/cmake
-      type: script
     - source: rtos/azure-rtos/netxduo/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: netxduo/cmake
       project_relative_path: netxduo/cmake
       package_relative_path: netxduo/cmake
       type: script
-    - source: rtos/azure-rtos/netxduo/cmake/cortex_m3.cmake
+    - source: rtos/azure-rtos/netxduo/cmake/arm-none-eabi.cmake
       toolchains: armgcc
       repo_relative_path: netxduo/cmake
       project_relative_path: netxduo/cmake
@@ -15323,7 +15141,19 @@ middleware.azure_rtos.nxd.template:
       project_relative_path: netxduo/cmake
       package_relative_path: netxduo/cmake
       type: script
-    - source: rtos/azure-rtos/netxduo/cmake/arm-none-eabi.cmake
+    - source: rtos/azure-rtos/netxduo/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: netxduo/cmake
+      project_relative_path: netxduo/cmake
+      package_relative_path: netxduo/cmake
+      type: script
+    - source: rtos/azure-rtos/netxduo/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: netxduo/cmake
+      project_relative_path: netxduo/cmake
+      package_relative_path: netxduo/cmake
+      type: script
+    - source: rtos/azure-rtos/netxduo/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: netxduo/cmake
       project_relative_path: netxduo/cmake
@@ -15682,20 +15512,6 @@ middleware.azure_rtos.nxd.template:
       project_relative_path: netxduo/ports/cortex_m7/gnu/inc
       package_relative_path: netxduo/ports/cortex_m7/gnu/inc
       type: c_include
-    - source: rtos/azure-rtos/netxduo/ports/cortex_m33/gnu/CMakeLists.txt
-      toolchains: armgcc
-      cores: cm33
-      repo_relative_path: netxduo/ports/cortex_m33/gnu
-      project_relative_path: netxduo/ports/cortex_m33/gnu
-      package_relative_path: netxduo/ports/cortex_m33/gnu
-      type: doc
-    - source: rtos/azure-rtos/netxduo/ports/cortex_m33/gnu/inc/nx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_nxd_template.cmake
       type: workspace
       toolchains: armgcc
@@ -15757,26 +15573,11 @@ middleware.azure_rtos.nxd.lib:
       cores: cm7f
       project_relative_path: filex/ports/cortex_m7/gnu/inc
       package_relative_path: filex/ports/cortex_m7/gnu/inc
-    - repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      toolchains: mcux armgcc
-      cores: cm33
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
     - repo_relative_path: netxduo/ports/cortex_m7/gnu/inc
       toolchains: mcux
       cores: cm7f
       project_relative_path: netxduo/ports/cortex_m7/gnu/inc
       package_relative_path: netxduo/ports/cortex_m7/gnu/inc
-    - repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-    - repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
     files:
     - source: rtos/azure-rtos/netxduo/LICENSED-HARDWARE.txt
       exclude: true
@@ -21060,17 +20861,10 @@ middleware.azure_rtos.nxd.lib:
       type: c_include
     - source: rtos/azure-rtos/filex/ports/generic/inc/fx_port.h
       toolchains: mcux armgcc
-      cores: cm7f cm33
+      cores: cm7f
       repo_relative_path: filex/ports/generic/inc
       project_relative_path: filex/ports/generic/inc
       package_relative_path: filex/ports/generic/inc
-      type: c_include
-    - source: rtos/azure-rtos/filex/ports/cortex_m33/gnu/inc/fx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/netxduo/ports/cortex_m7/gnu/inc/nx_port.h
       toolchains: mcux
@@ -21078,20 +20872,6 @@ middleware.azure_rtos.nxd.lib:
       repo_relative_path: netxduo/ports/cortex_m7/gnu/inc
       project_relative_path: netxduo/ports/cortex_m7/gnu/inc
       package_relative_path: netxduo/ports/cortex_m7/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/netxduo/ports/cortex_m33/gnu/inc/nx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_nxd_lib.cmake
       type: workspace
@@ -21979,11 +21759,6 @@ middleware.azure_rtos.ux.template:
       cores: cm7f
       project_relative_path: usbx/ports/cortex_m7/gnu/inc
       package_relative_path: usbx/ports/cortex_m7/gnu/inc
-    - repo_relative_path: usbx/ports/cortex_m33/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: usbx/ports/cortex_m33/inc
-      package_relative_path: usbx/ports/cortex_m33/inc
     files:
     - source: rtos/azure-rtos/usbx/LICENSE.txt
       repo_relative_path: usbx
@@ -21995,13 +21770,7 @@ middleware.azure_rtos.ux.template:
       project_relative_path: usbx
       package_relative_path: usbx
       type: doc
-    - source: rtos/azure-rtos/usbx/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: usbx/cmake
-      project_relative_path: usbx/cmake
-      package_relative_path: usbx/cmake
-      type: script
-    - source: rtos/azure-rtos/usbx/cmake/cortex_m0.cmake
+    - source: rtos/azure-rtos/usbx/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: usbx/cmake
       project_relative_path: usbx/cmake
@@ -22013,13 +21782,7 @@ middleware.azure_rtos.ux.template:
       project_relative_path: usbx/cmake
       package_relative_path: usbx/cmake
       type: script
-    - source: rtos/azure-rtos/usbx/cmake/cortex_m4.cmake
-      toolchains: armgcc
-      repo_relative_path: usbx/cmake
-      project_relative_path: usbx/cmake
-      package_relative_path: usbx/cmake
-      type: script
-    - source: rtos/azure-rtos/usbx/cmake/cortex_m3.cmake
+    - source: rtos/azure-rtos/usbx/cmake/arm-none-eabi.cmake
       toolchains: armgcc
       repo_relative_path: usbx/cmake
       project_relative_path: usbx/cmake
@@ -22031,7 +21794,19 @@ middleware.azure_rtos.ux.template:
       project_relative_path: usbx/cmake
       package_relative_path: usbx/cmake
       type: script
-    - source: rtos/azure-rtos/usbx/cmake/arm-none-eabi.cmake
+    - source: rtos/azure-rtos/usbx/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: usbx/cmake
+      project_relative_path: usbx/cmake
+      package_relative_path: usbx/cmake
+      type: script
+    - source: rtos/azure-rtos/usbx/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: usbx/cmake
+      project_relative_path: usbx/cmake
+      package_relative_path: usbx/cmake
+      type: script
+    - source: rtos/azure-rtos/usbx/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: usbx/cmake
       project_relative_path: usbx/cmake
@@ -22307,20 +22082,6 @@ middleware.azure_rtos.ux.template:
       repo_relative_path: usbx/ports/cortex_m7/gnu/inc
       project_relative_path: usbx/ports/cortex_m7/gnu/inc
       package_relative_path: usbx/ports/cortex_m7/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/usbx/ports/cortex_m33/gnu/CMakeLists.txt
-      toolchains: armgcc
-      cores: cm33
-      repo_relative_path: usbx/ports/cortex_m33/gnu
-      project_relative_path: usbx/ports/cortex_m33/gnu
-      package_relative_path: usbx/ports/cortex_m33/gnu
-      type: doc
-    - source: rtos/azure-rtos/usbx/ports/cortex_m33/inc/ux_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: usbx/ports/cortex_m33/inc
-      project_relative_path: usbx/ports/cortex_m33/inc
-      package_relative_path: usbx/ports/cortex_m33/inc
       type: c_include
     - source: rtos/azure-rtos/usbx/support/windows_host_files/CDC_ACM_Template.inf
       repo_relative_path: usbx/support/windows_host_files
@@ -23326,11 +23087,6 @@ middleware.azure_rtos.ux.lib:
       cores: cm7f
       project_relative_path: filex/ports/cortex_m7/gnu/inc
       package_relative_path: filex/ports/cortex_m7/gnu/inc
-    - repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      toolchains: mcux armgcc
-      cores: cm33
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
     - repo_relative_path: netxduo/ports/cortex_m7/gnu/inc
       toolchains: mcux
       cores: cm7f
@@ -23341,21 +23097,6 @@ middleware.azure_rtos.ux.lib:
       cores: cm7f
       project_relative_path: usbx/ports/cortex_m7/gnu/inc
       package_relative_path: usbx/ports/cortex_m7/gnu/inc
-    - repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-    - repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
-    - repo_relative_path: usbx/ports/cortex_m33/inc
-      toolchains: mcux
-      cores: cm33
-      project_relative_path: usbx/ports/cortex_m33/inc
-      package_relative_path: usbx/ports/cortex_m33/inc
     files:
     - source: rtos/azure-rtos/usbx/LICENSED-HARDWARE.txt
       exclude: true
@@ -29811,17 +29552,10 @@ middleware.azure_rtos.ux.lib:
       type: c_include
     - source: rtos/azure-rtos/filex/ports/generic/inc/fx_port.h
       toolchains: mcux armgcc
-      cores: cm7f cm33
+      cores: cm7f
       repo_relative_path: filex/ports/generic/inc
       project_relative_path: filex/ports/generic/inc
       package_relative_path: filex/ports/generic/inc
-      type: c_include
-    - source: rtos/azure-rtos/filex/ports/cortex_m33/gnu/inc/fx_port.h
-      toolchains: mcux armgcc
-      cores: cm33
-      repo_relative_path: filex/ports/cortex_m33/gnu/inc
-      project_relative_path: filex/ports/cortex_m33/gnu/inc
-      package_relative_path: filex/ports/cortex_m33/gnu/inc
       type: c_include
     - source: rtos/azure-rtos/netxduo/ports/cortex_m7/gnu/inc/nx_port.h
       toolchains: mcux
@@ -29836,27 +29570,6 @@ middleware.azure_rtos.ux.lib:
       repo_relative_path: usbx/ports/cortex_m7/gnu/inc
       project_relative_path: usbx/ports/cortex_m7/gnu/inc
       package_relative_path: usbx/ports/cortex_m7/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/threadx/ports/cortex_m33/gnu/inc/tx_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: threadx/ports/cortex_m33/gnu/inc
-      project_relative_path: threadx/ports/cortex_m33/gnu/inc
-      package_relative_path: threadx/ports/cortex_m33/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/netxduo/ports/cortex_m33/gnu/inc/nx_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      project_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      package_relative_path: netxduo/ports/cortex_m33/gnu/inc
-      type: c_include
-    - source: rtos/azure-rtos/usbx/ports/cortex_m33/inc/ux_port.h
-      toolchains: mcux
-      cores: cm33
-      repo_relative_path: usbx/ports/cortex_m33/inc
-      project_relative_path: usbx/ports/cortex_m33/inc
-      package_relative_path: usbx/ports/cortex_m33/inc
       type: c_include
     - source: rtos/azure-rtos/middleware_azure_rtos_ux_lib.cmake
       type: workspace
@@ -29930,22 +29643,7 @@ set.middleware.azure_rtos:
   dependency:
     allOf:
     - board:
-      - evkmimxrt1010
-      - evkmimxrt1015
-      - evkmimxrt1020
-      - evkmimxrt1040
-      - evkmimxrt1024
-      - evkbimxrt1050
-      - evkmimxrt1060
-      - evkbmimxrt1060
-      - evkmimxrt1064
-      - evkmimxrt1170
-      - evkbmimxrt1170
-      - evkmimxrt1160
-      - lpcxpresso55s69
-      - lpcxpresso55s28
-      - lpcxpresso55s16
-      - lpcxpresso55s06
+      - evkcmimxrt1060
 scr.middleware.azure_rtos_threadx:
   belong_to: set.middleware.azure_rtos
   section-type: scr
@@ -30108,14 +29806,6 @@ middleware.azure_rtos.tx.sp:
       repo_relative_path: ports/threadx/cortex_m7/mcux
       project_relative_path: binary/threadx/cortex_m7/mcux
       type: lib
-    - source: rtos/azure-rtos/binary/threadx/cortex_m33/mcux/libthreadx_sp.a
-      package_relative_path: binary/threadx/cortex_m33/mcux
-      toolchains: mcux
-      attribute: extra-libraries
-      cores: cm33
-      repo_relative_path: ports/threadx/cortex_m33/mcux
-      project_relative_path: binary/threadx/cortex_m33/mcux
-      type: lib
     - source: rtos/azure-rtos/middleware_azure_rtos_tx_sp.cmake
       type: workspace
       toolchains: armgcc
@@ -30189,14 +29879,6 @@ middleware.azure_rtos.fx.sp:
       repo_relative_path: ports/filex/cortex_m7/mcux
       project_relative_path: binary/filex/cortex_m7/mcux
       type: lib
-    - source: rtos/azure-rtos/binary/filex/cortex_m33/mcux/libfilex_sp.a
-      package_relative_path: binary/filex/cortex_m33/mcux
-      toolchains: mcux
-      attribute: extra-libraries
-      cores: cm33
-      repo_relative_path: ports/filex/cortex_m33/mcux
-      project_relative_path: binary/filex/cortex_m33/mcux
-      type: lib
     - source: rtos/azure-rtos/middleware_azure_rtos_fx_sp.cmake
       type: workspace
       toolchains: armgcc
@@ -30235,25 +29917,13 @@ middleware.azure_rtos.gx:
       project_relative_path: guix/ports/cortex_m7/gnu/inc
       package_relative_path: guix/ports/cortex_m7/gnu/inc
     files:
-    - source: rtos/azure-rtos/guix/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: guix/cmake
-      project_relative_path: guix/cmake
-      package_relative_path: guix/cmake
-      type: script
-    - source: rtos/azure-rtos/guix/cmake/cortex_m0.cmake
-      toolchains: armgcc
-      repo_relative_path: guix/cmake
-      project_relative_path: guix/cmake
-      package_relative_path: guix/cmake
-      type: script
     - source: rtos/azure-rtos/guix/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: guix/cmake
       project_relative_path: guix/cmake
       package_relative_path: guix/cmake
       type: script
-    - source: rtos/azure-rtos/guix/cmake/cortex_m3.cmake
+    - source: rtos/azure-rtos/guix/cmake/arm-none-eabi.cmake
       toolchains: armgcc
       repo_relative_path: guix/cmake
       project_relative_path: guix/cmake
@@ -30265,7 +29935,19 @@ middleware.azure_rtos.gx:
       project_relative_path: guix/cmake
       package_relative_path: guix/cmake
       type: script
-    - source: rtos/azure-rtos/guix/cmake/arm-none-eabi.cmake
+    - source: rtos/azure-rtos/guix/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: guix/cmake
+      project_relative_path: guix/cmake
+      package_relative_path: guix/cmake
+      type: script
+    - source: rtos/azure-rtos/guix/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: guix/cmake
+      project_relative_path: guix/cmake
+      package_relative_path: guix/cmake
+      type: script
+    - source: rtos/azure-rtos/guix/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: guix/cmake
       project_relative_path: guix/cmake
@@ -30541,13 +30223,7 @@ middleware.azure_rtos.lx:
       project_relative_path: levelx/common/inc
       package_relative_path: levelx/common/inc
     files:
-    - source: rtos/azure-rtos/levelx/cmake/cortex_m7.cmake
-      toolchains: armgcc
-      repo_relative_path: levelx/cmake
-      project_relative_path: levelx/cmake
-      package_relative_path: levelx/cmake
-      type: script
-    - source: rtos/azure-rtos/levelx/cmake/cortex_m0.cmake
+    - source: rtos/azure-rtos/levelx/cmake/cortex_m4.cmake
       toolchains: armgcc
       repo_relative_path: levelx/cmake
       project_relative_path: levelx/cmake
@@ -30559,13 +30235,7 @@ middleware.azure_rtos.lx:
       project_relative_path: levelx/cmake
       package_relative_path: levelx/cmake
       type: script
-    - source: rtos/azure-rtos/levelx/cmake/cortex_m4.cmake
-      toolchains: armgcc
-      repo_relative_path: levelx/cmake
-      project_relative_path: levelx/cmake
-      package_relative_path: levelx/cmake
-      type: script
-    - source: rtos/azure-rtos/levelx/cmake/cortex_m3.cmake
+    - source: rtos/azure-rtos/levelx/cmake/arm-none-eabi.cmake
       toolchains: armgcc
       repo_relative_path: levelx/cmake
       project_relative_path: levelx/cmake
@@ -30577,7 +30247,19 @@ middleware.azure_rtos.lx:
       project_relative_path: levelx/cmake
       package_relative_path: levelx/cmake
       type: script
-    - source: rtos/azure-rtos/levelx/cmake/arm-none-eabi.cmake
+    - source: rtos/azure-rtos/levelx/cmake/cortex_m0.cmake
+      toolchains: armgcc
+      repo_relative_path: levelx/cmake
+      project_relative_path: levelx/cmake
+      package_relative_path: levelx/cmake
+      type: script
+    - source: rtos/azure-rtos/levelx/cmake/cortex_m3.cmake
+      toolchains: armgcc
+      repo_relative_path: levelx/cmake
+      project_relative_path: levelx/cmake
+      package_relative_path: levelx/cmake
+      type: script
+    - source: rtos/azure-rtos/levelx/cmake/cortex_m7.cmake
       toolchains: armgcc
       repo_relative_path: levelx/cmake
       project_relative_path: levelx/cmake
@@ -31042,14 +30724,6 @@ middleware.azure_rtos.nxd.sp:
       repo_relative_path: ports/netxduo/cortex_m7/mcux
       project_relative_path: binary/netxduo/cortex_m7/mcux
       type: lib
-    - source: rtos/azure-rtos/binary/netxduo/cortex_m33/mcux/libnetxduo_sp.a
-      package_relative_path: binary/netxduo/cortex_m33/mcux
-      toolchains: mcux
-      attribute: extra-libraries
-      cores: cm33
-      repo_relative_path: ports/netxduo/cortex_m33/mcux
-      project_relative_path: binary/netxduo/cortex_m33/mcux
-      type: lib
     - source: rtos/azure-rtos/middleware_azure_rtos_nxd_sp.cmake
       type: workspace
       toolchains: armgcc
@@ -31166,14 +30840,6 @@ middleware.azure_rtos.ux.sp:
       cores: cm7f
       repo_relative_path: ports/usbx/cortex_m7/mcux
       project_relative_path: binary/usbx/cortex_m7/mcux
-      type: lib
-    - source: rtos/azure-rtos/binary/usbx/cortex_m33/mcux/libusbx_sp.a
-      package_relative_path: binary/usbx/cortex_m33/mcux
-      toolchains: mcux
-      attribute: extra-libraries
-      cores: cm33
-      repo_relative_path: ports/usbx/cortex_m33/mcux
-      project_relative_path: binary/usbx/cortex_m33/mcux
       type: lib
     - source: rtos/azure-rtos/middleware_azure_rtos_ux_sp.cmake
       type: workspace
@@ -31309,42 +30975,7 @@ middleware.azure_rtos.azure_iot:
       project_relative_path: netxduo/addons/azure_iot
       package_relative_path: netxduo/addons/azure_iot
       type: src
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_json.md
-      hidden: true
-      exclude: true
-      repo_relative_path: netxduo/addons/azure_iot/docs
-      project_relative_path: netxduo/addons/azure_iot/docs
-      package_relative_path: netxduo/addons/azure_iot/docs
-      type: other
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_sdk_api.md
-      hidden: true
-      exclude: true
-      repo_relative_path: netxduo/addons/azure_iot/docs
-      project_relative_path: netxduo/addons/azure_iot/docs
-      package_relative_path: netxduo/addons/azure_iot/docs
-      type: other
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_hub_client.md
-      hidden: true
-      exclude: true
-      repo_relative_path: netxduo/addons/azure_iot/docs
-      project_relative_path: netxduo/addons/azure_iot/docs
-      package_relative_path: netxduo/addons/azure_iot/docs
-      type: other
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_provisioning_client.md
-      hidden: true
-      exclude: true
-      repo_relative_path: netxduo/addons/azure_iot/docs
-      project_relative_path: netxduo/addons/azure_iot/docs
-      package_relative_path: netxduo/addons/azure_iot/docs
-      type: other
     - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_adu_agent.md
-      hidden: true
-      exclude: true
-      repo_relative_path: netxduo/addons/azure_iot/docs
-      project_relative_path: netxduo/addons/azure_iot/docs
-      package_relative_path: netxduo/addons/azure_iot/docs
-      type: other
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot.md
       hidden: true
       exclude: true
       repo_relative_path: netxduo/addons/azure_iot/docs
@@ -31358,7 +30989,7 @@ middleware.azure_rtos.azure_iot:
       project_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       package_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       type: image
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_temperature_max_at_40.png
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_temperature_min_at_0.png
       hidden: true
       exclude: true
       repo_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
@@ -31372,14 +31003,14 @@ middleware.azure_rtos.azure_iot:
       project_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       package_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       type: image
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_temperature_min_at_0.png
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_explorer_configuration.png
       hidden: true
       exclude: true
       repo_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       project_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       package_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
       type: image
-    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_explorer_configuration.png
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/img/device_explorer/device_temperature_max_at_40.png
       hidden: true
       exclude: true
       repo_relative_path: netxduo/addons/azure_iot/docs/img/device_explorer
@@ -31401,6 +31032,41 @@ middleware.azure_rtos.azure_iot:
       package_relative_path: netxduo/addons/azure_iot/docs/img
       type: image
     - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_hub_client_properties.md
+      hidden: true
+      exclude: true
+      repo_relative_path: netxduo/addons/azure_iot/docs
+      project_relative_path: netxduo/addons/azure_iot/docs
+      package_relative_path: netxduo/addons/azure_iot/docs
+      type: other
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_json.md
+      hidden: true
+      exclude: true
+      repo_relative_path: netxduo/addons/azure_iot/docs
+      project_relative_path: netxduo/addons/azure_iot/docs
+      package_relative_path: netxduo/addons/azure_iot/docs
+      type: other
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_sdk_api.md
+      hidden: true
+      exclude: true
+      repo_relative_path: netxduo/addons/azure_iot/docs
+      project_relative_path: netxduo/addons/azure_iot/docs
+      package_relative_path: netxduo/addons/azure_iot/docs
+      type: other
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_provisioning_client.md
+      hidden: true
+      exclude: true
+      repo_relative_path: netxduo/addons/azure_iot/docs
+      project_relative_path: netxduo/addons/azure_iot/docs
+      package_relative_path: netxduo/addons/azure_iot/docs
+      type: other
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot_hub_client.md
+      hidden: true
+      exclude: true
+      repo_relative_path: netxduo/addons/azure_iot/docs
+      project_relative_path: netxduo/addons/azure_iot/docs
+      package_relative_path: netxduo/addons/azure_iot/docs
+      type: other
+    - source: rtos/azure-rtos/netxduo/addons/azure_iot/docs/azure_rtos_iot.md
       hidden: true
       exclude: true
       repo_relative_path: netxduo/addons/azure_iot/docs

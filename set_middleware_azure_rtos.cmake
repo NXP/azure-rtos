@@ -25,20 +25,6 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/common/tx_initialize_low_level.c
 )
 
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_context_save.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_disable.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_schedule.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_stack_build.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/src/tx_timer_interrupt.S
-  )
-endif()
-
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
 )
@@ -46,12 +32,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
 )
 endif()
 
@@ -312,12 +292,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 )
 endif()
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -553,21 +527,21 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
   target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_stack_build.S
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_handler.c
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_disable.S
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_timer_interrupt.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
       ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_thread_stack_build.s
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
+      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
   )
 endif()
 
@@ -744,12 +718,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
 )
 endif()
 
@@ -1024,13 +992,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
 )
 endif()
 
@@ -1444,12 +1405,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m33/gnu/inc
 )
 endif()
 
@@ -1868,19 +1823,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 )
 endif()
 
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
-)
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m33/gnu/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -1912,12 +1854,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m33/inc
 )
 endif()
 
@@ -2205,20 +2141,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
 )
 endif()
 
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
-)
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m33/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m33/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -2299,14 +2221,6 @@ if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
   )
 endif()
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m33/mcux/libthreadx_sp.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_tx_sp dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2351,14 +2265,6 @@ if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
     -Wl,--start-group
       ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m7/mcux/libfilex_sp.a
-      -Wl,--end-group
-  )
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m33/mcux/libfilex_sp.a
       -Wl,--end-group
   )
 endif()
@@ -2550,14 +2456,6 @@ if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
   )
 endif()
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/netxduo/cortex_m33/mcux/libnetxduo_sp.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_nxd_sp dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2623,14 +2521,6 @@ if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
     -Wl,--start-group
       ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m7/mcux/libusbx_sp.a
-      -Wl,--end-group
-  )
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m33/mcux/libusbx_sp.a
       -Wl,--end-group
   )
 endif()
