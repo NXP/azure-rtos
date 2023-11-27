@@ -7,38 +7,38 @@
     <definition extID="cm7_MIMXRT1176xxxxx"/>
     <definition extID="mcuxpresso"/>
   </externalDefinitions>
-  <ksdk id="MCUXpressoSDK2140_middleware_microsoft_azure_rtos_MIMXRT1176_manifest_v3_13" name="MCUXpressoSDK2140_middleware_microsoft_azure_rtos_MIMXRT1176_manifest_v3_13" version="2.14.0"/>
+  <ksdk id="MCUXpressoSDK2140_middleware_microsoft_azure_rtos_MIMXRT1176_manifest_v3_13" name="MCUXpressoSDK2140_middleware_microsoft_azure_rtos_MIMXRT1176_manifest_v3_13" version="2.14.0" revision="2.14.0"/>
   <components>
-    <component id="middleware.azure_rtos.tx.template.MIMXRT1176" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.template.MIMXRT1176" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="FSL_RTOS_THREADX" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../threadx/cmake" project_relative_path="threadx/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m33.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./threadx/cmake" project_relative_path="threadx/cmake" type="script">
+        <files mask="linux.cmake"/>
         <files mask="win32.cmake"/>
         <files mask="arm-none-eabi.cmake"/>
-        <files mask="linux.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source toolchain="armgcc" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../threadx/common" project_relative_path="threadx/common" type="doc">
+      <source toolchain="armgcc" relative_path="./threadx/common" project_relative_path="threadx/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../threadx/ports/cortex_m7/gnu" project_relative_path="threadx/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="armgcc" relative_path="./threadx/ports/cortex_m7/gnu" project_relative_path="threadx/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -52,10 +52,10 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../threadx/ports/cortex_m7/gnu/src" project_relative_path="threadx/ports/cortex_m7/gnu/src" type="asm_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./threadx/ports/cortex_m7/gnu/src" project_relative_path="threadx/ports/cortex_m7/gnu/src" type="asm_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_misra.S"/>
         <files mask="tx_thread_context_restore.S"/>
         <files mask="tx_thread_context_save.S"/>
@@ -67,27 +67,27 @@
         <files mask="tx_thread_system_return.S"/>
         <files mask="tx_timer_interrupt.S"/>
       </source>
-      <source relative_path="../../threadx/ports/common" project_relative_path="threadx/ports/common" type="src">
+      <source relative_path="./threadx/ports/common" project_relative_path="threadx/ports/common" type="src">
         <files mask="tx_initialize_low_level.c"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_template.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.template.MIMXRT1176" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.template.MIMXRT1176" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="FSL_RTOS_THREADX" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -101,40 +101,40 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
         <files mask="txm_module.h"/>
         <files mask="txm_module_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
+      <source relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
         <files mask="txm_module_manager_dispatch.h"/>
         <files mask="txm_module_manager_util.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
-      <source relative_path="../../threadx/ports/common" project_relative_path="threadx/ports/common" type="src">
+      <source relative_path="./threadx/ports/common" project_relative_path="threadx/ports/common" type="src">
         <files mask="tx_initialize_low_level.c"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_mgr_template.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.lib.MIMXRT1176" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="OS" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.lib.MIMXRT1176" name="Azure RTOS ThreadX(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -148,7 +148,7 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common/src" project_relative_path="threadx/common/src" type="src">
+      <source relative_path="./threadx/common/src" project_relative_path="threadx/common/src" type="src">
         <files mask="tx_block_allocate.c"/>
         <files mask="tx_block_pool_cleanup.c"/>
         <files mask="tx_block_pool_create.c"/>
@@ -335,26 +335,26 @@
         <files mask="txe_timer_delete.c"/>
         <files mask="txe_timer_info_get.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.lib.MIMXRT1176" name="Azure RTOS ThreadX Module Manager(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.lib.MIMXRT1176" name="Azure RTOS ThreadX Module Manager(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -368,7 +368,7 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common/src" project_relative_path="threadx/common/src" type="src">
+      <source relative_path="./threadx/common/src" project_relative_path="threadx/common/src" type="src">
         <files mask="tx_misra.c"/>
         <files mask="tx_block_allocate.c"/>
         <files mask="tx_block_pool_cleanup.c"/>
@@ -555,15 +555,15 @@
         <files mask="txe_timer_delete.c"/>
         <files mask="txe_timer_info_get.c"/>
       </source>
-      <source relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
         <files mask="txm_module.h"/>
         <files mask="txm_module_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
+      <source relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include">
         <files mask="txm_module_manager_dispatch.h"/>
         <files mask="txm_module_manager_util.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/module_manager/src" project_relative_path="threadx/common_modules/module_manager/src" type="src">
+      <source relative_path="./threadx/common_modules/module_manager/src" project_relative_path="threadx/common_modules/module_manager/src" type="src">
         <files mask="txm_module_manager_absolute_load.c"/>
         <files mask="txm_module_manager_application_request.c"/>
         <files mask="txm_module_manager_callback_request.c"/>
@@ -592,48 +592,48 @@
         <files mask="txm_module_manager_unload.c"/>
         <files mask="txm_module_manager_util.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="cm7_MIMXRT1176xxxxx">
-        <files mask="tx_thread_schedule.S"/>
-        <files mask="tx_thread_stack_build.S"/>
-        <files mask="tx_thread_system_return.S"/>
-        <files mask="tx_thread_interrupt_disable.S"/>
-        <files mask="tx_timer_interrupt.S"/>
-        <files mask="tx_thread_interrupt_restore.S"/>
-        <files mask="tx_thread_interrupt_control.S"/>
-        <files mask="txm_module_manager_thread_stack_build.s"/>
-        <files mask="tx_thread_context_restore.S"/>
-        <files mask="tx_thread_context_save.S"/>
-      </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="src" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="txm_module_manager_external_memory_enable.c"/>
+        <files mask="txm_module_manager_mm_register_setup.c"/>
         <files mask="txm_module_manager_alignment_adjust.c"/>
         <files mask="txm_module_manager_memory_fault_handler.c"/>
-        <files mask="txm_module_manager_mm_register_setup.c"/>
         <files mask="txm_module_manager_memory_fault_notify.c"/>
+      </source>
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_manager/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_manager/src" type="asm_include" device_cores="cm7_MIMXRT1176xxxxx">
+        <files mask="tx_thread_stack_build.S"/>
+        <files mask="tx_thread_context_save.S"/>
+        <files mask="tx_thread_schedule.S"/>
+        <files mask="tx_thread_context_restore.S"/>
+        <files mask="tx_thread_interrupt_control.S"/>
+        <files mask="tx_thread_system_return.S"/>
+        <files mask="tx_thread_interrupt_restore.S"/>
+        <files mask="tx_thread_interrupt_disable.S"/>
+        <files mask="tx_timer_interrupt.S"/>
+        <files mask="txm_module_manager_thread_stack_build.s"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_mgr_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/module_manager/inc" project_relative_path="threadx/common_modules/module_manager/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.txm.lib.MIMXRT1176" name="Azure RTOS ThreadX Module(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.txm.lib.MIMXRT1176" name="Azure RTOS ThreadX Module(lib)" brief="Real Time Operating System Kernel" version="6.2.0" full_name="Azure RTOS ThreadX Module" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../threadx" project_relative_path="threadx" type="doc">
+      <source exclude="true" relative_path="./threadx" project_relative_path="threadx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -647,11 +647,11 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
+      <source relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include">
         <files mask="txm_module.h"/>
         <files mask="txm_module_user_sample.h"/>
       </source>
-      <source relative_path="../../threadx/common_modules/module_lib/src" project_relative_path="threadx/common_modules/module_lib/src" type="src">
+      <source relative_path="./threadx/common_modules/module_lib/src" project_relative_path="threadx/common_modules/module_lib/src" type="src">
         <files mask="txm_block_allocate.c"/>
         <files mask="txm_block_pool_create.c"/>
         <files mask="txm_block_pool_delete.c"/>
@@ -751,37 +751,37 @@
         <files mask="txm_trace_isr_exit_insert.c"/>
         <files mask="txm_trace_user_event_insert.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
         <files mask="txm_module_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports_module/cortex_m7/gnu/module_lib/src" project_relative_path="threadx/ports_module/cortex_m7/gnu/module_lib/src" type="src" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="txm_module_thread_shell_entry.c"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_txm_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/common_modules/inc" project_relative_path="threadx/common_modules/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports_module/cortex_m7/gnu/inc" project_relative_path="threadx/ports_module/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.fx.template.MIMXRT1176" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.template.MIMXRT1176" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="FX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../filex/docs" project_relative_path="filex/docs" type="image">
+      <source exclude="true" relative_path="./filex/docs" project_relative_path="filex/docs" type="image">
         <files mask="deps.png" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../filex" project_relative_path="filex" type="doc">
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source exclude="true" relative_path="../../filex" project_relative_path="filex" type="other">
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="other">
         <files mask="SECURITY.md" hidden="true"/>
       </source>
-      <source relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
         <files mask="fx_api.h"/>
         <files mask="fx_directory.h"/>
         <files mask="fx_directory_exFAT.h"/>
@@ -793,44 +793,44 @@
         <files mask="fx_user_sample.h"/>
         <files mask="fx_utility.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../filex/cmake" project_relative_path="filex/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m33.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./filex/cmake" project_relative_path="filex/cmake" type="script">
         <files mask="arm-none-eabi.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../filex" project_relative_path="filex" type="doc">
+      <source toolchain="armgcc" relative_path="./filex" project_relative_path="filex" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../filex/common" project_relative_path="filex/common" type="doc">
+      <source toolchain="armgcc" relative_path="./filex/common" project_relative_path="filex/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../filex/ports/cortex_m7/gnu" project_relative_path="filex/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="armgcc" relative_path="./filex/ports/cortex_m7/gnu" project_relative_path="filex/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_fx_template.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
-        <include_path relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.fx.lib.MIMXRT1176" name="Azure RTOS FileX(lib)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.lib.MIMXRT1176" name="Azure RTOS FileX(lib)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="FX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -844,11 +844,11 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source exclude="true" relative_path="../../filex" project_relative_path="filex" type="doc">
+      <source exclude="true" relative_path="./filex" project_relative_path="filex" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
         <files mask="fx_api.h"/>
         <files mask="fx_directory.h"/>
         <files mask="fx_directory_exFAT.h"/>
@@ -860,7 +860,7 @@
         <files mask="fx_user_sample.h"/>
         <files mask="fx_utility.h"/>
       </source>
-      <source relative_path="../../filex/common/src" project_relative_path="filex/common/src" type="src">
+      <source relative_path="./filex/common/src" project_relative_path="filex/common/src" type="src">
         <files mask="fx_directory_attributes_read.c"/>
         <files mask="fx_directory_attributes_set.c"/>
         <files mask="fx_directory_create.c"/>
@@ -1099,35 +1099,35 @@
         <files mask="fxe_unicode_short_name_get.c"/>
         <files mask="fxe_unicode_short_name_get_extended.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_fx_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.gx.lib.MIMXRT1176" name="Azure RTOS GUIX(lib)" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.gx.lib.MIMXRT1176" name="Azure RTOS GUIX(lib)" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="GX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../guix" project_relative_path="guix" type="doc">
+      <source exclude="true" relative_path="./guix" project_relative_path="guix" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
+      <source relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
         <files mask="gx_animation.h"/>
         <files mask="gx_api.h"/>
         <files mask="gx_binres_loader.h"/>
@@ -1166,7 +1166,7 @@
         <files mask="gx_widget.h"/>
         <files mask="gx_window.h"/>
       </source>
-      <source exclude="true" relative_path="../../guix/common/src" project_relative_path="guix/common/src" type="src">
+      <source exclude="true" relative_path="./guix/common/src" project_relative_path="guix/common/src" type="src">
         <files mask="gx_accordion_menu_create.c"/>
         <files mask="gx_accordion_menu_draw.c"/>
         <files mask="gx_accordion_menu_event_process.c"/>
@@ -2197,10 +2197,10 @@
         <files mask="gxe_window_wallpaper_get.c"/>
         <files mask="gxe_window_wallpaper_set.c"/>
       </source>
-      <source relative_path="../../guix/common" project_relative_path="guix/common" type="src">
+      <source relative_path="./guix/common" project_relative_path="guix/common" type="src">
         <files mask="gx_source.c"/>
       </source>
-      <source relative_path="../../guix/common/src" project_relative_path="guix/common/src" type="src">
+      <source relative_path="./guix/common/src" project_relative_path="guix/common/src" type="src">
         <files mask="gx_display_driver_1555xrgb_canvas_blend.c"/>
         <files mask="gx_display_driver_1555xrgb_jpeg_draw.c"/>
         <files mask="gx_display_driver_1555xrgb_native_color_get.c"/>
@@ -2484,7 +2484,7 @@
         <files mask="gx_utility_utf8_string_backward_character_length_get.c"/>
         <files mask="gx_utility_utf8_string_character_get.c"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -2498,199 +2498,199 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="gx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_gx_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.template.MIMXRT1176" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.template.MIMXRT1176" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="NX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../netxduo" project_relative_path="netxduo" type="doc">
+      <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="src">
+      <source relative_path="./netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="src">
         <files mask="nx_auto_ip.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="c_include">
+      <source relative_path="./netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="c_include">
         <files mask="nx_auto_ip.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="src">
+      <source relative_path="./netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="src">
         <files mask="nx_cloud.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="c_include">
+      <source relative_path="./netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="c_include">
         <files mask="nx_cloud.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="src">
+      <source relative_path="./netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="src">
         <files mask="nxd_dhcp_client.c"/>
         <files mask="nxd_dhcp_server.c"/>
         <files mask="nxd_dhcpv6_client.c"/>
         <files mask="nxd_dhcpv6_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="c_include">
+      <source relative_path="./netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="c_include">
         <files mask="nxd_dhcp_client.h"/>
         <files mask="nxd_dhcp_server.h"/>
         <files mask="nxd_dhcpv6_client.h"/>
         <files mask="nxd_dhcpv6_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="src">
+      <source relative_path="./netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="src">
         <files mask="nxd_dns.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="c_include">
+      <source relative_path="./netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="c_include">
         <files mask="nxd_dns.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="src">
+      <source relative_path="./netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="src">
         <files mask="nxd_ftp_client.c"/>
         <files mask="nxd_ftp_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="c_include">
+      <source relative_path="./netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="c_include">
         <files mask="nxd_ftp_client.h"/>
         <files mask="nxd_ftp_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/http" project_relative_path="netxduo/addons/http" type="src">
+      <source relative_path="./netxduo/addons/http" project_relative_path="netxduo/addons/http" type="src">
         <files mask="nxd_http_client.c"/>
         <files mask="nxd_http_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/http" project_relative_path="netxduo/addons/http" type="c_include">
+      <source relative_path="./netxduo/addons/http" project_relative_path="netxduo/addons/http" type="c_include">
         <files mask="nxd_http_client.h"/>
         <files mask="nxd_http_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="src">
+      <source relative_path="./netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="src">
         <files mask="nx_lwm2m_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="c_include">
+      <source relative_path="./netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="c_include">
         <files mask="nx_lwm2m_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="src">
+      <source relative_path="./netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="src">
         <files mask="nxd_mdns.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="c_include">
+      <source relative_path="./netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="c_include">
         <files mask="nxd_mdns.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="src">
+      <source relative_path="./netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="src">
         <files mask="nxd_mqtt_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="c_include">
+      <source relative_path="./netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="c_include">
         <files mask="nxd_mqtt_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="src">
+      <source relative_path="./netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="src">
         <files mask="nx_nat.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="c_include">
+      <source relative_path="./netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="c_include">
         <files mask="nx_nat.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="src">
+      <source relative_path="./netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="src">
         <files mask="nxd_pop3_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="c_include">
+      <source relative_path="./netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="c_include">
         <files mask="nxd_pop3_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="src">
+      <source relative_path="./netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="src">
         <files mask="nx_ppp.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="c_include">
+      <source relative_path="./netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="c_include">
         <files mask="nx_ppp.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="src">
+      <source relative_path="./netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="src">
         <files mask="nx_pppoe_client.c"/>
         <files mask="nx_pppoe_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="c_include">
+      <source relative_path="./netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="c_include">
         <files mask="nx_pppoe_client.h"/>
         <files mask="nx_pppoe_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="src">
+      <source relative_path="./netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="src">
         <files mask="nxd_ptp_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="c_include">
+      <source relative_path="./netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="c_include">
         <files mask="nxd_ptp_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="src">
+      <source relative_path="./netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="src">
         <files mask="nxd_smtp_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="c_include">
+      <source relative_path="./netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="c_include">
         <files mask="nxd_smtp_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="src">
+      <source relative_path="./netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="src">
         <files mask="nx_des.c"/>
         <files mask="nx_sha1.c"/>
         <files mask="nxd_snmp.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="c_include">
+      <source relative_path="./netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="c_include">
         <files mask="nx_des.h"/>
         <files mask="nx_sha1.h"/>
         <files mask="nxd_snmp.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="src">
+      <source relative_path="./netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="src">
         <files mask="nxd_sntp_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="c_include">
+      <source relative_path="./netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="c_include">
         <files mask="nxd_sntp_client.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="src">
+      <source relative_path="./netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="src">
         <files mask="nxd_telnet_client.c"/>
         <files mask="nxd_telnet_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="c_include">
+      <source relative_path="./netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="c_include">
         <files mask="nxd_telnet_client.h"/>
         <files mask="nxd_telnet_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="src">
+      <source relative_path="./netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="src">
         <files mask="nxd_tftp_client.c"/>
         <files mask="nxd_tftp_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="c_include">
+      <source relative_path="./netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="c_include">
         <files mask="nxd_tftp_client.h"/>
         <files mask="nxd_tftp_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/web" project_relative_path="netxduo/addons/web" type="src">
+      <source relative_path="./netxduo/addons/web" project_relative_path="netxduo/addons/web" type="src">
         <files mask="nx_tcpserver.c"/>
         <files mask="nx_web_http_client.c"/>
         <files mask="nx_web_http_server.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/web" project_relative_path="netxduo/addons/web" type="c_include">
+      <source relative_path="./netxduo/addons/web" project_relative_path="netxduo/addons/web" type="c_include">
         <files mask="nx_tcpserver.h"/>
         <files mask="nx_web_http_client.h"/>
         <files mask="nx_web_http_common.h"/>
         <files mask="nx_web_http_server.h"/>
       </source>
-      <source relative_path="../../netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="src">
+      <source relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="src">
         <files mask="nx_websocket_client.c"/>
       </source>
-      <source relative_path="../../netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include">
+      <source relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include">
         <files mask="nx_websocket_client.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/addons" project_relative_path="netxduo/addons" type="doc">
+      <source toolchain="armgcc" relative_path="./netxduo/addons" project_relative_path="netxduo/addons" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/cmake" project_relative_path="netxduo/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./netxduo/cmake" project_relative_path="netxduo/cmake" type="script">
         <files mask="arm-none-eabi.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo" project_relative_path="netxduo" type="doc">
+      <source toolchain="armgcc" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/common" project_relative_path="netxduo/common" type="doc">
+      <source toolchain="armgcc" relative_path="./netxduo/common" project_relative_path="netxduo/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
+      <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
         <files mask="nx_http_proxy_client.h"/>
@@ -2711,7 +2711,7 @@
         <files mask="nx_udp.h"/>
         <files mask="nx_user_sample.h"/>
       </source>
-      <source relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
+      <source relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
         <files mask="nx_crypto.h"/>
         <files mask="nx_crypto_3des.h"/>
         <files mask="nx_crypto_aes.h"/>
@@ -2749,10 +2749,10 @@
         <files mask="nx_crypto_tls_prf_sha512.h"/>
         <files mask="nx_crypto_xcbc_mac.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/crypto_libraries" project_relative_path="netxduo/crypto_libraries" type="doc">
+      <source toolchain="armgcc" relative_path="./netxduo/crypto_libraries" project_relative_path="netxduo/crypto_libraries" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
+      <source relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
         <files mask="nx_secure_crypto_table_self_test.h"/>
         <files mask="nx_secure_dtls.h"/>
         <files mask="nx_secure_dtls_api.h"/>
@@ -2761,62 +2761,62 @@
         <files mask="nx_secure_user_sample.h"/>
         <files mask="nx_secure_x509.h"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
+      <source relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
         <files mask="nx_secure_port.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/nx_secure" project_relative_path="netxduo/nx_secure" type="doc">
+      <source toolchain="armgcc" relative_path="./netxduo/nx_secure" project_relative_path="netxduo/nx_secure" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../netxduo/ports/cortex_m7/gnu" project_relative_path="netxduo/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="armgcc" relative_path="./netxduo/ports/cortex_m7/gnu" project_relative_path="netxduo/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="nx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_nxd_template.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/BSD" project_relative_path="netxduo/addons/BSD" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/http" project_relative_path="netxduo/addons/http" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/web" project_relative_path="netxduo/addons/web" type="c_include"/>
-        <include_path relative_path="../../netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include"/>
-        <include_path relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
-        <include_path relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./netxduo/addons/auto_ip" project_relative_path="netxduo/addons/auto_ip" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/cloud" project_relative_path="netxduo/addons/cloud" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/BSD" project_relative_path="netxduo/addons/BSD" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/dhcp" project_relative_path="netxduo/addons/dhcp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/dns" project_relative_path="netxduo/addons/dns" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/ftp" project_relative_path="netxduo/addons/ftp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/http" project_relative_path="netxduo/addons/http" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/lwm2m" project_relative_path="netxduo/addons/lwm2m" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/mdns" project_relative_path="netxduo/addons/mdns" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/mqtt" project_relative_path="netxduo/addons/mqtt" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/nat" project_relative_path="netxduo/addons/nat" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/pop3" project_relative_path="netxduo/addons/pop3" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/ppp" project_relative_path="netxduo/addons/ppp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/pppoe" project_relative_path="netxduo/addons/pppoe" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/ptp" project_relative_path="netxduo/addons/ptp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/smtp" project_relative_path="netxduo/addons/smtp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/snmp" project_relative_path="netxduo/addons/snmp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/sntp" project_relative_path="netxduo/addons/sntp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/telnet" project_relative_path="netxduo/addons/telnet" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/tftp" project_relative_path="netxduo/addons/tftp" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/web" project_relative_path="netxduo/addons/web" type="c_include"/>
+        <include_path relative_path="./netxduo/addons/websocket" project_relative_path="netxduo/addons/websocket" type="c_include"/>
+        <include_path relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
+        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1176" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.lib.MIMXRT1176" name="Azure RTOS NetX Duo(lib)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="FX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="NX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../netxduo" project_relative_path="netxduo" type="doc">
+      <source exclude="true" relative_path="./netxduo" project_relative_path="netxduo" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/common/src" project_relative_path="netxduo/common/src" type="src">
+      <source exclude="true" relative_path="./netxduo/common/src" project_relative_path="netxduo/common/src" type="src">
         <files mask="nx_arp_announce_send.c"/>
         <files mask="nx_arp_dynamic_entries_invalidate.c"/>
         <files mask="nx_arp_dynamic_entry_delete.c"/>
@@ -3317,17 +3317,17 @@
         <files mask="nxe_udp_socket_unbind.c"/>
         <files mask="nxe_udp_source_extract.c"/>
       </source>
-      <source relative_path="../../netxduo/common" project_relative_path="netxduo/common" type="src">
+      <source relative_path="./netxduo/common" project_relative_path="netxduo/common" type="src">
         <files mask="netxduo_common_source.c"/>
       </source>
-      <source relative_path="../../netxduo/common/src" project_relative_path="netxduo/common/src" type="src">
+      <source relative_path="./netxduo/common/src" project_relative_path="netxduo/common/src" type="src">
         <files mask="nx_ip_initialize.c"/>
         <files mask="nx_packet_pool_initialize.c"/>
         <files mask="nx_ram_network_driver.c"/>
         <files mask="nx_system_initialize.c"/>
         <files mask="nx_tcp_initialize.c"/>
       </source>
-      <source relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
+      <source relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
         <files mask="nx_crypto.h"/>
         <files mask="nx_crypto_3des.h"/>
         <files mask="nx_crypto_aes.h"/>
@@ -3365,7 +3365,7 @@
         <files mask="nx_crypto_tls_prf_sha512.h"/>
         <files mask="nx_crypto_xcbc_mac.h"/>
       </source>
-      <source relative_path="../../netxduo/crypto_libraries/src" project_relative_path="netxduo/crypto_libraries/src" type="src">
+      <source relative_path="./netxduo/crypto_libraries/src" project_relative_path="netxduo/crypto_libraries/src" type="src">
         <files mask="nx_crypto_3des.c"/>
         <files mask="nx_crypto_aes.c"/>
         <files mask="nx_crypto_cbc.c"/>
@@ -3423,7 +3423,7 @@
         <files mask="nx_crypto_tls_prf_sha512.c"/>
         <files mask="nx_crypto_xcbc_mac.c"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
+      <source relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
         <files mask="nx_secure_crypto_table_self_test.h"/>
         <files mask="nx_secure_dtls.h"/>
         <files mask="nx_secure_dtls_api.h"/>
@@ -3432,7 +3432,7 @@
         <files mask="nx_secure_user_sample.h"/>
         <files mask="nx_secure_x509.h"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/src" project_relative_path="netxduo/nx_secure/src" type="src">
+      <source relative_path="./netxduo/nx_secure/src" project_relative_path="netxduo/nx_secure/src" type="src">
         <files mask="nx_secure_crypto_method_self_test_3des.c"/>
         <files mask="nx_secure_crypto_method_self_test_aes.c"/>
         <files mask="nx_secure_crypto_method_self_test_des.c"/>
@@ -3739,10 +3739,10 @@
         <files mask="nxe_secure_x509_extension_find.c"/>
         <files mask="nxe_secure_x509_key_usage_extension_parse.c"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
+      <source relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
         <files mask="nx_secure_port.h"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -3756,7 +3756,7 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
         <files mask="fx_api.h"/>
         <files mask="fx_directory.h"/>
         <files mask="fx_directory_exFAT.h"/>
@@ -3768,7 +3768,7 @@
         <files mask="fx_user_sample.h"/>
         <files mask="fx_utility.h"/>
       </source>
-      <source relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
+      <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
         <files mask="nx_http_proxy_client.h"/>
@@ -3789,61 +3789,61 @@
         <files mask="nx_udp.h"/>
         <files mask="nx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="nx_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_nxd_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.template.MIMXRT1176" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.template.MIMXRT1176" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="UX_OTG_SUPPORT" value=""/>
         <define name="UX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source relative_path="../../usbx" project_relative_path="usbx" type="doc">
+      <source relative_path="./usbx" project_relative_path="usbx" type="doc">
         <files mask="LICENSE.txt"/>
         <files mask="LICENSED-HARDWARE.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/cmake" project_relative_path="usbx/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m33.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./usbx/cmake" project_relative_path="usbx/cmake" type="script">
         <files mask="arm-none-eabi.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx" project_relative_path="usbx" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx" project_relative_path="usbx" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common" project_relative_path="usbx/common" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common" project_relative_path="usbx/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common/core" project_relative_path="usbx/common/core" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common/core" project_relative_path="usbx/common/core" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
+      <source relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
         <files mask="ux_api.h"/>
         <files mask="ux_class_audio10.h"/>
         <files mask="ux_class_audio20.h"/>
@@ -3857,7 +3857,7 @@
         <files mask="ux_user_sample.h"/>
         <files mask="ux_utility.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include">
         <files mask="ux_device_class_audio.h"/>
         <files mask="ux_device_class_audio10.h"/>
         <files mask="ux_device_class_audio20.h"/>
@@ -3872,10 +3872,10 @@
         <files mask="ux_device_class_storage.h"/>
         <files mask="ux_device_class_video.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_device_classes" project_relative_path="usbx/common/usbx_device_classes" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_device_classes" project_relative_path="usbx/common/usbx_device_classes" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include">
         <files mask="ux_host_class_asix.h"/>
         <files mask="ux_host_class_audio.h"/>
         <files mask="ux_host_class_cdc_acm.h"/>
@@ -3893,28 +3893,28 @@
         <files mask="ux_host_class_swar.h"/>
         <files mask="ux_host_class_video.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_host_classes" project_relative_path="usbx/common/usbx_host_classes" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_host_classes" project_relative_path="usbx/common/usbx_host_classes" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_network" project_relative_path="usbx/common/usbx_network" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_network" project_relative_path="usbx/common/usbx_network" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include">
         <files mask="ux_network_driver.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_pictbridge" project_relative_path="usbx/common/usbx_pictbridge" type="doc">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_pictbridge" project_relative_path="usbx/common/usbx_pictbridge" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include">
         <files mask="ux_pictbridge.h"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../usbx/ports/cortex_m7/gnu" project_relative_path="usbx/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="armgcc" relative_path="./usbx/ports/cortex_m7/gnu" project_relative_path="usbx/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="ux_port.h"/>
       </source>
-      <source relative_path="../../usbx/support/windows_host_files" project_relative_path="usbx/support/windows_host_files" type="configuration">
+      <source relative_path="./usbx/support/windows_host_files" project_relative_path="usbx/support/windows_host_files" type="configuration">
         <files mask="CDC_ACM_Template.inf"/>
         <files mask="CDC_ACM_Template_Win7_64bit.inf"/>
         <files mask="CDC_Composite_Template.inf"/>
@@ -3924,22 +3924,22 @@
         <files mask="middleware_azure_rtos_ux_template.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include"/>
+        <include_path relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.ehci.MIMXRT1176" name="Azure RTOS USBX EHCI" brief="Azure RTOS USBX Host Controller EHCI" version="6.2.0" full_name="Azure RTOS USBX EHCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_host_controllers" project_relative_path="usbx/common/usbx_host_controllers" type="doc">
+    <component id="middleware.azure_rtos.ux.ehci.MIMXRT1176" name="Azure RTOS USBX EHCI" brief="Azure RTOS USBX Host Controller EHCI" version="6.2.0" full_name="Azure RTOS USBX EHCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_host_controllers" project_relative_path="usbx/common/usbx_host_controllers" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include">
         <files mask="ux_hcd_ehci.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_controllers/src" project_relative_path="usbx/common/usbx_host_controllers/src" type="src">
+      <source relative_path="./usbx/common/usbx_host_controllers/src" project_relative_path="usbx/common/usbx_host_controllers/src" type="src">
         <files mask="ux_hcd_ehci_asynchronous_endpoint_create.c"/>
         <files mask="ux_hcd_ehci_asynchronous_endpoint_destroy.c"/>
         <files mask="ux_hcd_ehci_asynch_td_process.c"/>
@@ -3991,17 +3991,17 @@
         <files mask="middleware_azure_rtos_ux_ehci.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.ohci.MIMXRT1176" name="Azure RTOS USBX OHCI" brief="Azure RTOS USBX Host Controller OHCI" version="6.2.0" full_name="Azure RTOS USBX OHCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
-      <source toolchain="armgcc" relative_path="../../usbx/common/usbx_host_controllers" project_relative_path="usbx/common/usbx_host_controllers" type="doc">
+    <component id="middleware.azure_rtos.ux.ohci.MIMXRT1176" name="Azure RTOS USBX OHCI" brief="Azure RTOS USBX Host Controller OHCI" version="6.2.0" full_name="Azure RTOS USBX OHCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source toolchain="armgcc" relative_path="./usbx/common/usbx_host_controllers" project_relative_path="usbx/common/usbx_host_controllers" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include">
         <files mask="ux_hcd_ohci.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_controllers/src" project_relative_path="usbx/common/usbx_host_controllers/src" type="src">
+      <source relative_path="./usbx/common/usbx_host_controllers/src" project_relative_path="usbx/common/usbx_host_controllers/src" type="src">
         <files mask="ux_hcd_ohci_asynchronous_endpoint_create.c"/>
         <files mask="ux_hcd_ohci_asynchronous_endpoint_destroy.c"/>
         <files mask="ux_hcd_ohci_controller_disable.c"/>
@@ -4045,11 +4045,11 @@
         <files mask="middleware_azure_rtos_ux_ohci.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_host_controllers/inc" project_relative_path="usbx/common/usbx_host_controllers/inc" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.ip3516.MIMXRT1176" name="Azure RTOS USBX IP3516" brief="Azure RTOS USBX Host Controller IP3516" version="6.2.0" full_name="Azure RTOS USBX IP3516" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
-      <source relative_path="../../usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="src">
+    <component id="middleware.azure_rtos.ux.ip3516.MIMXRT1176" name="Azure RTOS USBX IP3516" brief="Azure RTOS USBX Host Controller IP3516" version="6.2.0" full_name="Azure RTOS USBX IP3516" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source relative_path="./usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="src">
         <files mask="ux_hcd_ip3516_asynchronous_endpoint_create.c"/>
         <files mask="ux_hcd_ip3516_asynchronous_endpoint_destroy.c"/>
         <files mask="ux_hcd_ip3516_controller_disable.c"/>
@@ -4083,18 +4083,18 @@
         <files mask="ux_hcd_ip3516_transfer_abort.c"/>
         <files mask="ux_hcd_ip3516_transfer_request_process.c"/>
       </source>
-      <source relative_path="../../usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="c_include">
+      <source relative_path="./usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="c_include">
         <files mask="ux_hcd_ip3516.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux_ip3516.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="c_include"/>
+        <include_path relative_path="./usbx/usbx_host_controllers_ip3516" project_relative_path="usbx/usbx_host_controllers_ip3516" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.ip3511.MIMXRT1176" name="Azure RTOS USBX IP3511" brief="Azure RTOS USBX Device Controller IP3511" version="6.2.0" full_name="Azure RTOS USBX IP3511" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
-      <source relative_path="../../usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="src">
+    <component id="middleware.azure_rtos.ux.ip3511.MIMXRT1176" name="Azure RTOS USBX IP3511" brief="Azure RTOS USBX Device Controller IP3511" version="6.2.0" full_name="Azure RTOS USBX IP3511" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source relative_path="./usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="src">
         <files mask="ux_dcd_ip3511_callback.c"/>
         <files mask="ux_dcd_ip3511_control_callback.c"/>
         <files mask="ux_dcd_ip3511_endpoint_create.c"/>
@@ -4110,18 +4110,18 @@
         <files mask="ux_dcd_ip3511_transfer_request.c"/>
         <files mask="ux_dcd_ip3511_uninitialize.c"/>
       </source>
-      <source relative_path="../../usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="c_include">
+      <source relative_path="./usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="c_include">
         <files mask="ux_dcd_ip3511.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux_ip3511.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="c_include"/>
+        <include_path relative_path="./usbx/usbx_device_controllers_ip3511" project_relative_path="usbx/usbx_device_controllers_ip3511" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.dci.MIMXRT1176" name="Azure RTOS USBX DCI" brief="Azure RTOS USBX Device Controller for i.MX RT" version="6.2.0" full_name="Azure RTOS USBX DCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
-      <source relative_path="../../usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="src">
+    <component id="middleware.azure_rtos.ux.dci.MIMXRT1176" name="Azure RTOS USBX DCI" brief="Azure RTOS USBX Device Controller for i.MX RT" version="6.2.0" full_name="Azure RTOS USBX DCI" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
+      <source relative_path="./usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="src">
         <files mask="ux_dcd_nxp_dci_callback.c"/>
         <files mask="ux_dcd_nxp_dci_control_callback.c"/>
         <files mask="ux_dcd_nxp_dci_endpoint_create.c"/>
@@ -4137,17 +4137,17 @@
         <files mask="ux_dcd_nxp_dci_transfer_request.c"/>
         <files mask="ux_dcd_nxp_dci_uninitialize.c"/>
       </source>
-      <source relative_path="../../usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="c_include">
+      <source relative_path="./usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="c_include">
         <files mask="ux_dcd_nxp_dci.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux_dci.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="c_include"/>
+        <include_path relative_path="./usbx/usbx_device_controllers" project_relative_path="usbx/usbx_device_controllers" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.ux.lib.MIMXRT1176" name="Azure RTOS USBX(lib)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.lib.MIMXRT1176" name="Azure RTOS USBX(lib)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="false" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="UX_OTG_SUPPORT" value=""/>
         <define name="TX_INCLUDE_USER_DEFINE_FILE" value=""/>
@@ -4155,11 +4155,11 @@
         <define name="NX_INCLUDE_USER_DEFINE_FILE" value=""/>
         <define name="UX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
-      <source exclude="true" relative_path="../../usbx" project_relative_path="usbx" type="doc">
+      <source exclude="true" relative_path="./usbx" project_relative_path="usbx" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
+      <source relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include">
         <files mask="tx_api.h"/>
         <files mask="tx_block_pool.h"/>
         <files mask="tx_byte_pool.h"/>
@@ -4173,7 +4173,7 @@
         <files mask="tx_trace.h"/>
         <files mask="tx_user_sample.h"/>
       </source>
-      <source relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
+      <source relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include">
         <files mask="fx_api.h"/>
         <files mask="fx_directory.h"/>
         <files mask="fx_directory_exFAT.h"/>
@@ -4185,7 +4185,7 @@
         <files mask="fx_user_sample.h"/>
         <files mask="fx_utility.h"/>
       </source>
-      <source relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
+      <source relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include">
         <files mask="nx_api.h"/>
         <files mask="nx_arp.h"/>
         <files mask="nx_http_proxy_client.h"/>
@@ -4206,7 +4206,7 @@
         <files mask="nx_udp.h"/>
         <files mask="nx_user_sample.h"/>
       </source>
-      <source relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
+      <source relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include">
         <files mask="nx_crypto.h"/>
         <files mask="nx_crypto_3des.h"/>
         <files mask="nx_crypto_aes.h"/>
@@ -4244,7 +4244,7 @@
         <files mask="nx_crypto_tls_prf_sha512.h"/>
         <files mask="nx_crypto_xcbc_mac.h"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
+      <source relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include">
         <files mask="nx_secure_crypto_table_self_test.h"/>
         <files mask="nx_secure_dtls.h"/>
         <files mask="nx_secure_dtls_api.h"/>
@@ -4253,10 +4253,10 @@
         <files mask="nx_secure_user_sample.h"/>
         <files mask="nx_secure_x509.h"/>
       </source>
-      <source relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
+      <source relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include">
         <files mask="nx_secure_port.h"/>
       </source>
-      <source relative_path="../../usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
+      <source relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include">
         <files mask="ux_api.h"/>
         <files mask="ux_class_audio10.h"/>
         <files mask="ux_class_audio20.h"/>
@@ -4270,7 +4270,7 @@
         <files mask="ux_user_sample.h"/>
         <files mask="ux_utility.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include">
         <files mask="ux_device_class_audio.h"/>
         <files mask="ux_device_class_audio10.h"/>
         <files mask="ux_device_class_audio20.h"/>
@@ -4285,7 +4285,7 @@
         <files mask="ux_device_class_storage.h"/>
         <files mask="ux_device_class_video.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include">
         <files mask="ux_host_class_asix.h"/>
         <files mask="ux_host_class_audio.h"/>
         <files mask="ux_host_class_cdc_acm.h"/>
@@ -4303,16 +4303,16 @@
         <files mask="ux_host_class_swar.h"/>
         <files mask="ux_host_class_video.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include">
         <files mask="ux_network_driver.h"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include">
+      <source relative_path="./usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include">
         <files mask="ux_pictbridge.h"/>
       </source>
-      <source relative_path="../../usbx/common/core" project_relative_path="usbx/common/core" type="src">
+      <source relative_path="./usbx/common/core" project_relative_path="usbx/common/core" type="src">
         <files mask="usbx_core_source.c"/>
       </source>
-      <source toolchain="mcuxpresso" exclude="true" relative_path="../../usbx/common/core/src" project_relative_path="usbx/common/core/src" type="src">
+      <source toolchain="mcuxpresso" exclude="true" relative_path="./usbx/common/core/src" project_relative_path="usbx/common/core/src" type="src">
         <files mask="ux_dcd_sim_slave_address_set.c"/>
         <files mask="ux_dcd_sim_slave_endpoint_create.c"/>
         <files mask="ux_dcd_sim_slave_endpoint_destroy.c"/>
@@ -4532,10 +4532,10 @@
         <files mask="ux_utility_unicode_to_string.c"/>
         <files mask="ux_utility_virtual_address.c"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_device_classes" project_relative_path="usbx/common/usbx_device_classes" type="src">
+      <source relative_path="./usbx/common/usbx_device_classes" project_relative_path="usbx/common/usbx_device_classes" type="src">
         <files mask="usbx_device_classes_source.c"/>
       </source>
-      <source toolchain="mcuxpresso" exclude="true" relative_path="../../usbx/common/usbx_device_classes/src" project_relative_path="usbx/common/usbx_device_classes/src" type="src">
+      <source toolchain="mcuxpresso" exclude="true" relative_path="./usbx/common/usbx_device_classes/src" project_relative_path="usbx/common/usbx_device_classes/src" type="src">
         <files mask="ux_device_class_audio10_control_process.c"/>
         <files mask="ux_device_class_audio20_control_process.c"/>
         <files mask="ux_device_class_audio_activate.c"/>
@@ -4756,10 +4756,10 @@
         <files mask="ux_device_class_video_write_task_function.c"/>
         <files mask="ux_device_class_video_write_thread_entry.c"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_host_classes" project_relative_path="usbx/common/usbx_host_classes" type="src">
+      <source relative_path="./usbx/common/usbx_host_classes" project_relative_path="usbx/common/usbx_host_classes" type="src">
         <files mask="usbx_host_classes_source.c"/>
       </source>
-      <source toolchain="mcuxpresso" exclude="true" relative_path="../../usbx/common/usbx_host_classes/src" project_relative_path="usbx/common/usbx_host_classes/src" type="src">
+      <source toolchain="mcuxpresso" exclude="true" relative_path="./usbx/common/usbx_host_classes/src" project_relative_path="usbx/common/usbx_host_classes/src" type="src">
         <files mask="ux_host_class_asix_activate.c"/>
         <files mask="ux_host_class_asix_configure.c"/>
         <files mask="ux_host_class_asix_deactivate.c"/>
@@ -5049,10 +5049,10 @@
         <files mask="ux_host_class_video_transfer_request_callback.c"/>
         <files mask="ux_host_class_video_transfer_request_completed.c"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_pictbridge" project_relative_path="usbx/common/usbx_pictbridge" type="src">
+      <source relative_path="./usbx/common/usbx_pictbridge" project_relative_path="usbx/common/usbx_pictbridge" type="src">
         <files mask="usbx_pictbridge_source.c"/>
       </source>
-      <source toolchain="mcuxpresso" exclude="true" relative_path="../../usbx/common/usbx_pictbridge/src" project_relative_path="usbx/common/usbx_pictbridge/src" type="src">
+      <source toolchain="mcuxpresso" exclude="true" relative_path="./usbx/common/usbx_pictbridge/src" project_relative_path="usbx/common/usbx_pictbridge/src" type="src">
         <files mask="ux_pictbridge_array_element_to_array_hexa.c"/>
         <files mask="ux_pictbridge_data.c"/>
         <files mask="ux_pictbridge_dpsclient_api_abortjob.c"/>
@@ -5152,128 +5152,128 @@
         <files mask="ux_pictbridge_xml_function_root_output.c"/>
         <files mask="ux_pictbridge_xml_function_root_xml.c"/>
       </source>
-      <source relative_path="../../usbx/common/usbx_network/src" project_relative_path="usbx/common/usbx_network/src" type="src">
+      <source relative_path="./usbx/common/usbx_network/src" project_relative_path="usbx/common/usbx_network/src" type="src">
         <files mask="ux_network_driver.c"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="tx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./filex/ports/generic/inc" project_relative_path="filex/ports/generic/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="fx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="nx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="ux_port.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux_lib.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
-        <include_path relative_path="../../filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
-        <include_path relative_path="../../netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
-        <include_path relative_path="../../usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include"/>
-        <include_path relative_path="../../usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include"/>
-        <include_path relative_path="../../threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
-        <include_path relative_path="../../usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./threadx/common/inc" project_relative_path="threadx/common/inc" type="c_include"/>
+        <include_path relative_path="./filex/common/inc" project_relative_path="filex/common/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/common/inc" project_relative_path="netxduo/common/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/crypto_libraries/inc" project_relative_path="netxduo/crypto_libraries/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/inc" project_relative_path="netxduo/nx_secure/inc" type="c_include"/>
+        <include_path relative_path="./netxduo/nx_secure/ports" project_relative_path="netxduo/nx_secure/ports" type="c_include"/>
+        <include_path relative_path="./usbx/common/core/inc" project_relative_path="usbx/common/core/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_device_classes/inc" project_relative_path="usbx/common/usbx_device_classes/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_host_classes/inc" project_relative_path="usbx/common/usbx_host_classes/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_network/inc" project_relative_path="usbx/common/usbx_network/inc" type="c_include"/>
+        <include_path relative_path="./usbx/common/usbx_pictbridge/inc" project_relative_path="usbx/common/usbx_pictbridge/inc" type="c_include"/>
+        <include_path relative_path="./threadx/ports/cortex_m7/gnu/inc" project_relative_path="threadx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./filex/ports/cortex_m7/gnu/inc" project_relative_path="filex/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso armgcc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./netxduo/ports/cortex_m7/gnu/inc" project_relative_path="netxduo/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./usbx/ports/cortex_m7/gnu/inc" project_relative_path="usbx/ports/cortex_m7/gnu/inc" toolchain="mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.tx.MIMXRT1176" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="OS" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.MIMXRT1176" name="Azure RTOS ThreadX" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1176"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libthreadx.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx_mgr.MIMXRT1176" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx_mgr.MIMXRT1176" name="Azure RTOS ThreadX Module Manager" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX Module Manager" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx_mgr.template.MIMXRT1176"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libthreadx-txm.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_mgr.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.tx.sp.MIMXRT1176" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="OS" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.tx.sp.MIMXRT1176" name="Azure RTOS ThreadX(Single Precision FPU)" brief="Azure RTOS Core" version="6.2.0" full_name="Azure RTOS ThreadX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="OS" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.template.MIMXRT1176"/>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/threadx/cortex_m7/mcux" project_relative_path="binary/threadx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libthreadx_sp.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_tx_sp.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.fx.MIMXRT1176" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.MIMXRT1176" name="Azure RTOS FileX" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.fx.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.tx.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libfilex.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_fx.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.fx.sp.MIMXRT1176" name="Azure RTOS FileX(Single Precision FPU)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.fx.sp.MIMXRT1176" name="Azure RTOS FileX(Single Precision FPU)" brief="A file system based on azure RTOS" version="6.2.0" full_name="Azure RTOS FileX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.fx.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.tx.sp.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/filex/cortex_m7/mcux" project_relative_path="binary/filex/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libfilex_sp.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_fx_sp.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.gx.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.gx.MIMXRT1176" name="Azure RTOS GUIX" brief="A GUI library based on azure RTOS" version="6.2.0" full_name="Azure RTOS GUIX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="GX_INCLUDE_USER_DEFINE_FILE" value=""/>
       </defines>
       <dependencies>
         <component_dependency value="middleware.azure_rtos.tx.MIMXRT1176"/>
       </dependencies>
-      <source toolchain="armgcc" relative_path="../../guix/cmake" project_relative_path="guix/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./guix/cmake" project_relative_path="guix/cmake" type="script">
         <files mask="arm-none-eabi.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../guix" project_relative_path="guix" type="doc">
+      <source toolchain="armgcc" relative_path="./guix" project_relative_path="guix" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../guix/common" project_relative_path="guix/common" type="doc">
+      <source toolchain="armgcc" relative_path="./guix/common" project_relative_path="guix/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source relative_path="../../guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
+      <source relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include">
         <files mask="gx_animation.h"/>
         <files mask="gx_api.h"/>
         <files mask="gx_binres_loader.h"/>
@@ -5312,54 +5312,54 @@
         <files mask="gx_widget.h"/>
         <files mask="gx_window.h"/>
       </source>
-      <source exclude="true" relative_path="../../guix" project_relative_path="guix" type="doc">
+      <source exclude="true" relative_path="./guix" project_relative_path="guix" type="doc">
         <files mask="LICENSED-HARDWARE.txt"/>
         <files mask="LICENSE.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../guix/ports/cortex_m7/gnu" project_relative_path="guix/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="armgcc" relative_path="./guix/ports/cortex_m7/gnu" project_relative_path="guix/ports/cortex_m7/gnu" type="doc" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso armgcc" relative_path="../../guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso armgcc" relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" type="c_include" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="gx_port.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../binary/guix/cortex_m7/mcux" project_relative_path="binary/guix/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/guix/cortex_m7/mcux" project_relative_path="binary/guix/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libguix.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_gx.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
-        <include_path relative_path="../../guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
+        <include_path relative_path="./guix/common/inc" project_relative_path="guix/common/inc" type="c_include"/>
+        <include_path relative_path="./guix/ports/cortex_m7/gnu/inc" project_relative_path="guix/ports/cortex_m7/gnu/inc" toolchain="armgcc mcuxpresso" type="c_include" device_cores="cm7_MIMXRT1176xxxxx"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.lx.MIMXRT1176" name="Azure RTOS LevelX" brief="LevelX provides NAND and NOR flash wear leveling facilities to embedded applications" version="6.2.0" full_name="Azure RTOS LevelX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.lx.MIMXRT1176" name="Azure RTOS LevelX" brief="LevelX provides NAND and NOR flash wear leveling facilities to embedded applications" version="6.2.0" full_name="Azure RTOS LevelX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="LX_THREAD_SAFE_ENABLE" value=""/>
       </defines>
       <dependencies>
         <component_dependency value="middleware.azure_rtos.fx.MIMXRT1176"/>
       </dependencies>
-      <source toolchain="armgcc" relative_path="../../levelx/cmake" project_relative_path="levelx/cmake" type="script">
-        <files mask="cortex_m7.cmake"/>
-        <files mask="cortex_m0.cmake"/>
-        <files mask="cortex_m33.cmake"/>
-        <files mask="cortex_m4.cmake"/>
-        <files mask="cortex_m3.cmake"/>
-        <files mask="utilities.cmake"/>
+      <source toolchain="armgcc" relative_path="./levelx/cmake" project_relative_path="levelx/cmake" type="script">
         <files mask="arm-none-eabi.cmake"/>
+        <files mask="cortex_m0.cmake"/>
+        <files mask="utilities.cmake"/>
+        <files mask="cortex_m33.cmake"/>
+        <files mask="cortex_m3.cmake"/>
+        <files mask="cortex_m7.cmake"/>
+        <files mask="cortex_m4.cmake"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../levelx" project_relative_path="levelx" type="doc">
+      <source toolchain="armgcc" relative_path="./levelx" project_relative_path="levelx" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="armgcc" relative_path="../../levelx/common" project_relative_path="levelx/common" type="doc">
+      <source toolchain="armgcc" relative_path="./levelx/common" project_relative_path="levelx/common" type="doc">
         <files mask="CMakeLists.txt"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include">
+      <source toolchain="mcuxpresso" relative_path="./levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include">
         <files mask="lx_api.h"/>
         <files mask="lx_user_sample.h"/>
       </source>
-      <source toolchain="mcuxpresso" relative_path="../../levelx/common/src" project_relative_path="levelx/common/src" type="src">
+      <source toolchain="mcuxpresso" relative_path="./levelx/common/src" project_relative_path="levelx/common/src" type="src">
         <files mask="fx_nand_flash_simulated_driver.c"/>
         <files mask="fx_nor_flash_simulator_driver.c"/>
         <files mask="lx_nand_flash_256byte_ecc_check.c"/>
@@ -5413,99 +5413,99 @@
         <files mask="lx_nor_flash_simulator.c"/>
         <files mask="lx_nor_flash_system_error.c"/>
       </source>
-      <source exclude="true" relative_path="../../levelx/docs" project_relative_path="levelx/docs" type="image">
+      <source exclude="true" relative_path="./levelx/docs" project_relative_path="levelx/docs" type="image">
         <files mask="deps.png" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../levelx" project_relative_path="levelx" type="doc">
+      <source exclude="true" relative_path="./levelx" project_relative_path="levelx" type="doc">
         <files mask="LICENSED-HARDWARE.txt" hidden="true"/>
         <files mask="LICENSE.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../levelx/samples" project_relative_path="levelx/samples" type="src">
+      <source exclude="true" relative_path="./levelx/samples" project_relative_path="levelx/samples" type="src">
         <files mask="demo_filex_nand_flash.c" hidden="true"/>
         <files mask="demo_filex_nor_flash.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../levelx" project_relative_path="levelx" type="other">
+      <source exclude="true" relative_path="./levelx" project_relative_path="levelx" type="other">
         <files mask="SECURITY.md" hidden="true"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_lx.cmake" hidden="true"/>
       </source>
       <include_paths>
-        <include_path relative_path="../../levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include"/>
+        <include_path relative_path="./levelx/common/inc" project_relative_path="levelx/common/inc" type="c_include"/>
       </include_paths>
     </component>
-    <component id="middleware.azure_rtos.nxd.MIMXRT1176" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.MIMXRT1176" name="Azure RTOS NetX Duo" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.fx.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libnetxduo.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_nxd.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1176" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.nxd.sp.MIMXRT1176" name="Azure RTOS NetX Duo(Single Precision FPU)" brief="A network protocol stack based on azure RTOS" version="6.2.0" full_name="Azure RTOS NetX Duo(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.nxd.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.fx.sp.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/netxduo/cortex_m7/mcux" project_relative_path="binary/netxduo/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libnetxduo_sp.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_nxd_sp.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.netxduo.imxrt.MIMXRT1176" name="Azure RTOS NetX Duo Driver" brief="Azure NetX Duo driver based on i.MXRT series" version="6.2.0" full_name="Azure RTOS NetX Duo Driver" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.netxduo.imxrt.MIMXRT1176" name="Azure RTOS NetX Duo Driver" brief="Azure NetX Duo driver based on i.MXRT series" version="6.2.0" full_name="Azure RTOS NetX Duo Driver" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <component_dependency value="middleware.azure_rtos.nxd.MIMXRT1176"/>
       </dependencies>
-      <source relative_path="../../ports/netxduo" project_relative_path="ports" type="src">
+      <source relative_path="./ports/netxduo" project_relative_path="ports" type="src">
         <files mask="nx_driver_imxrt_irq.c"/>
         <files mask="nx_driver_imxrt.c"/>
       </source>
-      <source relative_path="../../ports/netxduo" project_relative_path="ports" type="c_include">
+      <source relative_path="./ports/netxduo" project_relative_path="ports" type="c_include">
         <files mask="nx_driver_imxrt.h"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_netxduo_imxrt.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.ux.MIMXRT1176" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.MIMXRT1176" name="Azure RTOS USBX" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.ux.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.nxd.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/usbx/cortex_m7/mcux" project_relative_path="binary/usbx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/usbx/cortex_m7/mcux" project_relative_path="binary/usbx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libusbx.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.ux.sp.MIMXRT1176" name="Azure RTOS USBX(Single Precision FPU)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.ux.sp.MIMXRT1176" name="Azure RTOS USBX(Single Precision FPU)" brief="A USB library based on azure RTOS" version="6.2.0" full_name="Azure RTOS USBX(Single Precision FPU)" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <dependencies>
         <all>
           <component_dependency value="middleware.azure_rtos.ux.template.MIMXRT1176"/>
           <component_dependency value="middleware.azure_rtos.nxd.sp.MIMXRT1176"/>
         </all>
       </dependencies>
-      <source toolchain="mcuxpresso" relative_path="../../binary/usbx/cortex_m7/mcux" project_relative_path="binary/usbx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
+      <source toolchain="mcuxpresso" relative_path="./binary/usbx/cortex_m7/mcux" project_relative_path="binary/usbx/cortex_m7/mcux" type="lib" device_cores="cm7_MIMXRT1176xxxxx">
         <files mask="libusbx_sp.a"/>
       </source>
       <source toolchain="armgcc" relative_path="./" type="workspace">
         <files mask="middleware_azure_rtos_ux_sp.cmake" hidden="true"/>
       </source>
     </component>
-    <component id="middleware.azure_rtos.azure_iot.MIMXRT1176" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.2.0" full_name="Azure RTOS IoT" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path="../rtos/azure-rtos" project_base_path="azure-rtos">
+    <component id="middleware.azure_rtos.azure_iot.MIMXRT1176" name="Azure RTOS IoT" brief="A software package that connects to the IoT Hub through Azure RTOS" version="6.2.0" full_name="Azure RTOS IoT" devices="MIMXRT1176xxxxx" category="Azure RTOS/Azure RTOS" user_visible="true" type="middleware" package_base_path=".././" project_base_path="azure-rtos">
       <defines>
         <define name="AZ_NO_PRECONDITION_CHECKING" value=""/>
       </defines>
@@ -5515,7 +5515,7 @@
           <component_dependency value="middleware.azure_rtos.nxd.sp.MIMXRT1176"/>
         </any_of>
       </dependencies>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot" project_relative_path="netxduo/addons/azure_iot" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot" project_relative_path="netxduo/addons/azure_iot" type="c_include">
         <files mask="nx_azure_iot.h" hidden="true"/>
         <files mask="nx_azure_iot_adu_agent.h" hidden="true"/>
         <files mask="nx_azure_iot_hub_client.h" hidden="true"/>
@@ -5524,7 +5524,7 @@
         <files mask="nx_azure_iot_json_writer.h" hidden="true"/>
         <files mask="nx_azure_iot_provisioning_client.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot" project_relative_path="netxduo/addons/azure_iot" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot" project_relative_path="netxduo/addons/azure_iot" type="src">
         <files mask="nx_azure_iot.c" hidden="true"/>
         <files mask="nx_azure_iot_adu_agent.c" hidden="true"/>
         <files mask="nx_azure_iot_adu_root_key.c" hidden="true"/>
@@ -5534,42 +5534,42 @@
         <files mask="nx_azure_iot_json_writer.c" hidden="true"/>
         <files mask="nx_azure_iot_provisioning_client.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/docs" project_relative_path="netxduo/addons/azure_iot/docs" type="other">
-        <files mask="azure_rtos_iot_json.md" hidden="true"/>
-        <files mask="azure_rtos_iot_sdk_api.md" hidden="true"/>
-        <files mask="azure_rtos_iot_hub_client.md" hidden="true"/>
-        <files mask="azure_rtos_iot_provisioning_client.md" hidden="true"/>
-        <files mask="azure_rtos_iot_adu_agent.md" hidden="true"/>
-        <files mask="azure_rtos_iot.md" hidden="true"/>
-        <files mask="azure_rtos_iot_hub_client_properties.md" hidden="true"/>
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs/img" project_relative_path="netxduo/addons/azure_iot/docs/img" type="image">
+        <files mask="diagram.png" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/docs/img/device_explorer" project_relative_path="netxduo/addons/azure_iot/docs/img/device_explorer" type="image">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs/img/device_explorer" project_relative_path="netxduo/addons/azure_iot/docs/img/device_explorer" type="image">
+        <files mask="send_turnfanon_message_to_device.png" hidden="true"/>
+        <files mask="device_explorer_configuration.png" hidden="true"/>
+        <files mask="device_temperature_min_at_0.png" hidden="true"/>
         <files mask="send_turnfanoff_message_to_device.png" hidden="true"/>
         <files mask="device_temperature_max_at_40.png" hidden="true"/>
         <files mask="device_explorer_management.png" hidden="true"/>
-        <files mask="device_temperature_min_at_0.png" hidden="true"/>
-        <files mask="device_explorer_configuration.png" hidden="true"/>
-        <files mask="send_turnfanon_message_to_device.png" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/docs/img" project_relative_path="netxduo/addons/azure_iot/docs/img" type="image">
-        <files mask="diagram.png" hidden="true"/>
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/docs" project_relative_path="netxduo/addons/azure_iot/docs" type="other">
+        <files mask="azure_rtos_iot.md" hidden="true"/>
+        <files mask="azure_rtos_iot_provisioning_client.md" hidden="true"/>
+        <files mask="azure_rtos_iot_json.md" hidden="true"/>
+        <files mask="azure_rtos_iot_hub_client.md" hidden="true"/>
+        <files mask="azure_rtos_iot_hub_client_properties.md" hidden="true"/>
+        <files mask="azure_rtos_iot_sdk_api.md" hidden="true"/>
+        <files mask="azure_rtos_iot_adu_agent.md" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="src">
         <files mask="nx_azure_iot_security_module.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module" type="c_include">
         <files mask="nx_azure_iot_security_module.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module" type="c_include">
         <files mask="mti.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module/model/objects" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/inc/iot_security_module/model/objects" type="c_include">
         <files mask="object_network_activity_ext.h" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/cmake-modules" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/cmake-modules" type="script">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/cmake-modules" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/cmake-modules" type="script">
         <files mask="CMockaConfig.cmake" hidden="true"/>
         <files mask="asc_security_coreBuild.cmake" hidden="true"/>
         <files mask="asc_security_coreCheckAndIncludeCodeCov.cmake" hidden="true"/>
@@ -5579,10 +5579,10 @@
         <files mask="asc_security_core_build_rules.cmake" hidden="true"/>
         <files mask="asc_security_core_dependencies.cmake" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc" type="c_include">
         <files mask="flatcc_accessors.h" hidden="true"/>
         <files mask="flatcc_alloc.h" hidden="true"/>
         <files mask="flatcc_assert.h" hidden="true"/>
@@ -5598,7 +5598,7 @@
         <files mask="flatcc_rtconfig.h" hidden="true"/>
         <files mask="flatcc_types.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include/flatcc/portable" type="c_include">
         <files mask="paligned_alloc.h" hidden="true"/>
         <files mask="pdiagnostic.h" hidden="true"/>
         <files mask="pdiagnostic_pop.h" hidden="true"/>
@@ -5610,12 +5610,12 @@
         <files mask="pstdint.h" hidden="true"/>
         <files mask="pwarnings.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime" type="src">
         <files mask="builder.c" hidden="true"/>
         <files mask="emitter.c" hidden="true"/>
         <files mask="refmap.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core" type="c_include">
         <files mask="asc_result.h" hidden="true"/>
         <files mask="collector.h" hidden="true"/>
         <files mask="collector_collection.h" hidden="true"/>
@@ -5636,17 +5636,17 @@
         <files mask="serializer.h" hidden="true"/>
         <files mask="version.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model" type="c_include">
         <files mask="mti.h" hidden="true"/>
         <files mask="security_message.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/objects" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/objects" type="c_include">
         <files mask="network_activity.h" hidden="true"/>
         <files mask="objects.h" hidden="true"/>
         <files mask="system_information.h" hidden="true"/>
         <files mask="transport_protocol.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/schema" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/schema" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/schema" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/model/schema" type="c_include">
         <files mask="baseline_builder.h" hidden="true"/>
         <files mask="baseline_json_parser.h" hidden="true"/>
         <files mask="baseline_json_printer.h" hidden="true"/>
@@ -5706,7 +5706,7 @@
         <files mask="uuid_json_printer.h" hidden="true"/>
         <files mask="uuid_reader.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils" type="c_include">
         <files mask="containerof.h" hidden="true"/>
         <files mask="event_loop_be.h" hidden="true"/>
         <files mask="iconv.h" hidden="true"/>
@@ -5723,7 +5723,7 @@
         <files mask="string_utils.h" hidden="true"/>
         <files mask="uuid.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils/collection" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils/collection" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils/collection" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc/asc_security_core/utils/collection" type="c_include">
         <files mask="bit_vector.h" hidden="true"/>
         <files mask="collection.h" hidden="true"/>
         <files mask="hashset.h" hidden="true"/>
@@ -5732,7 +5732,7 @@
         <files mask="list.h" hidden="true"/>
         <files mask="stack.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src" type="src">
         <files mask="collector_collection.c" hidden="true"/>
         <files mask="collectors_info.c" hidden="true"/>
         <files mask="components_factory.c" hidden="true"/>
@@ -5741,52 +5741,52 @@
         <files mask="logger.c" hidden="true"/>
         <files mask="object_pool_static.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors" type="src">
         <files mask="collector_heartbeat.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model" type="src">
         <files mask="collector.c" hidden="true"/>
         <files mask="security_message.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" type="src">
         <files mask="heartbeat.c" hidden="true"/>
         <files mask="network_activity.c" hidden="true"/>
         <files mask="serializer.c" hidden="true"/>
         <files mask="serializer_private.c" hidden="true"/>
         <files mask="system_information.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer" type="c_include">
         <files mask="protocol_serialize_enum.h" hidden="true"/>
         <files mask="serializer_private.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions" type="src">
         <files mask="custom_builder_allocator.c" hidden="true"/>
         <files mask="page_allocator.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils" type="src">
         <files mask="event_loop_be.c" hidden="true"/>
         <files mask="iconv.c" hidden="true"/>
         <files mask="notifier.c" hidden="true"/>
         <files mask="string_utils.c" hidden="true"/>
         <files mask="uuid.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/src/collectors" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/collectors" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/src/collectors" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/collectors" type="src">
         <files mask="collector_network_activity.c" hidden="true"/>
         <files mask="collector_system_information.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/src/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/model/objects" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/src/model/objects" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/model/objects" type="src">
         <files mask="object_network_activity_ext.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure_iot_security_module/src/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/utils" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure_iot_security_module/src/utils" project_relative_path="netxduo/addons/azure_iot/azure_iot_security_module/src/utils" type="src">
         <files mask="ievent_loop.c" hidden="true"/>
         <files mask="irand.c" hidden="true"/>
         <files mask="itime.c" hidden="true"/>
         <files mask="os_utils.c" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules" type="script">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/cmake-modules" type="script">
         <files mask="AddAzureSDKforC.cmake" hidden="true"/>
         <files mask="AddCMockaTest.cmake" hidden="true"/>
         <files mask="CheckAndIncludeCodeCov.cmake" hidden="true"/>
@@ -5795,10 +5795,10 @@
         <files mask="create_map_file.cmake" hidden="true"/>
         <files mask="gcc-arm-toolchain.cmake" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/eng/cmake" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/eng/cmake" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/eng/cmake" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/eng/cmake" type="doc">
         <files mask="global_compile_options.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core" type="c_include">
         <files mask="_az_cfg.h" hidden="true"/>
         <files mask="_az_cfg_prefix.h" hidden="true"/>
         <files mask="_az_cfg_suffix.h" hidden="true"/>
@@ -5816,7 +5816,7 @@
         <files mask="az_span.h" hidden="true"/>
         <files mask="az_version.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core/internal" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core/internal" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core/internal" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/core/internal" type="c_include">
         <files mask="az_config_internal.h" hidden="true"/>
         <files mask="az_credentials_internal.h" hidden="true"/>
         <files mask="az_http_internal.h" hidden="true"/>
@@ -5826,19 +5826,19 @@
         <files mask="az_retry_internal.h" hidden="true"/>
         <files mask="az_span_internal.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot" type="c_include">
         <files mask="az_iot_common.h" hidden="true"/>
         <files mask="az_iot_hub_client.h" hidden="true"/>
         <files mask="az_iot_hub_client_properties.h" hidden="true"/>
         <files mask="az_iot_provisioning_client.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot/internal" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot/internal" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot/internal" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc/azure/iot/internal" type="c_include">
         <files mask="az_iot_common_internal.h" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="c_include">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="c_include">
         <files mask="az_hex_private.h" hidden="true"/>
         <files mask="az_http_header_validation_private.h" hidden="true"/>
         <files mask="az_http_policy_logging_private.h" hidden="true"/>
@@ -5846,7 +5846,7 @@
         <files mask="az_json_private.h" hidden="true"/>
         <files mask="az_span_private.h" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core" type="src">
         <files mask="az_base64.c" hidden="true"/>
         <files mask="az_context.c" hidden="true"/>
         <files mask="az_http_pipeline.c" hidden="true"/>
@@ -5862,10 +5862,10 @@
         <files mask="az_precondition.c" hidden="true"/>
         <files mask="az_span.c" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot" type="src">
         <files mask="az_iot_common.c" hidden="true"/>
         <files mask="az_iot_hub_client.c" hidden="true"/>
         <files mask="az_iot_hub_client_c2d.c" hidden="true"/>
@@ -5878,15 +5878,15 @@
         <files mask="az_iot_provisioning_client.c" hidden="true"/>
         <files mask="az_iot_provisioning_client_sas.c" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="doc">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="doc">
         <files mask="CMakeLists.txt" hidden="true"/>
       </source>
-      <source toolchain="armgcc" exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="src">
+      <source toolchain="armgcc" exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="src">
         <files mask="az_curl.c" hidden="true"/>
         <files mask="az_posix.c" hidden="true"/>
         <files mask="az_win32.c" hidden="true"/>
       </source>
-      <source exclude="true" relative_path="../../netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="src">
+      <source exclude="true" relative_path="./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" project_relative_path="netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform" type="src">
         <files mask="az_nohttp.c" hidden="true"/>
         <files mask="az_noplatform.c" hidden="true"/>
       </source>
