@@ -6,21 +6,6 @@ if (CONFIG_USE_middleware_azure_rtos_tx_template)
 
 message("middleware_azure_rtos_tx_template component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_misra.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_context_save.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_disable.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_schedule.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_stack_build.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/src/tx_timer_interrupt.S
-  )
-endif()
-
 target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/common/tx_initialize_low_level.c
 )
@@ -42,12 +27,6 @@ endif()
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -88,12 +67,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -306,12 +279,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
@@ -337,7 +304,6 @@ if (CONFIG_USE_middleware_azure_rtos_tx_mgr_lib)
 message("middleware_azure_rtos_tx_mgr_lib component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_misra.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_block_allocate.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_block_pool_cleanup.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_block_pool_create.c
@@ -372,6 +338,7 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_initialize_high_level.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_initialize_kernel_enter.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_initialize_kernel_setup.c
+  ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_misra.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_mutex_cleanup.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_mutex_create.c
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/src/tx_mutex_delete.c
@@ -551,37 +518,11 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/src/txm_module_manager_util.c
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_schedule.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_external_memory_enable.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_stack_build.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_system_return.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_alignment_adjust.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_handler.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_disable.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_timer_interrupt.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_mm_register_setup.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_interrupt_control.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_memory_fault_notify.c
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/txm_module_manager_thread_stack_build.s
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_restore.S
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_manager/src/tx_thread_context_save.S
-  )
-endif()
-
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_manager/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -702,22 +643,10 @@ target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/module_lib/src/txm_trace_user_event_insert.c
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
-      ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/module_lib/src/txm_module_thread_shell_entry.c
-  )
-endif()
-
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common/inc
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/common_modules/inc
 )
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports_module/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
@@ -740,12 +669,6 @@ message("middleware_azure_rtos_fx_template component is included from ${CMAKE_CU
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/common/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -1021,22 +944,10 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/common/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m33/gnu/inc
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
 )
 endif()
 
@@ -1350,13 +1261,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./guix/common/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -1440,12 +1344,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/inc
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/ports
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -1855,19 +1753,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./netxduo/nx_secure/ports
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
@@ -1908,12 +1793,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_network/inc
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_pictbridge/inc
 )
-
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m7/gnu/inc
-)
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
@@ -2191,20 +2070,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./usbx/common/usbx_pictbridge/inc
 )
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./threadx/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/ports/cortex_m7/gnu/inc
-  ${CMAKE_CURRENT_LIST_DIR}/./usbx/ports/cortex_m7/gnu/inc
-)
-endif()
-
-if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc) AND CONFIG_CORE STREQUAL cm33)
 target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./filex/ports/cortex_m33/gnu/inc
@@ -2243,14 +2108,6 @@ message("middleware_azure_rtos_tx component is included from ${CMAKE_CURRENT_LIS
 
 if(CONFIG_USE_middleware_azure_rtos_tx_template)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_tx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2267,14 +2124,6 @@ message("middleware_azure_rtos_tx_mgr component is included from ${CMAKE_CURRENT
 
 if(CONFIG_USE_middleware_azure_rtos_tx_mgr_template)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx-txm.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_tx_mgr dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2290,14 +2139,6 @@ if (CONFIG_USE_middleware_azure_rtos_tx_sp)
 message("middleware_azure_rtos_tx_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_tx_template)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/threadx/cortex_m7/mcux/libthreadx_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2323,14 +2164,6 @@ message("middleware_azure_rtos_fx component is included from ${CMAKE_CURRENT_LIS
 
 if(CONFIG_USE_middleware_azure_rtos_fx_template AND CONFIG_USE_middleware_azure_rtos_tx)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m7/mcux/libfilex.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_fx dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2346,14 +2179,6 @@ if (CONFIG_USE_middleware_azure_rtos_fx_sp)
 message("middleware_azure_rtos_fx_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_fx_template AND CONFIG_USE_middleware_azure_rtos_tx_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/filex/cortex_m7/mcux/libfilex_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2383,12 +2208,6 @@ target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/./guix/common/inc
 )
 
-if((CONFIG_TOOLCHAIN STREQUAL armgcc OR CONFIG_TOOLCHAIN STREQUAL mcux) AND CONFIG_CORE STREQUAL cm7f)
-target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
-  ${CMAKE_CURRENT_LIST_DIR}/./guix/ports/cortex_m7/gnu/inc
-)
-endif()
-
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
 
@@ -2401,14 +2220,6 @@ if(CONFIG_USE_COMPONENT_CONFIGURATION)
     )
   endif()
 
-endif()
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/guix/cortex_m7/mcux/libguix.a
-      -Wl,--end-group
-  )
 endif()
 
 else()
@@ -2425,7 +2236,7 @@ if (CONFIG_USE_middleware_azure_rtos_lx)
 
 message("middleware_azure_rtos_lx component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
-if(CONFIG_USE_middleware_azure_rtos_fx)
+if(CONFIG_USE_middleware_azure_rtos_fx OR CONFIG_USE_middleware_azure_rtos_fx_sp)
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux)
   target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2518,14 +2329,6 @@ message("middleware_azure_rtos_nxd component is included from ${CMAKE_CURRENT_LI
 
 if(CONFIG_USE_middleware_azure_rtos_nxd_template AND CONFIG_USE_middleware_azure_rtos_fx)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/netxduo/cortex_m7/mcux/libnetxduo.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_nxd dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2541,14 +2344,6 @@ if (CONFIG_USE_middleware_azure_rtos_nxd_sp)
 message("middleware_azure_rtos_nxd_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_nxd_template AND CONFIG_USE_middleware_azure_rtos_fx_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/netxduo/cortex_m7/mcux/libnetxduo_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2595,14 +2390,6 @@ message("middleware_azure_rtos_ux component is included from ${CMAKE_CURRENT_LIS
 
 if(CONFIG_USE_middleware_azure_rtos_ux_template AND CONFIG_USE_middleware_azure_rtos_nxd)
 
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m7/mcux/libusbx.a
-      -Wl,--end-group
-  )
-endif()
-
 else()
 
 message(SEND_ERROR "middleware_azure_rtos_ux dependency does not meet, please check ${CMAKE_CURRENT_LIST_FILE}.")
@@ -2618,14 +2405,6 @@ if (CONFIG_USE_middleware_azure_rtos_ux_sp)
 message("middleware_azure_rtos_ux_sp component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_ux_template AND CONFIG_USE_middleware_azure_rtos_nxd_sp)
-
-if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm7f)
-  target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
-    -Wl,--start-group
-      ${CMAKE_CURRENT_LIST_DIR}/./binary/usbx/cortex_m7/mcux/libusbx_sp.a
-      -Wl,--end-group
-  )
-endif()
 
 if(CONFIG_TOOLCHAIN STREQUAL mcux AND CONFIG_CORE STREQUAL cm33)
   target_link_libraries(${MCUX_SDK_PROJECT_NAME} PRIVATE
@@ -2650,6 +2429,102 @@ if (CONFIG_USE_middleware_azure_rtos_azure_iot)
 message("middleware_azure_rtos_azure_iot component is included from ${CMAKE_CURRENT_LIST_FILE}.")
 
 if(CONFIG_USE_middleware_azure_rtos_nxd OR CONFIG_USE_middleware_azure_rtos_nxd_sp)
+
+target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_adu_agent.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_adu_root_key.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_hub_client.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_hub_client_properties.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_json_reader.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_json_writer.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/nx_azure_iot_provisioning_client.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_base64.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_context.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_pipeline.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_policy.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_policy_logging.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_policy_retry.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_request.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_http_response.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_json_reader.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_json_token.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_json_writer.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_log.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_precondition.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/core/az_span.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_common.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_c2d.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_commands.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_methods.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_properties.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_sas.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_telemetry.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_hub_client_twin.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_provisioning_client.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/iot/az_iot_provisioning_client_sas.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_nohttp.c
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/src/azure/platform/az_noplatform.c
+)
+
+if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc))
+  target_sources(${MCUX_SDK_PROJECT_NAME} PRIVATE
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/nx_azure_iot_security_module.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime/builder.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime/emitter.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime/refmap.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collector_collection.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors/collector_heartbeat.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/collectors_info.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/components_factory.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/components_manager.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/core.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/logger.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model/collector.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/model/security_message.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/object_pool_static.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions/custom_builder_allocator.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/extensions/page_allocator.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/heartbeat.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/network_activity.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/serializer.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/serializer_private.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/serializer/system_information.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/collection/bit_vector.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/collection/hashtable.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/collection/list.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/collection/stack.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/event_loop_be.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/iconv.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/notifier.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/string_utils.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/src/utils/uuid.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/collectors/collector_network_activity.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/collectors/collector_system_information.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/model/objects/object_network_activity_ext.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/utils/ievent_loop.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/utils/irand.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/utils/itime.c
+      ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/src/utils/os_utils.c
+  )
+endif()
+
+target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure-sdk-for-c/sdk/inc
+)
+
+if((CONFIG_TOOLCHAIN STREQUAL mcux OR CONFIG_TOOLCHAIN STREQUAL armgcc))
+target_include_directories(${MCUX_SDK_PROJECT_NAME} PUBLIC
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/inc
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/inc/configs/RTOS_BASE
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/inc
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/src/runtime
+  ${CMAKE_CURRENT_LIST_DIR}/./netxduo/addons/azure_iot/azure_iot_security_module/iot-security-module-core/deps/flatcc/include
+)
+endif()
 
 if(CONFIG_USE_COMPONENT_CONFIGURATION)
   message("===>Import configuration from ${CMAKE_CURRENT_LIST_FILE}")
